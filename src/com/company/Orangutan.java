@@ -58,6 +58,12 @@ public class Orangutan extends Animal {
      * Az oránugután átlép a t csempére.
      */
     void move(Tile t){
+        if(t.canIMove(this)){
+            getPosition().remove(this);
+            t.accept(this);
+        }
+        t.exit(this);
+        Maze.removePanda(getNextPanda());
 
     }
 }
