@@ -35,7 +35,7 @@ public abstract class Animal extends Thing {
      * @return Visszaadja a sorban következő Panda-t.
      */
     Panda getNextPanda(){
-
+        return nextPanda;
     }
 
     /**

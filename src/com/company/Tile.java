@@ -9,7 +9,11 @@ public class Tile {
 
     }
 
-    void accept(Animal a){
+    void accept(Orangutan o){
+
+    }
+
+    void accept(Panda p) {
 
     }
 

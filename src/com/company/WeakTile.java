@@ -12,12 +12,36 @@ public class WeakTile extends Tile {
     private int strength;
 
     /**
-     * @param a : a WeakTilera lépni akaró állat
-     * Magára rakja az Animal-t, ha “élete” 0, akkor pedig
+     * @param o : a WeakTilera lépni akaró orángután
+     * Magára rakja az Orángutántt, ha “élete” 0, akkor pedig
      * törli azt.
      */
-    void accept(Animal a) {
+    @Override
+    void accept(Orangutan o) {
+        decreaseStrength(1);
+        if(strength>0) {
+            //TODO
+        }
+        else {
+            remove(o);
+            Maze.removeOrangutan(o);
+        }
+    }
 
+    /**
+     * @param p a WeakTilera lépni akaró panda
+     * Magára rakja az Pandat, ha “élete” 0, akkor pedig törli azt.
+     */
+    @Override
+    void accept(Panda p) {
+        decreaseStrength(1);
+        if(strength>0) {
+            //TODO
+        }
+        else {
+            remove(p);
+            Maze.removeOnePanda(p);
+        }
     }
 
     /**
@@ -25,6 +49,6 @@ public class WeakTile extends Tile {
      * Csökkenti a strength attributum értékét i-vel
      */
     void decreaseStrength(int i) {
-
+        strength -= i;
     }
 }
