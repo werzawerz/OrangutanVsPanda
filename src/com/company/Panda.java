@@ -45,7 +45,7 @@ public abstract class Panda extends Animal {
      * Rekurzív, a sor felbontását végzi el.
      */
     void release(){
-
+        getNextPanda().setNextPanda(null);
     }
 
 

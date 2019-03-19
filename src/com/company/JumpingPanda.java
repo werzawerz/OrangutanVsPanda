@@ -9,6 +9,6 @@ public class JumpingPanda extends Panda {
      * gyenge.
      */
     void jump(){
-
+        getPosition().decreaseStrength(5);
     }
 }

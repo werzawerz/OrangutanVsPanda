@@ -10,6 +10,6 @@ public class LazyPanda extends Panda {
      * pandát rálépteti a fotel csempéjére, t-re, és kivonja a mozgásból.
      */
     void sit(Tile t){
-
+        move(t);
     }
 }
