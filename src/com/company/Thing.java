@@ -18,7 +18,7 @@ public abstract class Thing {
      * Leszármazottban felül van írva. Itt csak false-szal tér vissza.
      */
     public boolean collideWith(Orangutan o){
-
+        return false;
     }
 
     /**
@@ -28,7 +28,7 @@ public abstract class Thing {
      * Leszármazottban felül van írva. Itt csak false-szal tér vissza.
      */
     public boolean collideWith(Panda p){
-
+        return false;
     }
 
     /**

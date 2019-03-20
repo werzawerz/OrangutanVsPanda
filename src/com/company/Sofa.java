@@ -20,7 +20,7 @@ public class Sofa extends Item{
      * függvényét.
      */
     public  void notify(){
-        getPosition().getNeighbours()[0].getAnimal().sit(this);
+        getPosition().getNeighbours()[0].getAnimal().sit(this.getPosition());
 
     }
 
@@ -30,6 +30,6 @@ public class Sofa extends Item{
      * Visszaadja a fotel foglaltságát jelző bool értékét.
      */
     public  boolean isEmpty(){
-
+        return empty;
     }
 }
