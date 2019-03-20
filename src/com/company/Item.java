@@ -29,7 +29,7 @@ public class Item extends Thing{
     }
 
     /**
-     *Értesíti a szomszédos csempéken állókat, ha valami történik,
+     *Értesíti a szomszédos csempéken állókat, ha valami történik
      * amiről tudniuk kellene.
      */
     public void notify()
