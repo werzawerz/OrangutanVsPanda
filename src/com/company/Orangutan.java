@@ -15,7 +15,7 @@ public class Orangutan extends Animal {
      * Visszaadja a pandas tömb hosszát.
      */
     int getPandaNum(){
-
+        return 0;
     }
 
     /**
@@ -25,7 +25,7 @@ public class Orangutan extends Animal {
      * tér vissza.
      */
     boolean collideWidth(Orangutan o){
-
+        return false;
     }
 
     /**
@@ -35,7 +35,7 @@ public class Orangutan extends Animal {
      * amennyiben nem egy másik sor tagja, false-t ad vissza.
      */
     boolean collideWidth(Panda p){
-
+        return false;
     }
 
     /**
@@ -62,7 +62,7 @@ public class Orangutan extends Animal {
             getPosition().remove(this);
             t.accept(this);
         }
-        t.exit(this);
+        t.accept(this);
         Maze.removePanda(getNextPanda());
 
     }

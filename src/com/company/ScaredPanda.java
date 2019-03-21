@@ -5,6 +5,11 @@ package com.company;
  */
 public class ScaredPanda extends Panda {
 
+    @Override
+    void move(Tile t) {
+
+    }
+
     /**
      * A függvény elvégzi a sor felbontását, ha van.
      */

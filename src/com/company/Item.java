@@ -4,7 +4,7 @@ package com.company;
  * A nem mozgó pályaelemeket reprezentálja. Absztrakt ősosztálya az Arcade-nek, a
  * VendingMachine-nek, és a Sofa-nak.
  */
-public class Item extends Thing{
+public class Item extends Thing {
 
     /**
      * @param o
@@ -12,9 +12,8 @@ public class Item extends Thing{
      * Amikor o, egy csempére adott Item-mel,
      * akkor visszatér false-szal.
      */
-    public  boolean collidewith(Orangutan o)
-    {
-
+    public boolean collidewith(Orangutan o) {
+        return false;
     }
 
     /**
@@ -23,16 +22,15 @@ public class Item extends Thing{
      * Amikor p, egy csempére adott Item-mel, akkor
      * visszatér false-szal.
      */
-    public  boolean collidewith(Panda p)
-    {
-
+    public boolean collidewith(Panda p) {
+        return false;
     }
 
     /**
-     *Értesíti a szomszédos csempéken állókat, ha valami történik
+     * Értesíti a szomszédos csempéken állókat, ha valami történik
      * amiről tudniuk kellene.
      */
-    public void notify()
-    {
+    public void notifyNeighbours() {
 
     }
+}

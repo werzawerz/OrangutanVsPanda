@@ -19,7 +19,7 @@ public class Sofa extends Item{
      * Meghívja a szomszédos csempéken levő állatoknak a sit()
      * függvényét.
      */
-    public  void notify(){
+    public  void notifyNeighbours(){
         getPosition().getNeighbours()[0].getAnimal().sit(this.getPosition());
 
     }

@@ -20,17 +20,29 @@ public class Tile {
     private Item item;
 
     /**
-     * @param a Animal: a Tile-ra lépni akaró Animal
+     * @param o Orangutan: a Tile-ra lépni akaró Orangutan
      * @return bool
      * A megfelelő collideWith metódusokkal megnézi,
      * hogy Animal a léphet-e rá, ennek megfelelő a visszatérési érték.
      */
-    boolean canIMove(Animal a){
+    boolean canIMove(Orangutan o){
         if(occupiedBy!=null)
-            return occupiedBy.collideWidth(a);
+            return occupiedBy.collideWith(o);
         if(item!=null)
-            return item.collideWidth(a);
+            return item.collideWith(o);
+        return false;
+    }
 
+    /**
+     * @param p ?????????????????????????????????????
+     * @return ?????????????????????????? Kérdéses cucc
+     */
+    boolean canIMove(Panda p){
+        if(occupiedBy!=null)
+            return occupiedBy.collideWith(p);
+        if(item!=null)
+            return item.collideWith(p);
+        return false;
     }
 
     /**
@@ -62,7 +74,7 @@ public class Tile {
      * Üres függvény, a WeakTile-nál van
      * törzse.
      */
-    void decreaseStrength(){}
+    void decreaseStrength(int i){}
 
     /**
      * @return Tile[]
@@ -70,7 +82,7 @@ public class Tile {
      * tömböt.
      */
     Tile[] getNeighbours(){
-
+        return null;
     }
 
     /**
@@ -78,6 +90,6 @@ public class Tile {
      * Visszaadja a a Tile-on levő Animal-t.
      */
     Animal getAnimal(){
-
+        return null;
     }
 }

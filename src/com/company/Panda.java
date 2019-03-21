@@ -20,7 +20,7 @@ public abstract class Panda extends Animal {
      * bekerül a sorba, false-t ad vissza.
      */
     boolean collideWidth(Orangutan o){
-
+        return false;
     }
 
     /**
@@ -30,7 +30,7 @@ public abstract class Panda extends Animal {
      * marad, false-t ad vissza.
      */
     boolean collideWidth(Panda p){
-
+        return false;
     }
 
     /**
