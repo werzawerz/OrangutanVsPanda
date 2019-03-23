@@ -57,7 +57,7 @@ public class Orangutan extends Animal {
      * @param t Tile
      * Az oránugután átlép a t csempére.
      */
-    void move(Tile t){
+    public void move(Tile t){
         if(t.canIMove(this)){
             getPosition().remove(this);
             t.accept(this);

@@ -23,6 +23,10 @@ public abstract class Panda extends Animal {
         return false;
     }
 
+    public void move(Tile t){
+        t.canIMove(this);
+    }
+
     /**
      * @param p Panda
      * @return bool
