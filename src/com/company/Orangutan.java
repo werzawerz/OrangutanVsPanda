@@ -39,6 +39,7 @@ public class Orangutan extends Animal {
     void destroyPandas(){
         Controller.incTab();
         Controller.writeClassAndFunction("ORANGUTAN:destroyPandas()");
+        Maze.removePanda(getNextPanda());
         Controller.decTab();
     }
 
@@ -55,7 +56,6 @@ public class Orangutan extends Animal {
             t.accept(this);
         }
         t.accept(this);
-        Maze.removePanda(getNextPanda());
         Controller.decTab();
     }
 }

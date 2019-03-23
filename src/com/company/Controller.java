@@ -24,12 +24,14 @@ public class Controller {
         Tile t = new Tile();
         Exit e = new Exit();
         JumpingPanda p = new JumpingPanda();
+        Tile entry = new Tile();
         t.accept(o);
         t.setNeighbours(e);
         Maze.addPanda(p);
-        p.setNextPanda(p);
+        o.setNextPanda(p);
         p.setFollowingA(o);
         p.setFollow(true);
+        e.setEntry(entry);
         o.move(e);
     }
 

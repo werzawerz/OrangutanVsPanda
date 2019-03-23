@@ -25,4 +25,8 @@ public class Exit extends Tile {
         o.destroyPandas();
         Controller.decTab();
     }
+
+    void setEntry(Tile t) {
+        entry = t;
+    }
 }
