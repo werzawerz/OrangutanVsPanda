@@ -4,10 +4,6 @@ package com.company;
  * Az a panda, amelyik, fotel mellé ér, leül rá.
  */
 public class LazyPanda extends Panda {
-    @Override
-    void move(Tile t) {
-
-    }
 
     /**
      * @param t Tile
