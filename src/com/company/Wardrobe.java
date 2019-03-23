@@ -19,7 +19,10 @@ public class Wardrobe extends Tile {
      * p-t átlépteti a szomszédos szekrényre.
      */
     public void accept(Panda p){
+        Controller.incTab();
+        Controller.writeClassAndFunction("WARDROBE:accept(p)");
         neighbourWardrobe.accept(p);
+        Controller.decTab();
 
     }
 
@@ -28,7 +31,10 @@ public class Wardrobe extends Tile {
      * o-t átlépteti a szomszédos szekrényre.
      */
     public void accept(Orangutan o){
+        Controller.incTab();
+        Controller.writeClassAndFunction("WARDROBE:accept(o)");
         neighbourWardrobe.accept(o);
+        Controller.decTab();
     }
 
 

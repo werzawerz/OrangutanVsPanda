@@ -13,7 +13,7 @@ public class Arcade extends Item{
     {
         Controller.incTab();
         Controller.writeClassAndFunction("ARCADE:notifyNeighbours()");
-        getPosition().getNeighbours()[0].getAnimal().scare();
+        getPosition().getNeighbours().get(0).getAnimal().scare();
         Controller.decTab();
     }
 }

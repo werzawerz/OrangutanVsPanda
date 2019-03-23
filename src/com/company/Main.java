@@ -47,6 +47,10 @@ public class Main {
 
         switch (selectedEvent) {
             case "1" : Controller.orangutanStepsOutOnExit();
+            case "12" : Controller.pandaCollidesWithPanda();
+            case "13" : Controller.scaredPandaGetsScared();
+            case "14" : Controller.lazyPandaSitsDown();
+           
         }
 
     }

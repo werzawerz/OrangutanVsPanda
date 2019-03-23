@@ -12,12 +12,12 @@ public class Item extends Thing {
      * Amikor o, egy csempére adott Item-mel,
      * akkor visszatér false-szal.
      */
-    public boolean collidewith(Orangutan o) {
+   /* public boolean collidewith(Orangutan o) {
         Controller.incTab();
         Controller.writeClassAndFunction("ITEM:collideWith(o)");
         Controller.decTab();
         return false;
-    }
+    } */
 
     /**
      * @param p
@@ -25,20 +25,22 @@ public class Item extends Thing {
      * Amikor p, egy csempére adott Item-mel, akkor
      * visszatér false-szal.
      */
-    public boolean collidewith(Panda p) {
+    /*public boolean collidewith(Panda p) {
+        String s = this.getClass().getName().toUpperCase() + ":collideWith(p)"
         Controller.incTab();
         Controller.writeClassAndFunction("ITEM:collideWith(p)");
         Controller.decTab();
         return false;
-    }
+    } */
 
     /**
      * Értesíti a szomszédos csempéken állókat, ha valami történik
      * amiről tudniuk kellene.
      */
     public void notifyNeighbours() {
+        String s = this.getClass().getName().toUpperCase() + ":notifyNeighbours()";
         Controller.incTab();
-        Controller.writeClassAndFunction("ITEM:notifyNeighbours()");
+        Controller.writeClassAndFunction(s);
         Controller.decTab();
     }
 }

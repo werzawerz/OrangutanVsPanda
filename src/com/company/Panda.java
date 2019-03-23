@@ -24,7 +24,12 @@ public abstract class Panda extends Animal {
     }
 
     public void move(Tile t){
-        t.canIMove(this);
+        String s = this.getClass().getSimpleName().toUpperCase() + ":move(t)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        if(t.canIMove(this))
+            getPosition().remove(this);
+        Controller.decTab();
     }
 
     /**
@@ -49,12 +54,19 @@ public abstract class Panda extends Animal {
      * Rekurzív, a sor felbontását végzi el.
      */
     void release(){
-        getNextPanda().setNextPanda(null);
+        String s = this.getClass().getSimpleName().toUpperCase() + ":release()";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        if(getNextPanda()!=null)
+            getNextPanda().setNextPanda(null);
+        Controller.decTab();
     }
 
     void setFollowingA(Animal a) {
+
         followingA = a;
     }
+
 
 
 }

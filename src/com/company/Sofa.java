@@ -12,6 +12,9 @@ public class Sofa extends Item{
     private boolean empty;
 
     public  boolean collideWith(Panda p){
+        Controller.incTab();
+        Controller.writeClassAndFunction("SOFA:collideWith(p)");
+        Controller.decTab();
         return true;
     }
 
@@ -20,7 +23,10 @@ public class Sofa extends Item{
      * függvényét.
      */
     public  void notifyNeighbours(){
-        getPosition().getNeighbours()[0].getAnimal().sit(this.getPosition());
+        Controller.incTab();
+        Controller.writeClassAndFunction("SOFA:notifyNeighbours()");
+        getPosition().getNeighbours().get(0).getAnimal().sit(this.getPosition());
+        Controller.decTab();
 
     }
 
