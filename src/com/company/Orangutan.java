@@ -15,34 +15,21 @@ public class Orangutan extends Animal {
      * Visszaadja a pandas tömb hosszát.
      */
     int getPandaNum(){
+        Controller.incTab();
+        Controller.writeClassAndFunction("ORANGUTAN:getPandaNum()");
+        Controller.decTab();
         return 0;
     }
 
-    /**
-     * @param o Orangutan
-     * @return boolean
-     * Orangutan Orangutan-nal ütközik, false-szal
-     * tér vissza.
-     */
-    boolean collideWidth(Orangutan o){
-        return false;
-    }
 
-    /**
-     * @param p Panda
-     * @return boolean
-     * Orangutan Panda-val ütközik, p bekerül a sorba,
-     * amennyiben nem egy másik sor tagja, false-t ad vissza.
-     */
-    boolean collideWidth(Panda p){
-        return false;
-    }
 
     /**
      * Kiüríti a nextPanda attribútumot.
      */
     void removePanda(){
-
+        Controller.incTab();
+        Controller.writeClassAndFunction("ORANGUTAN:removePanda()");
+        Controller.decTab();
     }
 
     /**
@@ -50,7 +37,9 @@ public class Orangutan extends Animal {
      * vezetve.
      */
     void destroyPandas(){
-
+        Controller.incTab();
+        Controller.writeClassAndFunction("ORANGUTAN:destroyPandas()");
+        Controller.decTab();
     }
 
     /**
@@ -58,12 +47,15 @@ public class Orangutan extends Animal {
      * Az oránugután átlép a t csempére.
      */
     public void move(Tile t){
+
+        Controller.incTab();
+        Controller.writeClassAndFunction("ORANGUTAN:move(t)");
         if(t.canIMove(this)){
             getPosition().remove(this);
             t.accept(this);
         }
         t.accept(this);
         Maze.removePanda(getNextPanda());
-
+        Controller.decTab();
     }
 }

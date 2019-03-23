@@ -41,16 +41,22 @@ public class Maze {
      * a sorban következő pandára, amikor kimennek a kijáraton, vagy.
      */
     static void removePanda(Panda p) {
+        Controller.incTab();
+        Controller.writeClassAndFunction("MAZE:removePanda(p)");
         if(p.getNextPanda()!=null)
             removePanda(p.getNextPanda());
         pandas.remove(p);
+        Controller.decTab();
     }
 
     /**
      * @param p A Maze-ről levevendő panda
      */
     static void removeOnePanda(Panda p) {
+        Controller.incTab();
+        Controller.writeClassAndFunction("MAZE:removeOnePanda(p)");
         pandas.remove(p);
+        Controller.decTab();
     }
 
     /**
@@ -58,6 +64,9 @@ public class Maze {
      * Kiveszi o-t az orangutans-ból.
      */
     static void removeOrangutan(Orangutan o) {
+        Controller.incTab();
+        Controller.writeClassAndFunction("MAZE:removeOrangutan(o)");
         orangutans.remove(o);
+        Controller.decTab();
     }
 }

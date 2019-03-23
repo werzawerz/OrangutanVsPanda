@@ -28,5 +28,6 @@ public class Main {
             System.out.println(i+1 + ". " + useCase[i]);
         }
         System.out.println("Enter the selected number:");
+
     }
 }

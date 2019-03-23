@@ -2,17 +2,21 @@ package com.company;
 
 public class Controller {
 
-    private int tab;
+    static private int tab = -1;
 
-    public int getTab() {
-        return tab;
-    }
-
-    public void incTab() {
+    static public void incTab() {
         tab++;
     }
 
-    public void decTab() {
+    static public void decTab() {
         tab--;
     }
+
+    static public void writeClassAndFunction(String s) {
+        for(int i = 0; i<tab; i++) {
+            System.out.print("\t");
+        }
+        System.out.println(s);
+    }
+    
 }

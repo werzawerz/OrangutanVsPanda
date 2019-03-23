@@ -14,12 +14,16 @@ public abstract class Animal extends Thing {
      * Absztrakt függvény, felüldefiniálandó, állatokként
      * változó. Leszármazottaknál bővebben lesz tárgyalva.
      */
-    public void move(Tile t){ }
+    public void move(Tile t){
+
+    }
 
     /**
      * Üres függvény.
      */
-    void jump(){}
+    void jump(){
+
+    }
 
     /**
      * Üres függvény.

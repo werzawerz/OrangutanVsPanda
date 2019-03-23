@@ -13,6 +13,9 @@ public class Item extends Thing {
      * akkor visszatér false-szal.
      */
     public boolean collidewith(Orangutan o) {
+        Controller.incTab();
+        Controller.writeClassAndFunction("ITEM:collideWith(o)");
+        Controller.decTab();
         return false;
     }
 
@@ -23,6 +26,9 @@ public class Item extends Thing {
      * visszatér false-szal.
      */
     public boolean collidewith(Panda p) {
+        Controller.incTab();
+        Controller.writeClassAndFunction("ITEM:collideWith(p)");
+        Controller.decTab();
         return false;
     }
 
@@ -31,6 +37,8 @@ public class Item extends Thing {
      * amiről tudniuk kellene.
      */
     public void notifyNeighbours() {
-
+        Controller.incTab();
+        Controller.writeClassAndFunction("ITEM:notifyNeighbours()");
+        Controller.decTab();
     }
 }

@@ -11,6 +11,9 @@ public class Arcade extends Item{
      */
     public void notifyNeighbours()
     {
+        Controller.incTab();
+        Controller.writeClassAndFunction("ARCADE:notifyNeighbours()");
         getPosition().getNeighbours()[0].getAnimal().scare();
+        Controller.decTab();
     }
 }

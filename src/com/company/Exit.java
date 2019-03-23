@@ -17,9 +17,12 @@ public class Exit extends Tile {
      * orángutánt a bejárati csempére.
      */
     void accept(Orangutan o) {
+        Controller.incTab();
+        Controller.writeClassAndFunction("EXIT:accept(o)");
         int pandaNum = o.getPandaNum();
         Game.addPoints(pandaNum);
         o.move(entry);
         o.destroyPandas();
+        Controller.decTab();
     }
 }

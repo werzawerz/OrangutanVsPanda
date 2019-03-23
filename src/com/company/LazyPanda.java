@@ -11,6 +11,9 @@ public class LazyPanda extends Panda {
      * pandát rálépteti a fotel csempéjére, t-re, és kivonja a mozgásból.
      */
     void sit(Tile t){
+        Controller.incTab();
+        Controller.writeClassAndFunction("LAZYPANDA:sit(t)");
         move(t);
+        Controller.decTab();
     }
 }

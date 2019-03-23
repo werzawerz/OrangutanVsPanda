@@ -10,6 +10,9 @@ public class JumpingPanda extends Panda {
      * gyenge.
      */
     void jump(){
+        Controller.incTab();
+        Controller.writeClassAndFunction("JUMPINGPANDA:jump()");
         getPosition().decreaseStrength(5);
+        Controller.decTab();
     }
 }
