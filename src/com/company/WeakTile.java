@@ -43,7 +43,7 @@ public class WeakTile extends Tile {
         Controller.writeClassAndFunction("WEAKTILE:accept(p)");
         decreaseStrength(1);
         if(strength>0) {
-            //TODO
+            //todo
         }
         else {
             remove(p);
@@ -61,5 +61,9 @@ public class WeakTile extends Tile {
         Controller.writeClassAndFunction("WEAKTILE:decreaseStrength(i)");
         strength -= i;
         Controller.decTab();
+    }
+
+    public void setStrength(int i) {
+        strength = i;
     }
 }

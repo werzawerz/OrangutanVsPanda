@@ -1,5 +1,7 @@
 package com.company;
 
+import java.io.IOException;
+
 public class Controller {
 
     /**
@@ -36,8 +38,12 @@ public class Controller {
      * inicializálások után letörli a konzol tartalmát és a tabulálást visszaállitja -1re
      */
     public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        try {
+            if (System.getProperty("os.name").contains("Windows"))
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            else
+                Runtime.getRuntime().exec("clear");
+        } catch (IOException | InterruptedException ex) {}
         tab = -1;
     }
 
@@ -51,6 +57,7 @@ public class Controller {
         JumpingPanda p = new JumpingPanda();
         Tile entry = new Tile();
         t.accept(o);
+        o.setPosition(t);
         t.setNeighbours(e);
         Maze.addPanda(p);
         o.setNextPanda(p);
@@ -127,6 +134,28 @@ public class Controller {
         Tile t=new Tile();
         t.setAnimal(sp);
         o.move(t);
+    }
+
+    static void pandaStepsOnWeakTile() {
+        WeakTile wt = new WeakTile();
+        JumpingPanda jp = new JumpingPanda();
+        Tile t = new Tile();
+        t.setAnimal(jp);
+        jp.setPosition(t);
+        wt.setStrength(5);
+        clearScreen();
+        jp.move(wt);
+    }
+
+    static void pandaStepsOnBrokenWeakTile() {
+        WeakTile wt = new WeakTile();
+        JumpingPanda jp = new JumpingPanda();
+        Tile t = new Tile();
+        t.setAnimal(jp);
+        jp.setPosition(t);
+        wt.setStrength(1);
+        clearScreen();
+        jp.move(wt);
     }
 
 }

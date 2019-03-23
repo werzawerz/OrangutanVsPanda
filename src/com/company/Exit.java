@@ -21,6 +21,7 @@ public class Exit extends Tile {
         Controller.writeClassAndFunction("EXIT:accept(o)");
         int pandaNum = o.getPandaNum();
         Game.addPoints(pandaNum);
+        o.setPosition(this);
         o.move(entry);
         o.destroyPandas();
         Controller.decTab();

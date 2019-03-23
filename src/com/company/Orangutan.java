@@ -55,7 +55,6 @@ public class Orangutan extends Animal {
             getPosition().remove(this);
             t.accept(this);
         }
-        t.accept(this);
         Controller.decTab();
     }
 }
