@@ -52,5 +52,9 @@ public abstract class Panda extends Animal {
         getNextPanda().setNextPanda(null);
     }
 
+    void setFollowingA(Animal a) {
+        followingA = a;
+    }
+
 
 }

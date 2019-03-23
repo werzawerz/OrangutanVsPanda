@@ -1,6 +1,12 @@
 package com.company;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Main {
+
+    private static String selectedEvent;
 
     private static String[] useCase={"Orangutan steps out on Exit",
             "Orangutan steps on WeakTile", "Orangutan steps on broken WeakTile",
@@ -28,6 +34,20 @@ public class Main {
             System.out.println(i+1 + ". " + useCase[i]);
         }
         System.out.println("Enter the selected number:");
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            selectedEvent = br.readLine();
+        }
+        catch(IOException e) {
+
+        }
+
+        System.out.println(selectedEvent);
+
+        switch (selectedEvent) {
+            case "1" : Controller.orangutanStepsOutOnExit();
+        }
 
     }
 }

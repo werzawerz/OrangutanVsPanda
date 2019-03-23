@@ -18,5 +18,19 @@ public class Controller {
         }
         System.out.println(s);
     }
-    
+
+    static public void orangutanStepsOutOnExit() {
+        Orangutan o = new Orangutan();
+        Tile t = new Tile();
+        Exit e = new Exit();
+        JumpingPanda p = new JumpingPanda();
+        t.accept(o);
+        t.setNeighbours(e);
+        Maze.addPanda(p);
+        p.setNextPanda(p);
+        p.setFollowingA(o);
+        p.setFollow(true);
+        o.move(e);
+    }
+
 }

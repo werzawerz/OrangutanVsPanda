@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 /**
  * A pályát alkotó csempéket modellező osztály. Nyilván tartja a szomszédos
  * csempéket, illetve a rajta lévő állatot, vagy egyéb pályaelemet.
@@ -9,7 +11,7 @@ public class Tile {
     /**
      * A szomszédos csempéket tartalmazó tömb.
      */
-    private Tile[] neighbours;
+    private ArrayList<Tile> neighbours = new ArrayList<Tile>();
     /**
      * A csempén tartózkodó Animal.
      */
@@ -91,5 +93,12 @@ public class Tile {
      */
     Animal getAnimal(){
         return null;
+    }
+
+    /**
+     * @param t t-t hozzáadja a szomszédos tileok közé
+     */
+    void setNeighbours(Tile t) {
+        neighbours.add(t);
     }
 }

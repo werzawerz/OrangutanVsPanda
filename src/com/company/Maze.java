@@ -10,22 +10,22 @@ public class Maze {
     /**
      * A pálya csempéit tartalmazó tömb.
      */
-    static private ArrayList<Tile> tiles;
+    static private ArrayList<Tile> tiles = new ArrayList<Tile>();
 
     /**
      * A pályán lévő pandákat tartalmazó tömb.
      */
-    static private ArrayList<Panda> pandas;
+    static private ArrayList<Panda> pandas =  new ArrayList<Panda>();
 
     /**
      * A pályán lévő Orángutánokat tartalmazó tömb.
      */
-    static private ArrayList<Orangutan> orangutans;
+    static private ArrayList<Orangutan> orangutans = new ArrayList<Orangutan>();
 
     /**
      * A pályán lévő, nem mozgó elemek tömbje.
      */
-    static private ArrayList<Item> items;
+    static private ArrayList<Item> items = new ArrayList<Item>();
 
     /**
      * Megnézi, hogy vannak-e még pandák vagy orángutánok a
@@ -68,5 +68,12 @@ public class Maze {
         Controller.writeClassAndFunction("MAZE:removeOrangutan(o)");
         orangutans.remove(o);
         Controller.decTab();
+    }
+
+    /**
+     * @param p p-t hozzáaadja a pályán lévő pandákhoz
+     */
+    static void addPanda(Panda p) {
+        pandas.add(p);
     }
 }
