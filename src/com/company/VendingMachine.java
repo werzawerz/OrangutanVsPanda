@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 /**
  * Sipszot ad ki a kornyezo mezokre.
  */
@@ -10,8 +12,8 @@ public class VendingMachine extends Item{
      */
     public void Notify(){
         Tile t = this.getPosition();
-        Tile tiles[] = t.getNeighbours();
-        Animal a = tiles[0].getAnimal();
+        ArrayList<Tile> tiles = t.getNeighbours();
+        Animal a = tiles.get(0).getAnimal();
         a.jump();
     }
 }

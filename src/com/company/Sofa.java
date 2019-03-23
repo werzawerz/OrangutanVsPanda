@@ -20,7 +20,7 @@ public class Sofa extends Item{
      * függvényét.
      */
     public  void notifyNeighbours(){
-        getPosition().getNeighbours()[0].getAnimal().sit(this.getPosition());
+        getPosition().getNeighbours().get(0).getAnimal().sit(this.getPosition());
 
     }
 

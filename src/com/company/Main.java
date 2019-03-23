@@ -46,9 +46,9 @@ public class Main {
         System.out.println(selectedEvent);
 
         switch (selectedEvent) {
-            case "1" : Controller.orangutanStepsOutOnExit();
-            case "8" : Controller.orangutanStepsInWardrobe();
-            case "9" : Controller.orangutanPicksUpPanda();
+            case "1" : Controller.orangutanStepsOutOnExit(); break;
+            case "8" : Controller.orangutanStepsInWardrobe(); break;
+            case "9" : Controller.orangutanPicksUpPanda(); break;
         }
 
     }
