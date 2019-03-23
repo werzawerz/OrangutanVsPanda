@@ -47,10 +47,12 @@ public class Main {
 
         switch (selectedEvent) {
             case "1" : Controller.orangutanStepsOutOnExit();
+            case "8" : Controller.orangutanStepsInWardrobe();
+            case "9" : Controller.orangutanPicksUpPanda();
             case "12" : Controller.pandaCollidesWithPanda();
             case "13" : Controller.scaredPandaGetsScared();
             case "14" : Controller.lazyPandaSitsDown();
-           
+
         }
 
     }

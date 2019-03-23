@@ -117,6 +117,8 @@ public class Tile {
         return occupiedBy;
     }
 
+
+
     /**
      * @param t t-t hozzáadja a szomszédos tileok közé
      */
@@ -126,5 +128,9 @@ public class Tile {
 
     public void setItem(Item i) {
         item = i;
+    }
+
+    public void setAnimal(Animal occupiedBy) {
+        this.occupiedBy = occupiedBy;
     }
 }

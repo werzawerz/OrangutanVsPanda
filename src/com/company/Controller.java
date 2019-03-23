@@ -110,4 +110,23 @@ public class Controller {
         s.notifyNeighbours();
     }
 
+    static  public void orangutanStepsInWardrobe(){
+        Orangutan o=new Orangutan();
+        Tile t=new Tile();
+        Wardrobe w=new Wardrobe();
+        Wardrobe nw=new Wardrobe();
+        w.setNeighbourWardrobe(nw);
+        t.setNeighbours(w);
+        t.setAnimal(o);
+        o.move(w);
+    }
+
+    static public void  orangutanPicksUpPanda(){
+        Orangutan o=new Orangutan();
+        ScaredPanda sp=new ScaredPanda();
+        Tile t=new Tile();
+        t.setAnimal(sp);
+        o.move(t);
+    }
+
 }
