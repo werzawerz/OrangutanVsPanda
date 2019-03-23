@@ -83,8 +83,8 @@ public class Tile {
      * Visszaadja a szomszédos csempéket tartalmazó
      * tömböt.
      */
-    Tile[] getNeighbours(){
-        return null;
+    ArrayList<Tile> getNeighbours(){
+        return neighbours;
     }
 
     /**
@@ -92,7 +92,7 @@ public class Tile {
      * Visszaadja a a Tile-on levő Animal-t.
      */
     Animal getAnimal(){
-        return null;
+        return occupiedBy;
     }
 
     /**
@@ -100,5 +100,9 @@ public class Tile {
      */
     void setNeighbours(Tile t) {
         neighbours.add(t);
+    }
+
+    public void setAnimal(Animal occupiedBy) {
+        this.occupiedBy = occupiedBy;
     }
 }

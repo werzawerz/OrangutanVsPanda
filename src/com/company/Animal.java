@@ -11,19 +11,15 @@ public abstract class Animal extends Thing {
     private Panda nextPanda;
 
     /**
-     * Absztrakt függvény, felüldefiniálandó, állatokként
+     * Üres függvény, felüldefiniálandó, állatokként
      * változó. Leszármazottaknál bővebben lesz tárgyalva.
      */
-    public void move(Tile t){
-
-    }
+    public void move(Tile t){}
 
     /**
      * Üres függvény.
      */
-    void jump(){
-
-    }
+    void jump(){}
 
     /**
      * Üres függvény.

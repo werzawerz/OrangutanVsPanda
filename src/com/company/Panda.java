@@ -20,6 +20,9 @@ public abstract class Panda extends Animal {
      * bekerül a sorba, false-t ad vissza.
      */
     boolean collideWidth(Orangutan o){
+        setFollow(true);
+        setFollowingA(o);
+        o.setNextPanda(this);
         return false;
     }
 

@@ -32,4 +32,7 @@ public class Wardrobe extends Tile {
     }
 
 
+    public void setNeighbourWardrobe(Tile neighbourWardrobe) {
+        this.neighbourWardrobe = neighbourWardrobe;
+    }
 }
