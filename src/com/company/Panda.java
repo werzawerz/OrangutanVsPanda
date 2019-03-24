@@ -19,7 +19,7 @@ public abstract class Panda extends Animal {
      * Panda Orangutan-nal ütközik, a panda
      * bekerül a sorba, false-t ad vissza.
      */
-    boolean collideWidth(Orangutan o){
+    public boolean collideWith(Orangutan o){
         setFollow(true);
         setFollowingA(o);
         o.setNextPanda(this);
@@ -47,7 +47,7 @@ public abstract class Panda extends Animal {
      * Panda Panda-val ütközik, mindenki a helyén
      * marad, false-t ad vissza.
      */
-    boolean collideWidth(Panda p){
+    public boolean collideWith(Panda p){
         return false;
     }
 
