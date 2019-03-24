@@ -33,7 +33,7 @@ public class Main {
         for(int i=0; i<useCase.length; i++){
             System.out.println(i+1 + ". " + useCase[i]);
         }
-        System.out.println("Enter the selected number:");
+        System.out.println("Enter the selected number, 0 for exit:");
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
@@ -45,22 +45,58 @@ public class Main {
 
         System.out.println(selectedEvent);
 
-        switch (selectedEvent) {
-            case "1" : Controller.orangutanStepsOutOnExit(); break;
-            case "7" : Controller.OrangutanCollidesWithOrangutan(); break;
-            case "8" : Controller.orangutanStepsInWardrobe(); break;
-            case "9" : Controller.orangutanPicksUpPanda(); break;
-            case "12" : Controller.pandaCollidesWithPanda(); break;
-            case "13" : Controller.scaredPandaGetsScared(); break;
-            case "14" : Controller.lazyPandaSitsDown(); break;
-            case "15" : Controller.JumpingPandaJumps(); break;
-            case "16" : Controller.pandaStepsOnWeakTile(); break;
-            case "17" : Controller.pandaStepsOnBrokenWeakTile(); break;
-            case "18" : Controller.pandaCollidesWithVendingMachine(); break;
-            case "19" : Controller.PandaCollidesWithArcade(); break;
-            case "20" : Controller.pandaCollidesWithTakenSofa();
-            case "11" : Controller.PandaMoves(); break;
-            case "21" : Controller.OrangutanLeadsPanda(); break;
+        boolean onGoing=true;
+
+        while(onGoing) {
+            switch (selectedEvent) {
+                case "0":
+                    onGoing=false;
+                    break;
+                case "1":
+                    Controller.orangutanStepsOutOnExit();
+                    break;
+                case "7":
+                    Controller.OrangutanCollidesWithOrangutan();
+                    break;
+                case "8":
+                    Controller.orangutanStepsInWardrobe();
+                    break;
+                case "9":
+                    Controller.orangutanPicksUpPanda();
+                    break;
+                case "12":
+                    Controller.pandaCollidesWithPanda();
+                    break;
+                case "13":
+                    Controller.scaredPandaGetsScared();
+                    break;
+                case "14":
+                    Controller.lazyPandaSitsDown();
+                    break;
+                case "15":
+                    Controller.JumpingPandaJumps();
+                    break;
+                case "16":
+                    Controller.pandaStepsOnWeakTile();
+                    break;
+                case "17":
+                    Controller.pandaStepsOnBrokenWeakTile();
+                    break;
+                case "18":
+                    Controller.pandaCollidesWithVendingMachine();
+                    break;
+                case "19":
+                    Controller.PandaCollidesWithArcade();
+                    break;
+                case "20":
+                    Controller.pandaCollidesWithTakenSofa();
+                case "11":
+                    Controller.PandaMoves();
+                    break;
+                case "21":
+                    Controller.OrangutanLeadsPanda();
+                    break;
+            }
         }
 
     }
