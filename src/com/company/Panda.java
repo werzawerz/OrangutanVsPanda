@@ -19,10 +19,15 @@ public abstract class Panda extends Animal {
      * Panda Orangutan-nal ütközik, a panda
      * bekerül a sorba, false-t ad vissza.
      */
-    boolean collideWidth(Orangutan o){
+    public boolean collideWith(Orangutan o){
+        String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+
         setFollow(true);
         setFollowingA(o);
         o.setNextPanda(this);
+        Controller.decTab();
         return false;
     }
 
@@ -47,7 +52,7 @@ public abstract class Panda extends Animal {
      * Panda Panda-val ütközik, mindenki a helyén
      * marad, false-t ad vissza.
      */
-    boolean collideWidth(Panda p){
+    public boolean collideWith(Panda p){
         return false;
     }
 
@@ -56,6 +61,10 @@ public abstract class Panda extends Animal {
      * Beállítja a follow flaget.
      */
     void setFollow(boolean b){
+        String s = this.getClass().getSimpleName().toUpperCase() + ":setFollow(b)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
 
     }
 
@@ -72,6 +81,10 @@ public abstract class Panda extends Animal {
     }
 
     void setFollowingA(Animal a) {
+        String s = this.getClass().getSimpleName().toUpperCase() + ":setFollowingA(a)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
 
         followingA = a;
     }
