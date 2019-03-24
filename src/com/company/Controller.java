@@ -158,4 +158,78 @@ public class Controller {
         jp.move(wt);
     }
 
+
+    /**
+     * Az orangutan egy WeakTile-ra lep, csokkenti a tile strengthjet.
+     */
+    static void orangutanStepsOnWeakTile() {
+        WeakTile wt = new WeakTile();
+        Orangutan o = new Orangutan();
+        Tile t = new Tile();
+        t.setAnimal(o);
+        o.setPosition(t);
+        wt.setStrength(5);
+        clearScreen();
+        o.move(wt);
+    }
+
+    /**
+     *Az orangutan ralep egy tile-ra es osszetori azt, igy el lesz tavolitva a palyarol.
+     */
+    static void orangutanStepsOnBrokenWeakTile() {
+        WeakTile wt = new WeakTile();
+        Orangutan o = new Orangutan();
+        Tile t = new Tile();
+        t.setAnimal(o);
+        o.setPosition(t);
+        wt.setStrength(1);
+        clearScreen();
+        o.move(wt);
+    }
+
+    /**
+     * Az orangutan megprobal egy olyan tile-ra lepni, ahol egy Sofa van, de nem tud odalepni.
+     */
+    static void orangutanCollidesWithSofa() {
+        Tile t = new Tile();
+        Orangutan o = new Orangutan();
+        Tile t1 = new Tile();
+        Sofa s = new Sofa();
+        t1.setAnimal(o);
+        //o.setPosition(t1);
+        t.setItem(s);
+        //s.setPosition(t);
+        clearScreen();
+        o.move(t);
+    }
+
+    /**
+     * Az orangutan megprobal egy olyan tile-ra lepni, ahol egy Arcade van, de nem tud odalepni.
+     */
+    static void orangutanCollidesWithArcade() {
+        Tile t = new Tile();
+        Orangutan o = new Orangutan();
+        Tile t1 = new Tile();
+        Arcade a = new Arcade();
+        t1.setAnimal(o);
+        //o.setPosition(t1);
+        t.setItem(a);
+        //s.setPosition(t);
+        clearScreen();
+        o.move(t);
+    }
+
+    /**
+     * Az orangutan egyik Tile-rol a masikra lep.
+     */
+    static void orangutanMoves() {
+        Orangutan o = new Orangutan();
+        Tile t1 = new Tile();
+        Tile t2 = new Tile();
+        t1.setAnimal(o);
+        o.setPosition(t1);
+        clearScreen();
+        o.move(t2);
+    }
+
 }

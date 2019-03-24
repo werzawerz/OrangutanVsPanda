@@ -64,8 +64,12 @@ public class Tile {
      * Az o-t rálépteti magára.
      */
     void accept(Orangutan o){
+        String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(o)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
         occupiedBy = o;
         o.setPosition(this);
+        Controller.decTab();
     }
 
     /**

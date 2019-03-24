@@ -47,6 +47,11 @@ public class Main {
 
         switch (selectedEvent) {
             case "1" : Controller.orangutanStepsOutOnExit(); break;
+            case "2" : Controller.orangutanStepsOnWeakTile(); break;
+            case "3" : Controller.orangutanStepsOnBrokenWeakTile(); break;
+            case "4" : Controller.orangutanCollidesWithSofa(); break;
+            case "5" : Controller.orangutanMoves(); break;
+            case "6" : Controller.orangutanCollidesWithArcade(); break;
             case "8" : Controller.orangutanStepsInWardrobe(); break;
             case "9" : Controller.orangutanPicksUpPanda(); break;
             case "12" : Controller.pandaCollidesWithPanda(); break;
