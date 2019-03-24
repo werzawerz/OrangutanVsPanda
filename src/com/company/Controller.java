@@ -1,5 +1,7 @@
 package com.company;
 
+import java.io.IOException;
+
 public class Controller {
 
     /**
@@ -36,8 +38,12 @@ public class Controller {
      * inicializálások után letörli a konzol tartalmát és a tabulálást visszaállitja -1re
      */
     public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        try {
+            if (System.getProperty("os.name").contains("Windows"))
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            else
+                Runtime.getRuntime().exec("clear");
+        } catch (IOException | InterruptedException ex) {}
         tab = -1;
     }
 
@@ -51,6 +57,7 @@ public class Controller {
         JumpingPanda p = new JumpingPanda();
         Tile entry = new Tile();
         t.accept(o);
+        o.setPosition(t);
         t.setNeighbours(e);
         Maze.addPanda(p);
         o.setNextPanda(p);
@@ -129,79 +136,26 @@ public class Controller {
         o.move(t);
     }
 
-
-    static public void pandaCollidesWithTakenSofa(){
-        ScaredPanda p1 = new ScaredPanda();
-        Tile t1 = new Tile();
-        Tile t2 = new Tile();
-        Sofa s1 = new Sofa();
-        t1.setItem(s1);
-        s1.setEmpty(false);
-        t2.setAnimal(p1);
-        p1.setPosition(t2);
-        t2.setNeighbours(t1);
+    static void pandaStepsOnWeakTile() {
+        WeakTile wt = new WeakTile();
+        JumpingPanda jp = new JumpingPanda();
+        Tile t = new Tile();
+        t.setAnimal(jp);
+        jp.setPosition(t);
+        wt.setStrength(5);
         clearScreen();
-        p1.move(t1);
+        jp.move(wt);
     }
 
-    static  public  void  pandaCollidesWithVendingMachine()
-    {
-        ScaredPanda p1 = new ScaredPanda();
-        Tile t1 = new Tile();
-        Tile t2 = new Tile();
-        VendingMachine v1 = new VendingMachine();
-        t1.setItem(v1);
-        t2.setAnimal(p1);
-        p1.setPosition(t2);
-        t2.setNeighbours(t1);
+    static void pandaStepsOnBrokenWeakTile() {
+        WeakTile wt = new WeakTile();
+        JumpingPanda jp = new JumpingPanda();
+        Tile t = new Tile();
+        t.setAnimal(jp);
+        jp.setPosition(t);
+        wt.setStrength(1);
         clearScreen();
-        p1.move(t1);
+        jp.move(wt);
     }
-
-    static public void PandaCollidesWithArcade()
-    {
-        ScaredPanda p1 = new ScaredPanda();
-        Tile t1 = new Tile();
-        Tile t2 = new Tile();
-        Arcade a1 = new Arcade();
-        t1.setItem(a1);
-        t2.setAnimal(p1);
-        p1.setPosition(t2);
-        t2.setNeighbours(t1);
-        clearScreen();
-        p1.move(t2);
-    }
-
-    static  public  void  OrangutanCollidesWithOrangutan()
-    {
-        Orangutan o1 = new Orangutan();
-        Orangutan o2 = new Orangutan();
-        Tile t1 = new Tile();
-        Tile t2 = new Tile();
-        t1.setAnimal(o1);
-        t2.setAnimal(o2);
-        o1.setPosition(t1);
-        o2.setPosition(t2);
-        t1.setNeighbours(t2);
-        clearScreen();
-        o1.move(t2);
-    }
-
-    static  public  void JumpingPandaJumps()
-    {
-        Tile t1 = new Tile();
-        Tile t2 = new Tile();
-        JumpingPanda j = new JumpingPanda();
-        VendingMachine v = new VendingMachine();
-        t1.setAnimal(j);
-        t2.setItem(v);
-        j.setPosition(t1);
-        v.setPosition(t2);
-        t2.setNeighbours(t1);
-        clearScreen();
-        v.Notify();
-    }
-
-
 
 }

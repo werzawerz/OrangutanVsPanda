@@ -28,9 +28,10 @@ public class Tile {
      * hogy Animal a léphet-e rá, ennek megfelelő a visszatérési érték.
      */
     boolean canIMove(Orangutan o){
+        String s = this.getClass().getSimpleName().toUpperCase() +  ":canIMove(o)";
         Controller.incTab();
-        Controller.writeClassAndFunction("TILE:canIMove(o)");
-        boolean bul = false;
+        Controller.writeClassAndFunction(s);
+        boolean bul = true;
         if(occupiedBy!=null)
             bul =  occupiedBy.collideWith(o);
         if(item!=null)
@@ -44,9 +45,10 @@ public class Tile {
      * @return ?????????????????????????? Kérdéses cucc
      */
     boolean canIMove(Panda p){
+        String s = this.getClass().getSimpleName().toUpperCase() +  ":canIMove(p)";
         Controller.incTab();
-        Controller.writeClassAndFunction("TILE:canIMove(p)");
-        boolean bul = false;
+        Controller.writeClassAndFunction(s);
+        boolean bul = true;
         if(occupiedBy!=null) {
             bul = occupiedBy.collideWith(p);
         }
@@ -63,6 +65,7 @@ public class Tile {
      */
     void accept(Orangutan o){
         occupiedBy = o;
+        o.setPosition(this);
     }
 
     /**
@@ -71,6 +74,7 @@ public class Tile {
      */
     void accept(Panda p) {
         occupiedBy = p;
+        p.setPosition(this);
     }
 
     /**

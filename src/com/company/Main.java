@@ -46,13 +46,14 @@ public class Main {
         System.out.println(selectedEvent);
 
         switch (selectedEvent) {
-            case "1" : Controller.orangutanStepsOutOnExit();
-            case "8" : Controller.orangutanStepsInWardrobe();
-            case "9" : Controller.orangutanPicksUpPanda();
-            case "12" : Controller.pandaCollidesWithPanda();
-            case "13" : Controller.scaredPandaGetsScared();
-            case "14" : Controller.lazyPandaSitsDown();
-            
+            case "1" : Controller.orangutanStepsOutOnExit(); break;
+            case "8" : Controller.orangutanStepsInWardrobe(); break;
+            case "9" : Controller.orangutanPicksUpPanda(); break;
+            case "12" : Controller.pandaCollidesWithPanda(); break;
+            case "13" : Controller.scaredPandaGetsScared(); break;
+            case "14" : Controller.lazyPandaSitsDown(); break;
+            case "16" : Controller.pandaStepsOnWeakTile(); break;
+            case "17" : Controller.pandaStepsOnBrokenWeakTile(); break;
         }
 
     }
