@@ -10,9 +10,9 @@ public class VendingMachine extends Item{
     /**
      * Ertesiti a szomszedos tile-okat a sipszorol, ha pedig van ott animal, meghivja a jump fuggvenyet.
      */
-    public void Notify(){
+    public void notifyNeighbours(){
         Controller.incTab();
-        Controller.writeClassAndFunction("VENDINGMACHINE:notify()");
+        Controller.writeClassAndFunction("VENDINGMACHINE:notifyNeighbours()");
         Tile t = this.getPosition();
         ArrayList<Tile> tiles = t.getNeighbours();
         Animal a = tiles.get(0).getAnimal();

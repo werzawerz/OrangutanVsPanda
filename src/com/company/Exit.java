@@ -23,7 +23,9 @@ public class Exit extends Tile {
         Game.addPoints(pandaNum);
         o.setPosition(this);
         o.move(entry);
-        o.destroyPandas();
+        if(o.getNextPanda()!=null) {
+            o.destroyPandas();
+        }
         Controller.decTab();
     }
 

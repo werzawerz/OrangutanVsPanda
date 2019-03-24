@@ -40,6 +40,7 @@ public class Orangutan extends Animal {
         Controller.incTab();
         Controller.writeClassAndFunction("ORANGUTAN:destroyPandas()");
         Maze.removePanda(getNextPanda());
+        removePanda();
         Controller.decTab();
     }
 

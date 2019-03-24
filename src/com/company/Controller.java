@@ -254,7 +254,7 @@ public class Controller {
         v.setPosition(t2);
         t2.setNeighbours(t1);
         clearScreen();
-        v.Notify();
+        v.notifyNeighbours();
     }
 
     static public void PandaMoves()
