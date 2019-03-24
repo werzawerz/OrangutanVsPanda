@@ -53,6 +53,10 @@ public class Orangutan extends Animal {
         Controller.writeClassAndFunction("ORANGUTAN:move(t)");
         if(t.canIMove(this)){
             getPosition().remove(this);
+            if(nextPanda!=null)
+            {
+                nextPanda.move(position);
+            }
             t.accept(this);
         }
         Controller.decTab();

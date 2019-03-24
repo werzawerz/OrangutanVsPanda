@@ -31,6 +31,11 @@ public class Sofa extends Item{
     }
 
 
+    public  void setEmpty(boolean b)
+    {
+        empty = b;
+    }
+
     /**
      * @return
      * Visszaadja a fotel foglaltságát jelző bool értékét.

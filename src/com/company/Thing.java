@@ -9,7 +9,7 @@ public abstract class Thing {
     /**
      * Az a Tile, amin aktuálisan van.
      */
-    private Tile position;
+    protected Tile position;
 
     /**
      * @param o
