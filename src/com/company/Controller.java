@@ -139,10 +139,12 @@ public class Controller {
     static  public void orangutanStepsInWardrobe(){
         Orangutan o=new Orangutan();
         Tile t=new Tile();
+        Tile ot=new Tile();
         Wardrobe w=new Wardrobe();
         Wardrobe nw=new Wardrobe();
         w.setNeighbourWardrobe(nw);
         t.setNeighbours(w);
+        nw.setNeighbours(ot);
         t.setAnimal(o);
         o.setPosition(t);
         clearScreen();
