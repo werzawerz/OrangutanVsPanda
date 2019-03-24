@@ -26,6 +26,12 @@ public abstract class Thing {
     }
 
     /**
+     * @param lp LazyPanda
+     * @return
+     */
+
+
+    /**
      * @param p
      * @return bool
      * Akkor hívódik meg, amikor egy leszármazottja találkozik egy Panda-val.

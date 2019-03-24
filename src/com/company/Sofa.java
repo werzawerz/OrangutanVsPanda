@@ -9,14 +9,16 @@ public class Sofa extends Item{
     /**
      * A foglaltságot jelzi.
      */
-    private boolean empty;
+    private boolean empty = true;
 
     public  boolean collideWith(Panda p){
         Controller.incTab();
         Controller.writeClassAndFunction("SOFA:collideWith(p)");
         Controller.decTab();
-        return true;
+        return empty;
     }
+
+
 
     /**
      * Meghívja a szomszédos csempéken levő állatoknak a sit()
