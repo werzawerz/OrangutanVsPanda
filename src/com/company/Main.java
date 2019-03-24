@@ -58,7 +58,7 @@ public class Main {
             case "17" : Controller.pandaStepsOnBrokenWeakTile(); break;
             case "18" : Controller.pandaCollidesWithVendingMachine(); break;
             case "19" : Controller.PandaCollidesWithArcade(); break;
-            case "20" : Controller.pandaCollidesWithTakenSofa();
+            case "20" : Controller.pandaCollidesWithTakenSofa(); break;
             case "11" : Controller.PandaMoves(); break;
             case "21" : Controller.OrangutanLeadsPanda(); break;
         }
