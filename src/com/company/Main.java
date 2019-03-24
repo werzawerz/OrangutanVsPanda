@@ -96,6 +96,7 @@ public class Main {
                 case "21":
                     Controller.OrangutanLeadsPanda();
                     break;
+                default: break;
             }
         }
 
