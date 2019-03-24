@@ -129,4 +129,79 @@ public class Controller {
         o.move(t);
     }
 
+
+    static public void pandaCollidesWithTakenSofa(){
+        ScaredPanda p1 = new ScaredPanda();
+        Tile t1 = new Tile();
+        Tile t2 = new Tile();
+        Sofa s1 = new Sofa();
+        t1.setItem(s1);
+        s1.setEmpty(false);
+        t2.setAnimal(p1);
+        p1.setPosition(t2);
+        t2.setNeighbours(t1);
+        clearScreen();
+        p1.move(t1);
+    }
+
+    static  public  void  pandaCollidesWithVendingMachine()
+    {
+        ScaredPanda p1 = new ScaredPanda();
+        Tile t1 = new Tile();
+        Tile t2 = new Tile();
+        VendingMachine v1 = new VendingMachine();
+        t1.setItem(v1);
+        t2.setAnimal(p1);
+        p1.setPosition(t2);
+        t2.setNeighbours(t1);
+        clearScreen();
+        p1.move(t1);
+    }
+
+    static public void PandaCollidesWithArcade()
+    {
+        ScaredPanda p1 = new ScaredPanda();
+        Tile t1 = new Tile();
+        Tile t2 = new Tile();
+        Arcade a1 = new Arcade();
+        t1.setItem(a1);
+        t2.setAnimal(p1);
+        p1.setPosition(t2);
+        t2.setNeighbours(t1);
+        clearScreen();
+        p1.move(t2);
+    }
+
+    static  public  void  OrangutanCollidesWithOrangutan()
+    {
+        Orangutan o1 = new Orangutan();
+        Orangutan o2 = new Orangutan();
+        Tile t1 = new Tile();
+        Tile t2 = new Tile();
+        t1.setAnimal(o1);
+        t2.setAnimal(o2);
+        o1.setPosition(t1);
+        o2.setPosition(t2);
+        t1.setNeighbours(t2);
+        clearScreen();
+        o1.move(t2);
+    }
+
+    static  public  void JumpingPandaJumps()
+    {
+        Tile t1 = new Tile();
+        Tile t2 = new Tile();
+        JumpingPanda j = new JumpingPanda();
+        VendingMachine v = new VendingMachine();
+        t1.setAnimal(j);
+        t2.setItem(v);
+        j.setPosition(t1);
+        v.setPosition(t2);
+        t2.setNeighbours(t1);
+        clearScreen();
+        v.Notify();
+    }
+
+
+
 }

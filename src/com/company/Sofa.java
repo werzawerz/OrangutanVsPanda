@@ -25,11 +25,16 @@ public class Sofa extends Item{
     public  void notifyNeighbours(){
         Controller.incTab();
         Controller.writeClassAndFunction("SOFA:notifyNeighbours()");
-        getPosition().getNeighbours().get(0).getAnimal().sit(this.getPosition());
+        getPosition().getNeighbours()[0].getAnimal().sit(this.getPosition());
         Controller.decTab();
 
     }
 
+
+    public  void setEmpty(boolean b)
+    {
+        empty = b;
+    }
 
     /**
      * @return
