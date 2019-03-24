@@ -54,6 +54,8 @@ public class Main {
             case "14" : Controller.lazyPandaSitsDown(); break;
             case "16" : Controller.pandaStepsOnWeakTile(); break;
             case "17" : Controller.pandaStepsOnBrokenWeakTile(); break;
+            case "11" : Controller.PandaMoves(); break;
+            case "21" : Controller.OrangutanLeadsPanda(); break;
         }
 
     }

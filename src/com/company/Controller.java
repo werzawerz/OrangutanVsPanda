@@ -230,4 +230,45 @@ public class Controller {
         v.Notify();
     }
 
+    static public void PandaMoves()
+    {
+        Tile t1 = new Tile();
+        Tile t2 = new Tile();
+        ScaredPanda p = new ScaredPanda();
+        t1.setAnimal(p);
+        p.setPosition(t1);
+        t2.setNeighbours(t1);
+        t1.setNeighbours(t2);
+        clearScreen();
+        p.move(t2);
+    }
+
+    static public void OrangutanLeadsPanda()
+    {
+        Tile t1 = new Tile();
+        Tile t2 = new Tile();
+        Tile t3 = new Tile();
+        Orangutan o = new Orangutan();
+        o.setPosition(t1);
+        ScaredPanda sc = new ScaredPanda();
+        sc.setPosition(t2);
+        JumpingPanda jp = new JumpingPanda();
+        jp.setPosition(t3);
+        t1.setAnimal(o);
+        t2.setAnimal(sc);
+        t3.setAnimal(jp);
+
+        Tile t4 = new Tile();
+        o.setNextPanda(sc);
+        sc.setFollow(true);
+        sc.setFollowingA(o);
+        sc.setNextPanda(jp);
+        jp.setFollow(true);
+        jp.setFollowingA(sc);
+
+        clearScreen();
+
+        o.move(t4);
+    }
+
 }

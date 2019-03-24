@@ -8,7 +8,7 @@ public abstract class Animal extends Thing {
     /**
      * A sorban következő Panda.
      */
-    private Panda nextPanda;
+    protected Panda nextPanda;
 
     /**
      * Üres függvény, felüldefiniálandó, állatokként

@@ -32,6 +32,10 @@ public abstract class Panda extends Animal {
         Controller.writeClassAndFunction(s);
         if(t.canIMove(this)) {
             getPosition().remove(this);
+            if(nextPanda!=null)
+            {
+                nextPanda.move(position);
+            }
             t.accept(this);
         }
         Controller.decTab();

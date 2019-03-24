@@ -64,6 +64,10 @@ public class Tile {
      * Az o-t rálépteti magára.
      */
     void accept(Orangutan o){
+        String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(o)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
         occupiedBy = o;
         o.setPosition(this);
     }
@@ -73,6 +77,10 @@ public class Tile {
      * A p-t rálépteti magára.
      */
     void accept(Panda p) {
+        String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(p)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
         occupiedBy = p;
         p.setPosition(this);
     }
