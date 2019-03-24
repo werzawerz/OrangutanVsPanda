@@ -53,6 +53,7 @@ public class Controller {
     static public void orangutanStepsOutOnExit() {
         Orangutan o = new Orangutan();
         Tile t = new Tile();
+        Tile pt = new Tile();
         Exit e = new Exit();
         JumpingPanda p = new JumpingPanda();
         Tile entry = new Tile();
@@ -64,6 +65,8 @@ public class Controller {
         p.setFollowingA(o);
         p.setFollow(true);
         e.setEntry(entry);
+        p.setPosition(pt);
+        pt.setAnimal(p);
         clearScreen();
         o.move(e);
     }
