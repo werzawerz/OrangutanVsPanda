@@ -20,9 +20,14 @@ public abstract class Panda extends Animal {
      * bekerül a sorba, false-t ad vissza.
      */
     public boolean collideWith(Orangutan o){
+        String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+
         setFollow(true);
         setFollowingA(o);
         o.setNextPanda(this);
+        Controller.decTab();
         return false;
     }
 
