@@ -30,30 +30,41 @@ public class Main {
             "Orangutan leads Pandas"};
 
     public static void main(String[] args) {
-        for(int i=0; i<useCase.length; i++){
-            System.out.println(i+1 + ". " + useCase[i]);
-        }
-        System.out.println("Enter the selected number, 0 for exit:");
+        boolean exit=false;
+        while(!exit) {
+            for (int i = 0; i < useCase.length; i++) {
+                System.out.println(i + 1 + ". " + useCase[i]);
+            }
+            System.out.println((useCase.length+1)+". Exit");
+            System.out.println("Enter the selected number:");
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            selectedEvent = br.readLine();
-        }
-        catch(IOException e) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            try {
+                selectedEvent = br.readLine();
+            } catch (IOException e) {
 
-        }
+            }
 
-        System.out.println(selectedEvent);
+            System.out.println(selectedEvent);
 
-        boolean onGoing=true;
-
-        while(onGoing) {
             switch (selectedEvent) {
-                case "0":
-                    onGoing=false;
-                    break;
                 case "1":
                     Controller.orangutanStepsOutOnExit();
+                    break;
+                case "2":
+                    Controller.orangutanStepsOnWeakTile();
+                    break;
+                case "3":
+                    Controller.orangutanStepsOnBrokenWeakTile();
+                    break;
+                case "4":
+                    Controller.orangutanCollidesWithSofa();
+                    break;
+                case "5":
+                    Controller.orangutanMoves();
+                    break;
+                case "6":
+                    Controller.orangutanCollidesWithArcade();
                     break;
                 case "7":
                     Controller.OrangutanCollidesWithOrangutan();
@@ -90,13 +101,16 @@ public class Main {
                     break;
                 case "20":
                     Controller.pandaCollidesWithTakenSofa();
+                    break;
                 case "11":
                     Controller.PandaMoves();
                     break;
                 case "21":
                     Controller.OrangutanLeadsPanda();
                     break;
-                default: break;
+                case "22":
+                    exit=true;
+                    break;
             }
         }
 
