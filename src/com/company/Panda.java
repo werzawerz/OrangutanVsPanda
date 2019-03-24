@@ -56,6 +56,10 @@ public abstract class Panda extends Animal {
      * Beállítja a follow flaget.
      */
     void setFollow(boolean b){
+        String s = this.getClass().getSimpleName().toUpperCase() + ":setFollow(b)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
 
     }
 
@@ -72,6 +76,10 @@ public abstract class Panda extends Animal {
     }
 
     void setFollowingA(Animal a) {
+        String s = this.getClass().getSimpleName().toUpperCase() + ":setFollowingA(a)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
 
         followingA = a;
     }
