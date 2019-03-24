@@ -47,13 +47,18 @@ public class Main {
 
         switch (selectedEvent) {
             case "1" : Controller.orangutanStepsOutOnExit(); break;
+            case "7" : Controller.OrangutanCollidesWithOrangutan(); break;
             case "8" : Controller.orangutanStepsInWardrobe(); break;
             case "9" : Controller.orangutanPicksUpPanda(); break;
             case "12" : Controller.pandaCollidesWithPanda(); break;
             case "13" : Controller.scaredPandaGetsScared(); break;
             case "14" : Controller.lazyPandaSitsDown(); break;
+            case "15" : Controller.JumpingPandaJumps(); break;
             case "16" : Controller.pandaStepsOnWeakTile(); break;
             case "17" : Controller.pandaStepsOnBrokenWeakTile(); break;
+            case "18" : Controller.pandaCollidesWithVendingMachine(); break;
+            case "19" : Controller.PandaCollidesWithArcade(); break;
+            case "20" : Controller.pandaCollidesWithTakenSofa();
             case "11" : Controller.PandaMoves(); break;
             case "21" : Controller.OrangutanLeadsPanda(); break;
         }
