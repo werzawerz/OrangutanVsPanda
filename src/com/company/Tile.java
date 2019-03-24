@@ -28,11 +28,16 @@ public class Tile {
      * hogy Animal a léphet-e rá, ennek megfelelő a visszatérési érték.
      */
     boolean canIMove(Orangutan o){
+        String s = this.getClass().getSimpleName().toUpperCase() +  ":canIMove(o)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        boolean bul = true;
         if(occupiedBy!=null)
-            return occupiedBy.collideWith(o);
+            bul =  occupiedBy.collideWith(o);
         if(item!=null)
-            return item.collideWith(o);
-        return false;
+            bul = item.collideWith(o);
+        Controller.decTab();
+        return bul;
     }
 
     /**
@@ -40,11 +45,18 @@ public class Tile {
      * @return ?????????????????????????? Kérdéses cucc
      */
     boolean canIMove(Panda p){
-        if(occupiedBy!=null)
-            return occupiedBy.collideWith(p);
-        if(item!=null)
-            return item.collideWith(p);
-        return false;
+        String s = this.getClass().getSimpleName().toUpperCase() +  ":canIMove(p)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        boolean bul = true;
+        if(occupiedBy!=null) {
+            bul = occupiedBy.collideWith(p);
+        }
+        if(item!=null) {
+           bul = item.collideWith(p);
+        }
+        Controller.decTab();
+        return bul;
     }
 
     /**
@@ -52,7 +64,12 @@ public class Tile {
      * Az o-t rálépteti magára.
      */
     void accept(Orangutan o){
-
+        String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(o)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
+        occupiedBy = o;
+        o.setPosition(this);
     }
 
     /**
@@ -60,7 +77,12 @@ public class Tile {
      * A p-t rálépteti magára.
      */
     void accept(Panda p) {
-
+        String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(p)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
+        occupiedBy = p;
+        p.setPosition(this);
     }
 
     /**
@@ -69,7 +91,11 @@ public class Tile {
      */
     void remove(Animal a)
     {
-
+        String s = this.getClass().getSimpleName().toUpperCase() + ":remove(a)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
+        occupiedBy = null;
     }
 
     /**
@@ -84,6 +110,10 @@ public class Tile {
      * tömböt.
      */
     ArrayList<Tile> getNeighbours(){
+        String s = this.getClass().getSimpleName().toUpperCase() + ":getNeighbours()";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
         return neighbours;
     }
 
@@ -91,15 +121,25 @@ public class Tile {
      * @return Animal
      * Visszaadja a a Tile-on levő Animal-t.
      */
-    Animal getAnimal(){
+     Animal getAnimal(){
+         String s = this.getClass().getSimpleName().toUpperCase() + ":getAnimal()";
+         Controller.incTab();
+         Controller.writeClassAndFunction(s);
+         Controller.decTab();
         return occupiedBy;
     }
+
+
 
     /**
      * @param t t-t hozzáadja a szomszédos tileok közé
      */
     void setNeighbours(Tile t) {
         neighbours.add(t);
+    }
+
+    public void setItem(Item i) {
+        item = i;
     }
 
     public void setAnimal(Animal occupiedBy) {

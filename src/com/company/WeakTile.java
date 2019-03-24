@@ -1,5 +1,7 @@
 package com.company;
 
+import javax.naming.ldap.Control;
+
 /**
  * Olyan csempe, ami egy bizonyos rálépés után eltörik. Nyilvántartja, hogy mennyi
  * rálépés van vissza a törésig.
@@ -18,6 +20,8 @@ public class WeakTile extends Tile {
      */
     @Override
     void accept(Orangutan o) {
+        Controller.incTab();
+        Controller.writeClassAndFunction("WEAKTILE:accept(o)");
         decreaseStrength(1);
         if(strength>0) {
             //TODO
@@ -26,6 +30,7 @@ public class WeakTile extends Tile {
             remove(o);
             Maze.removeOrangutan(o);
         }
+        Controller.decTab();
     }
 
     /**
@@ -34,14 +39,17 @@ public class WeakTile extends Tile {
      */
     @Override
     void accept(Panda p) {
+        Controller.incTab();
+        Controller.writeClassAndFunction("WEAKTILE:accept(p)");
         decreaseStrength(1);
         if(strength>0) {
-            //TODO
+            //todo
         }
         else {
             remove(p);
             Maze.removeOnePanda(p);
         }
+        Controller.decTab();
     }
 
     /**
@@ -49,6 +57,13 @@ public class WeakTile extends Tile {
      * Csökkenti a strength attributum értékét i-vel
      */
     void decreaseStrength(int i) {
+        Controller.incTab();
+        Controller.writeClassAndFunction("WEAKTILE:decreaseStrength(i)");
         strength -= i;
+        Controller.decTab();
+    }
+
+    public void setStrength(int i) {
+        strength = i;
     }
 }

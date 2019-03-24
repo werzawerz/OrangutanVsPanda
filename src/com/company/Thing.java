@@ -9,7 +9,7 @@ public abstract class Thing {
     /**
      * Az a Tile, amin aktuálisan van.
      */
-    private Tile position;
+    protected Tile position;
 
     /**
      * @param o
@@ -18,6 +18,10 @@ public abstract class Thing {
      * Leszármazottban felül van írva. Itt csak false-szal tér vissza.
      */
     public boolean collideWith(Orangutan o){
+        String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
         return false;
     }
 
@@ -28,6 +32,10 @@ public abstract class Thing {
      * Leszármazottban felül van írva. Itt csak false-szal tér vissza.
      */
     public boolean collideWith(Panda p){
+        String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(p)";
+        Controller.incTab();
+        Controller.writeClassAndFunction(s);
+        Controller.decTab();
         return false;
     }
 
@@ -37,6 +45,9 @@ public abstract class Thing {
      */
     public Tile getPosition(){
         return position;
+    }
+    public void setPosition(Tile t) {
+        position =t;
     }
 
 
