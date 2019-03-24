@@ -265,8 +265,8 @@ public class Controller {
         sc.setNextPanda(jp);
         jp.setFollow(true);
         jp.setFollowingA(sc);
-
         clearScreen();
+
 
         o.move(t4);
     }
