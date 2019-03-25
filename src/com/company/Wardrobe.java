@@ -21,9 +21,8 @@ public class Wardrobe extends Tile {
     public void accept(Panda p){
         Controller.incTab();
         Controller.writeClassAndFunction("WARDROBE:accept(p)");
-        neighbourWardrobe.accept(p);
+        neighbourWardrobe.getNeighbours().get(0).accept(p);
         Controller.decTab();
-
     }
 
     /**
@@ -33,7 +32,7 @@ public class Wardrobe extends Tile {
     public void accept(Orangutan o){
         Controller.incTab();
         Controller.writeClassAndFunction("WARDROBE:accept(o)");
-        neighbourWardrobe.accept(o);
+        neighbourWardrobe.getNeighbours().get(0).accept(o);
         Controller.decTab();
     }
 

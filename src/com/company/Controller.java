@@ -53,6 +53,7 @@ public class Controller {
     static public void orangutanStepsOutOnExit() {
         Orangutan o = new Orangutan();
         Tile t = new Tile();
+        Tile pt = new Tile();
         Exit e = new Exit();
         JumpingPanda p = new JumpingPanda();
         Tile entry = new Tile();
@@ -64,6 +65,8 @@ public class Controller {
         p.setFollowingA(o);
         p.setFollow(true);
         e.setEntry(entry);
+        p.setPosition(pt);
+        pt.setAnimal(p);
         clearScreen();
         o.move(e);
     }
@@ -101,6 +104,22 @@ public class Controller {
     }
 
     /**
+     * Egy Orangutan egy VendingMachine-nel egy mezőre próbál lépni.
+     */
+    static public void orangutanCollidesWithVendingMachine(){
+        Orangutan o = new Orangutan();
+        Tile t1 = new Tile();
+        Tile t2 = new Tile();
+        VendingMachine v1 = new VendingMachine();
+        t1.setItem(v1);
+        t2.setAnimal(o);
+        o.setPosition(t2);
+        t2.setNeighbours(t1);
+        clearScreen();
+        o.move(t1);
+    };
+
+    /**
      * Ha a lazyPanda a sofaval szomszedos mezore lep, leul a sofara
      */
     static void lazyPandaSitsDown() {
@@ -120,11 +139,15 @@ public class Controller {
     static  public void orangutanStepsInWardrobe(){
         Orangutan o=new Orangutan();
         Tile t=new Tile();
+        Tile ot=new Tile();
         Wardrobe w=new Wardrobe();
         Wardrobe nw=new Wardrobe();
         w.setNeighbourWardrobe(nw);
         t.setNeighbours(w);
+        nw.setNeighbours(ot);
         t.setAnimal(o);
+        o.setPosition(t);
+        clearScreen();
         o.move(w);
     }
 
@@ -132,7 +155,12 @@ public class Controller {
         Orangutan o=new Orangutan();
         ScaredPanda sp=new ScaredPanda();
         Tile t=new Tile();
+        Tile ot=new Tile();
         t.setAnimal(sp);
+        sp.setPosition(t);
+        o.setPosition(ot);
+        ot.setAnimal(o);
+        clearScreen();
         o.move(t);
     }
 
@@ -172,8 +200,7 @@ public class Controller {
         p1.move(t1);
     }
 
-    static  public  void  pandaCollidesWithVendingMachine()
-    {
+    static  public  void  pandaCollidesWithVendingMachine(){
         ScaredPanda p1 = new ScaredPanda();
         Tile t1 = new Tile();
         Tile t2 = new Tile();
@@ -200,6 +227,9 @@ public class Controller {
         p1.move(t2);
     }
 
+    /**
+     * Orángután orángutánnal ütközik.
+     */
     static  public  void  OrangutanCollidesWithOrangutan()
     {
         Orangutan o1 = new Orangutan();
@@ -215,6 +245,9 @@ public class Controller {
         o1.move(t2);
     }
 
+    /**
+     * JumpingPanda ugrik a VendingMachine jelzésére.
+     */
     static  public  void JumpingPandaJumps()
     {
         Tile t1 = new Tile();
@@ -230,6 +263,9 @@ public class Controller {
         v.Notify();
     }
 
+    /**
+     * Panda egy mezőről a másikra lép.
+     */
     static public void PandaMoves()
     {
         Tile t1 = new Tile();
@@ -243,6 +279,9 @@ public class Controller {
         p.move(t2);
     }
 
+    /**
+     * Az orángután lép, és vezeti a pandákat.
+     */
     static public void OrangutanLeadsPanda()
     {
         Tile t1 = new Tile();

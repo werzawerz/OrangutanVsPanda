@@ -48,6 +48,8 @@ public class Main {
             System.out.println(selectedEvent);
 
             switch (selectedEvent) {
+                case "10": Controller.orangutanCollidesWithVendingMachine();
+                    break;
                 case "1":
                     Controller.orangutanStepsOutOnExit();
                     break;
