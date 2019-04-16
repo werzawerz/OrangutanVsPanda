@@ -145,4 +145,7 @@ public class Tile {
     public void setAnimal(Animal occupiedBy) {
         this.occupiedBy = occupiedBy;
     }
+
+    void setEntry(Tile t) {}
+    public void setNeighbourWardrobe(Tile neighbourWardrobe) {}
 }
