@@ -31,16 +31,14 @@ public class Orangutan extends Animal {
     }
 
     public boolean collideWith(Orangutan o){
-       // String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
+
         if (o.getNextPanda() == null && this.getNextPanda() != null && o.gettimeToSteal() == 0) {
             o.setNextPanda(this.getNextPanda());
             o.getNextPanda().setFollowingA(o);
             this.settimeToSteal(3);
             this.setNextPanda(null);
+            return true;
         }
-      //  Controller.incTab();
-     //   Controller.writeClassAndFunction(s);
-    //    Controller.decTab();
         return false;
     }
 
