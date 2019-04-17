@@ -19,7 +19,7 @@ public class Exit extends Tile {
     void accept(Orangutan o) {
         Controller.incTab();
         Controller.writeClassAndFunction("EXIT:accept(o)");
-        int pandaNum = o.getPandaNum();
+        int pandaNum = o.getPandaNum(o.getNextPanda());
         Game.addPoints(pandaNum);
         o.setPosition(this);
         o.move(entry);

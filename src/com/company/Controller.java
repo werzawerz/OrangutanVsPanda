@@ -73,6 +73,7 @@ public class Controller {
                 break;
             case "step" :
                 moveAnim(lineArr[1], lineArr[2]);
+                break;
             default:
                 break;
         }
@@ -80,6 +81,8 @@ public class Controller {
             case "follow" :
                 makeFollow(lineArr[0], lineArr[2]);
                 break;
+            case "sound" :
+                makeSound(lineArr[0]);
         }
     }
 
@@ -148,28 +151,17 @@ public class Controller {
         anim.move(tile);
     }
 
+    static void makeSound(String t) {
+        int TileNum = Integer.parseInt(t.substring(1));
+        Tile tile = Maze.getTile(TileNum-1);
+        Item i = tile.getItem();
+        i.notifyNeighbours();
+    }
+
     /**
      * Use-case az orángután exit-re való lépésére, ahol az orángutánt követi egy panda
      */
     static public void orangutanStepsOutOnExit() {
-        /*Orangutan o = new Orangutan();
-        Tile t = new Tile();
-        Tile pt = new Tile();
-        Exit e = new Exit();
-        JumpingPanda p = new JumpingPanda();
-        Tile entry = new Tile();
-        t.accept(o);
-        o.setPosition(t);
-        t.setNeighbours(e);
-        Maze.addPanda(p);
-        o.setNextPanda(p);
-        p.setFollowingA(o);
-        p.setFollow(true);
-        e.setEntry(entry);
-        p.setPosition(pt);
-        pt.setAnimal(p);
-        clearScreen();
-        o.move(e); */
 
         readFile("Test1.txt");
     }
@@ -178,31 +170,14 @@ public class Controller {
      * egy panda olyan mezőre akar lépni, ahol egy másik panda található
      */
     static public void pandaCollidesWithPanda() {
-        Tile t = new Tile();
-        Panda sp = new ScaredPanda();
-        Panda lp = new LazyPanda();
-        t.accept(lp);
-        clearScreen();
-        sp.move(t);
+        readFile("Test12.txt");
     }
 
     /**
      * Az Arcade hangajank hatasara a panda elengedi a pandak kezet
      */
     static public void scaredPandaGetsScared() {
-        Tile t1 = new Tile();
-        Tile t2 = new Tile();
-        Arcade a = new Arcade();
-        ScaredPanda sc1 = new ScaredPanda();
-        ScaredPanda sc2 = new ScaredPanda();
-        t1.setItem(a);
-        t1.setNeighbours(t2);
-        t2.accept(sc1);
-        sc2.setFollowingA(sc1);
-        sc1.setNextPanda(sc2);
-        a.setPosition(t1);
-        clearScreen();
-        a.notifyNeighbours();
+        readFile("Test13.txt");
 
     }
 
@@ -210,48 +185,18 @@ public class Controller {
      * Egy Orangutan egy VendingMachine-nel egy mezőre próbál lépni.
      */
     static public void orangutanCollidesWithVendingMachine(){
-        Orangutan o = new Orangutan();
-        Tile t1 = new Tile();
-        Tile t2 = new Tile();
-        VendingMachine v1 = new VendingMachine();
-        t1.setItem(v1);
-        t2.setAnimal(o);
-        o.setPosition(t2);
-        t2.setNeighbours(t1);
-        clearScreen();
-        o.move(t1);
+        readFile("Test10.txt");
     };
 
     /**
      * Ha a lazyPanda a sofaval szomszedos mezore lep, leul a sofara
      */
     static void lazyPandaSitsDown() {
-        Tile t1 = new Tile();
-        Tile t2 = new Tile();
-        Sofa s = new Sofa();
-        LazyPanda lp = new LazyPanda();
-        t1.setNeighbours(t2);
-        t1.setItem(s);
-        s.setPosition(t1);
-        t2.accept(lp);
-        lp.setPosition(t2);
-        clearScreen();
-        s.notifyNeighbours();
+        readFile("Test14.txt");
     }
 
     static  public void orangutanStepsInWardrobe(){
-        Orangutan o=new Orangutan();
-        Tile t=new Tile();
-        Tile ot=new Tile();
-        Wardrobe w=new Wardrobe();
-        Wardrobe nw=new Wardrobe();
-        w.setNeighbourWardrobe(nw);
-        t.setNeighbours(w);
-        nw.setNeighbours(ot);
-        t.setAnimal(o);
-        o.setPosition(t);
-        clearScreen();
-        o.move(w);
+        readFile("Test8.txt");
     }
 
     static public void  orangutanPicksUpPanda(){
@@ -335,17 +280,7 @@ public class Controller {
      */
     static  public  void  OrangutanCollidesWithOrangutan()
     {
-        Orangutan o1 = new Orangutan();
-        Orangutan o2 = new Orangutan();
-        Tile t1 = new Tile();
-        Tile t2 = new Tile();
-        t1.setAnimal(o1);
-        t2.setAnimal(o2);
-        o1.setPosition(t1);
-        o2.setPosition(t2);
-        t1.setNeighbours(t2);
-        clearScreen();
-        o1.move(t2);
+        readFile("Test7.txt");
     }
 
     /**
@@ -417,73 +352,35 @@ public class Controller {
      * Az orangutan egy WeakTile-ra lep, csokkenti a tile strengthjet.
      */
     static void orangutanStepsOnWeakTile() {
-        WeakTile wt = new WeakTile();
-        Orangutan o = new Orangutan();
-        Tile t = new Tile();
-        t.setAnimal(o);
-        o.setPosition(t);
-        wt.setStrength(5);
-        clearScreen();
-        o.move(wt);
+        readFile("Test2.txt");
     }
 
     /**
      *Az orangutan ralep egy tile-ra es osszetori azt, igy el lesz tavolitva a palyarol.
      */
     static void orangutanStepsOnBrokenWeakTile() {
-        WeakTile wt = new WeakTile();
-        Orangutan o = new Orangutan();
-        Tile t = new Tile();
-        t.setAnimal(o);
-        o.setPosition(t);
-        wt.setStrength(1);
-        clearScreen();
-        o.move(wt);
+        readFile("Test3.txt");
     }
 
     /**
      * Az orangutan megprobal egy olyan tile-ra lepni, ahol egy Sofa van, de nem tud odalepni.
      */
     static void orangutanCollidesWithSofa() {
-        Tile t = new Tile();
-        Orangutan o = new Orangutan();
-        Tile t1 = new Tile();
-        Sofa s = new Sofa();
-        t1.setAnimal(o);
-        //o.setPosition(t1);
-        t.setItem(s);
-        //s.setPosition(t);
-        clearScreen();
-        o.move(t);
+        readFile("Test4.txt");
     }
 
     /**
      * Az orangutan megprobal egy olyan tile-ra lepni, ahol egy Arcade van, de nem tud odalepni.
      */
     static void orangutanCollidesWithArcade() {
-        Tile t = new Tile();
-        Orangutan o = new Orangutan();
-        Tile t1 = new Tile();
-        Arcade a = new Arcade();
-        t1.setAnimal(o);
-        //o.setPosition(t1);
-        t.setItem(a);
-        //s.setPosition(t);
-        clearScreen();
-        o.move(t);
+        readFile("Test6.txt");
     }
 
     /**
      * Az orangutan egyik Tile-rol a masikra lep.
      */
     static void orangutanMoves() {
-        Orangutan o = new Orangutan();
-        Tile t1 = new Tile();
-        Tile t2 = new Tile();
-        t1.setAnimal(o);
-        o.setPosition(t1);
-        clearScreen();
-        o.move(t2);
+        readFile("Test5.txt");
     }
     
 

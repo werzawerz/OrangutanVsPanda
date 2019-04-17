@@ -11,7 +11,8 @@ public class ScaredPanda extends Panda {
     void scare(){
         Controller.incTab();
         Controller.writeClassAndFunction("SCAREDPANDA:scare()");
-        getNextPanda().release();
+        if(getNextPanda()!=null)
+            getNextPanda().release();
         release();
         Controller.decTab();
     }

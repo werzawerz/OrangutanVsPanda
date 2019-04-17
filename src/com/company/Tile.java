@@ -129,6 +129,10 @@ public class Tile {
         return occupiedBy;
     }
 
+    Item getItem() {
+         return item;
+    }
+
 
 
     /**
