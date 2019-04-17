@@ -158,7 +158,12 @@ public class Maze {
      * pályán.
      */
     static void check() {
-        //TODO
+        if(pandas.size()<=0){
+            Game.endGame(true);
+        }
+        else if(orangutans.size()<=0){
+            Game.endGame(false);
+        }
     }
 
     /**
@@ -201,5 +206,13 @@ public class Maze {
      */
     static void addPanda(Panda p) {
         pandas.add(p);
+    }
+
+    static Panda getPanda(int i){
+        return pandas.get(i);
+    }
+
+    static int getPandaSize(){
+        return pandas.size();
     }
 }

@@ -146,6 +146,10 @@ public class Tile {
         this.occupiedBy = occupiedBy;
     }
 
+    public int getNeighbourSize(){
+        return neighbours.size();
+    }
+
     void setEntry(Tile t) {}
     public void setNeighbourWardrobe(Tile neighbourWardrobe) {}
 }
