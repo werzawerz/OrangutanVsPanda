@@ -27,7 +27,14 @@ public class Sofa extends Item{
     public  void notifyNeighbours(){
         Controller.incTab();
         Controller.writeClassAndFunction("SOFA:notifyNeighbours()");
+        Tile t = this.getPosition();
+        ArrayList<Tile> tiles = t.getNeighbours();
+        for(int i=0;i<tiles.size();i++){
+            Animal a = tiles.get(0).getAnimal();
+            if(a!=null)
+                a.sit(this.getPosition());
         getPosition().getNeighbours().get(0).getAnimal().sit(this.getPosition());
+        }
         Controller.decTab();
 
     }

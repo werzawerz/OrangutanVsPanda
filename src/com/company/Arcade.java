@@ -13,7 +13,12 @@ public class Arcade extends Item{
     {
         Controller.incTab();
         Controller.writeClassAndFunction("ARCADE:notifyNeighbours()");
-        getPosition().getNeighbours().get(0).getAnimal().scare();
+        Tile t = this.getPosition();
+        ArrayList<Tile> tiles = t.getNeighbours();
+        for(int i=0;i<tiles.size();i++){
+            Animal a = tiles.get(0).getAnimal();
+            if(a!=null)
+                a.scare();}
         Controller.decTab();
     }
 }

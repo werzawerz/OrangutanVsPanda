@@ -15,8 +15,10 @@ public class VendingMachine extends Item{
         Controller.writeClassAndFunction("VENDINGMACHINE:notifyNeighbours()");
         Tile t = this.getPosition();
         ArrayList<Tile> tiles = t.getNeighbours();
+        for(int i=0;i<tiles.size();i++){
         Animal a = tiles.get(0).getAnimal();
-        a.jump();
+        if(a!=null)
+        a.jump();}
         Controller.decTab();
     }
 }
