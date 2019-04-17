@@ -18,7 +18,6 @@ public class Wardrobe extends Tile {
      * @param p Panda
      * p-t átlépteti a szomszédos szekrényre.
      */
-    @Override
     public void accept(Panda p){
         Controller.incTab();
         Controller.writeClassAndFunction("WARDROBE:accept(p)");
@@ -30,7 +29,6 @@ public class Wardrobe extends Tile {
      * @param o Orangutan
      * o-t átlépteti a szomszédos szekrényre.
      */
-    @Override
     public void accept(Orangutan o){
         Controller.incTab();
         Controller.writeClassAndFunction("WARDROBE:accept(o)");

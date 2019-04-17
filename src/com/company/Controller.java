@@ -227,6 +227,9 @@ public class Controller {
         p1.move(t2);
     }
 
+    /**
+     * Orángután orángutánnal ütközik.
+     */
     static  public  void  OrangutanCollidesWithOrangutan()
     {
         Orangutan o1 = new Orangutan();
@@ -242,6 +245,9 @@ public class Controller {
         o1.move(t2);
     }
 
+    /**
+     * JumpingPanda ugrik a VendingMachine jelzésére.
+     */
     static  public  void JumpingPandaJumps()
     {
         Tile t1 = new Tile();
@@ -257,6 +263,9 @@ public class Controller {
         v.notifyNeighbours();
     }
 
+    /**
+     * Panda egy mezőről a másikra lép.
+     */
     static public void PandaMoves()
     {
         Tile t1 = new Tile();
@@ -270,6 +279,9 @@ public class Controller {
         p.move(t2);
     }
 
+    /**
+     * Az orángután lép, és vezeti a pandákat.
+     */
     static public void OrangutanLeadsPanda()
     {
         Tile t1 = new Tile();
