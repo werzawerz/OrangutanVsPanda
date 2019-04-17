@@ -31,6 +31,8 @@ public class Main {
 
     public static void main(String[] args) {
         boolean exit=false;
+        Maze.init();
+
         while(!exit) {
             for (int i = 0; i < useCase.length; i++) {
                 System.out.println(i + 1 + ". " + useCase[i]);

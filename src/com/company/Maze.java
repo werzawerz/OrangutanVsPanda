@@ -30,7 +30,7 @@ public class Maze {
     /**
      * Betölti a hardcoded pályát, amit a proto használ.
      */
-    public void init(){
+    static public void init(){
         for(int i=0; i<14; i++){
             tiles.add(new Tile());
         }
@@ -222,5 +222,9 @@ public class Maze {
 
     static void addOrangutan(Orangutan o) {
         orangutans.add(o);
+    }
+
+    static Orangutan getOrangutan(int i) {
+        return orangutans.get(i);
     }
 }

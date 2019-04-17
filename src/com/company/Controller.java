@@ -70,6 +70,16 @@ public class Controller {
         switch(lineArr[0]) {
             case "put" :
                 putAnim(lineArr[1], lineArr[2]);
+                break;
+            case "step" :
+                moveAnim(lineArr[1], lineArr[2]);
+            default:
+                break;
+        }
+        switch(lineArr[1]) {
+            case "follow" :
+                makeFollow(lineArr[0], lineArr[2]);
+                break;
         }
     }
 
@@ -83,6 +93,59 @@ public class Controller {
             o.setPosition(t);
             Maze.addOrangutan(o);
         }
+        if(animal.charAt(0) == 'l') {
+            LazyPanda lp = new LazyPanda();
+            t.accept(lp);
+            lp.setPosition(t);
+            Maze.addPanda(lp);
+        }
+        if(animal.charAt(0) == 's') {
+            ScaredPanda sp = new ScaredPanda();
+            t.accept(sp);
+            sp.setPosition(t);
+            Maze.addPanda(sp);
+        }
+        if(animal.charAt(0) == 'j') {
+            JumpingPanda jp = new JumpingPanda();
+            t.accept(jp);
+            jp.setPosition(t);
+            Maze.addPanda(jp);
+        }
+    }
+
+    static void makeFollow(String a1, String a2) {
+        Orangutan o;
+        Panda pFollowing;
+        Panda pFollower;
+        int PNum = Integer.parseInt(a1.substring(2));
+        pFollower = Maze.getPanda(PNum-1);
+        pFollower.setFollow(true);
+        if(a2.charAt(0)=='o') {
+            int ONum = Integer.parseInt(a2.substring(1));
+            o = Maze.getOrangutan(ONum-1);
+            o.setNextPanda(pFollower);
+            pFollower.setFollowingA(o);
+        }
+        else {
+            PNum = Integer.parseInt(a2.substring(2));
+            pFollowing = Maze.getPanda(PNum-1);
+            pFollower.setFollowingA(pFollowing);
+        }
+    }
+
+    static void moveAnim(String a, String t) {
+        Animal anim;
+        int TileNum = Integer.parseInt(t.substring(1));
+        Tile tile = Maze.getTile(TileNum-1);
+        if(a.charAt(0)=='o') {
+            int ONum = Integer.parseInt(a.substring(1));
+            anim = Maze.getOrangutan(ONum-1);
+        }
+        else {
+            int PNum = Integer.parseInt(a.substring(1));
+            anim = Maze.getPanda(PNum-1);
+        }
+        anim.move(tile);
     }
 
     /**
