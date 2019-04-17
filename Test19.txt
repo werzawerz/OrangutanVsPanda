@@ -1,0 +1,6 @@
+put o1 t6
+put p1 t11
+put p2 t12 
+p1 follow o1
+p2 follow p1
+step o1 t5

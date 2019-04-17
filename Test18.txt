@@ -1,0 +1,2 @@
+put p1 t17
+move p1 t18

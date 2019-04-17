@@ -1,0 +1,3 @@
+put p1 t9
+put p2 t8
+step p2 t9

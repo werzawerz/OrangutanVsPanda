@@ -1,0 +1,6 @@
+put lp1 t5
+put sp2 t6
+put o1 t11
+lp1 follow sp2
+sp2 follow o1
+t7 sound

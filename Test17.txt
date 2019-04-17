@@ -1,0 +1,2 @@
+put p1 t5
+step p1 t10 

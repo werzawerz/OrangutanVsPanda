@@ -1,0 +1,3 @@
+put o1 t5
+put sp1 t6
+step o1 t6
