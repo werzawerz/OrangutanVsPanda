@@ -233,4 +233,8 @@ public class Maze {
     static Orangutan getOrangutan(int i) {
         return orangutans.get(i);
     }
+
+    static ArrayList<Item> getItems(){
+        return items;
+    }
 }
