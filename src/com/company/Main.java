@@ -8,7 +8,7 @@ public class Main {
 
     private static String selectedEvent;
 
-    private static String[] useCase={"Orangutan steps out on Exit",
+/*    private static String[] useCase={"Orangutan steps out on Exit",
             "Orangutan steps on WeakTile", "Orangutan steps on broken WeakTile",
             "Orangutan collides with Sofa",
             "Orangutan moves",
@@ -27,14 +27,14 @@ public class Main {
             "Panda collides with VendingMachine",
             "Panda collides with Arcade",
             "Panda collides with taken Sofa",
-            "Orangutan leads Pandas"};
+            "Orangutan leads Pandas"};*/
 
     public static void main(String[] args) {
         boolean exit=false;
         Maze.init();
 
         while(!exit) {
-            for (int i = 0; i < useCase.length; i++) {
+            /*for (int i = 0; i < useCase.length; i++) {
                 System.out.println(i + 1 + ". " + useCase[i]);
             }
             System.out.println((useCase.length+1)+". Exit");
@@ -115,6 +115,16 @@ public class Main {
                 case "22":
                     exit=true;
                     break;
+            }*/
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            try {
+                selectedEvent = br.readLine();
+            } catch (IOException e) { }
+            if(selectedEvent.equals("exit")) {
+                exit=true;
+            }
+            else {
+                Controller.readFile(selectedEvent);
             }
         }
 

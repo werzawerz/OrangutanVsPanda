@@ -68,6 +68,9 @@ public class Controller {
     public static void doWork(String line) {
         String lineArr[] = line.split(" ");
         switch(lineArr[0]) {
+            case "load":
+                readFile(lineArr[1]);
+                break;
             case "put" :
                 putAnim(lineArr[1], lineArr[2]);
                 break;

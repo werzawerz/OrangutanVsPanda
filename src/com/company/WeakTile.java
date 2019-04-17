@@ -57,10 +57,10 @@ public class WeakTile extends Tile {
      * Csökkenti a strength attributum értékét i-vel
      */
     void decreaseStrength(int i) {
-        Controller.incTab();
-        Controller.writeClassAndFunction("WEAKTILE:decreaseStrength(i)");
+        /*Controller.incTab();
+        Controller.writeClassAndFunction("WEAKTILE:decreaseStrength(i)");*/
         strength -= i;
-        Controller.decTab();
+        //Controller.decTab();
     }
 
     public void setStrength(int i) {
