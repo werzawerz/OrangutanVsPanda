@@ -10,4 +10,13 @@ public class Game {
         points += i;
         Controller.decTab();
     }
+
+    static void endGame(boolean orangutanWon) {
+        if(orangutanWon) {
+            System.out.println("Orangutans have won");
+        }
+        else {
+            System.out.println("Panda have won");
+        }
+    }
 }
