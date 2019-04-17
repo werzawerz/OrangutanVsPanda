@@ -27,7 +27,10 @@ public class Maze {
      */
     static private ArrayList<Item> items = new ArrayList<Item>();
 
-    public Maze(){
+    /**
+     * Betölti a hardcoded pályát, amit a proto használ.
+     */
+    public void init(){
         for(int i=0; i<14; i++){
             tiles.add(new Tile());
         }

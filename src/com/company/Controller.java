@@ -2,6 +2,9 @@ package com.company;
 
 import java.io.IOException;
 
+/**
+ * A use-caseket intéző osztály, ami a tabulálásért is felel.
+ */
 public class Controller {
 
     /**
