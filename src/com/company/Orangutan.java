@@ -14,11 +14,12 @@ public class Orangutan extends Animal {
      * @return int
      * Visszaadja a pandas tömb hosszát.
      */
-    int getPandaNum(){
-        Controller.incTab();
-        Controller.writeClassAndFunction("ORANGUTAN:getPandaNum()");
-        Controller.decTab();
-        return 0;
+    int getPandaNum(Panda p){
+        if(p==null) {
+            return 0;
+        }
+        else
+            return 1 + getPandaNum(p.getNextPanda());
     }
 
 
