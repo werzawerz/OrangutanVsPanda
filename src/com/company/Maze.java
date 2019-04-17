@@ -51,7 +51,10 @@ public class Maze {
         items.add(s1);
         tiles.get(8).setItem(s1);
         tiles.get(17).setItem(v1);
-        tiles.get(8).setItem(a1);
+        tiles.get(6).setItem(a1);
+        s1.setPosition(tiles.get(8));
+        v1.setPosition(tiles.get(17));
+        a1.setPosition(tiles.get(6));
 
         tiles.get(0).setNeighbours(tiles.get(1));
         tiles.get(0).setNeighbours(tiles.get(4));
