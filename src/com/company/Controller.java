@@ -1,6 +1,6 @@
 package com.company;
 
-import java.io.IOException;
+import java.io.*;
 
 /**
  * A use-caseket intéző osztály, ami a tabulálásért is felel.
@@ -50,11 +50,46 @@ public class Controller {
         tab = -1;
     }
 
+    public static void readFile(String text) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(text));
+            String line = br.readLine();
+
+            while (line != null) {
+                doWork(line);
+                line = br.readLine();
+            }
+        }
+        catch(IOException e) {
+
+        }
+    }
+
+    public static void doWork(String line) {
+        String lineArr[] = line.split(" ");
+        switch(lineArr[0]) {
+            case "put" :
+                putAnim(lineArr[1], lineArr[2]);
+        }
+    }
+
+    public static void putAnim(String animal, String tile) {
+        tile = tile.substring(1);
+        int tileNum = Integer.parseInt(tile);
+        Tile t = Maze.getTile(tileNum-1);
+        if(animal.charAt(0) == 'o') {
+            Orangutan o = new Orangutan();
+            t.accept(o);
+            o.setPosition(t);
+            Maze.addOrangutan(o);
+        }
+    }
+
     /**
      * Use-case az orángután exit-re való lépésére, ahol az orángutánt követi egy panda
      */
     static public void orangutanStepsOutOnExit() {
-        Orangutan o = new Orangutan();
+        /*Orangutan o = new Orangutan();
         Tile t = new Tile();
         Tile pt = new Tile();
         Exit e = new Exit();
@@ -71,7 +106,9 @@ public class Controller {
         p.setPosition(pt);
         pt.setAnimal(p);
         clearScreen();
-        o.move(e);
+        o.move(e); */
+
+        readFile("Test1.txt");
     }
 
     /**

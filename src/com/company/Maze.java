@@ -215,4 +215,12 @@ public class Maze {
     static int getPandaSize(){
         return pandas.size();
     }
+
+    static Tile getTile(int i) {
+        return tiles.get(i);
+    }
+
+    static void addOrangutan(Orangutan o) {
+        orangutans.add(o);
+    }
 }
