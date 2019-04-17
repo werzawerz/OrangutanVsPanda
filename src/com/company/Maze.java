@@ -43,9 +43,15 @@ public class Maze {
         tiles.add(20, new WeakTile());
         tiles.get(9).decreaseStrength(10000);
         tiles.get(18).setEntry(tiles.get(0));
-        tiles.get(8).setItem(new Sofa());
-        tiles.get(17).setItem((new VendingMachine()));
-        tiles.get(8).setItem(new Arcade());
+        Sofa s1=new Sofa();
+        VendingMachine v1=new VendingMachine();
+        Arcade a1=new Arcade();
+        items.add(a1);
+        items.add(v1);
+        items.add(s1);
+        tiles.get(8).setItem(s1);
+        tiles.get(17).setItem(v1);
+        tiles.get(8).setItem(a1);
 
         tiles.get(0).setNeighbours(tiles.get(1));
         tiles.get(0).setNeighbours(tiles.get(4));
