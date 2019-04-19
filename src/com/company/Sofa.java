@@ -1,5 +1,8 @@
 package com.company;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -26,7 +29,10 @@ public class Sofa extends Item{
      * Meghívja a szomszédos csempéken levő állatoknak a sit()
      * függvényét.
      */
-    public  void notifyNeighbours(){
+    public  void notifyNeighbours() throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        writer.append(this.getName()+" sound\n");
+        writer.close();
         Controller.incTab();
         Controller.writeClassAndFunction("SOFA:notifyNeighbours()");
         Tile t = this.getPosition();

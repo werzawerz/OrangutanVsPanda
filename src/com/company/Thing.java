@@ -1,5 +1,7 @@
 package com.company;
 
+import java.io.IOException;
+
 /**
  * A pályáelemek összességének abszrakt ősosztálya.
  * Nyilvántartja a csempét, amin van.
@@ -10,14 +12,14 @@ public abstract class Thing {
      * Az a Tile, amin aktuálisan van.
      */
     protected Tile position;
-
+    private String name;
     /**
      * @param o
      * @return bool
      * Akkor hívódik meg, amikor egy leszármazottja találkozik egy Orangutan-nal.
      * Leszármazottban felül van írva. Itt csak false-szal tér vissza.
      */
-    public boolean collideWith(Orangutan o){
+    public boolean collideWith(Orangutan o) throws IOException {
         String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
         Controller.incTab();
         Controller.writeClassAndFunction(s);
@@ -55,6 +57,8 @@ public abstract class Thing {
     public void setPosition(Tile t) {
         position =t;
     }
+    public void setName(String s) {name=s;}
+    public String getName() {return  name;}
 
 
 }

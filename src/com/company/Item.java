@@ -1,6 +1,7 @@
 package com.company;
 
 
+import java.io.IOException;
 
 /**
  * A nem mozgó pályaelemeket reprezentálja. Absztrakt ősosztálya az Arcade-nek, a
@@ -13,7 +14,7 @@ public class Item extends Thing {
      * Értesíti a szomszédos csempéken állókat, ha valami történik
      * amiről tudniuk kellene.
      */
-    public void notifyNeighbours() {
+    public void notifyNeighbours() throws IOException {
         String s = this.getClass().getName().toUpperCase() + ":notifyNeighbours()";
         Controller.incTab();
         Controller.writeClassAndFunction(s);

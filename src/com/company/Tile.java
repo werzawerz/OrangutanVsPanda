@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -7,6 +8,8 @@ import java.util.ArrayList;
  * csempéket, illetve a rajta lévő állatot, vagy egyéb pályaelemet.
  */
 public class Tile {
+
+    private String name;
 
     /**
      * A szomszédos csempéket tartalmazó tömb.
@@ -27,7 +30,7 @@ public class Tile {
      * A megfelelő collideWith metódusokkal megnézi,
      * hogy Animal a léphet-e rá, ennek megfelelő a visszatérési érték.
      */
-    boolean canIMove(Orangutan o){
+    boolean canIMove(Orangutan o) throws IOException {
         String s = this.getClass().getSimpleName().toUpperCase() +  ":canIMove(o)";
         Controller.incTab();
         Controller.writeClassAndFunction(s);
@@ -63,7 +66,7 @@ public class Tile {
      * @param o Orangutan
      * Az o-t rálépteti magára.
      */
-    void accept(Orangutan o){
+    void accept(Orangutan o) throws IOException {
         String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(o)";
         Controller.incTab();
         Controller.writeClassAndFunction(s);
@@ -76,7 +79,7 @@ public class Tile {
      * @param p Panda
      * A p-t rálépteti magára.
      */
-    void accept(Panda p) {
+    void accept(Panda p) throws IOException {
         String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(p)";
         Controller.incTab();
         Controller.writeClassAndFunction(s);
@@ -102,7 +105,7 @@ public class Tile {
      * Üres függvény, a WeakTile-nál van
      * törzse.
      */
-    void decreaseStrength(int i){}
+    void decreaseStrength(int i) throws IOException {}
 
     /**
      * @return Tile[]
@@ -156,4 +159,7 @@ public class Tile {
 
     void setEntry(Tile t) {}
     public void setNeighbourWardrobe(Tile neighbourWardrobe) {}
+
+    public String getName() {return  name;}
+    public void setName(String s) {name=s;}
 }

@@ -1,5 +1,8 @@
 package com.company;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -10,7 +13,10 @@ public class VendingMachine extends Item{
     /**
      * Ertesiti a szomszedos tile-okat a sipszorol, ha pedig van ott animal, meghivja a jump fuggvenyet.
      */
-    public void notifyNeighbours(){
+    public void notifyNeighbours() throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        writer.append(this.getName()+" sound\n");
+        writer.close();
         Controller.incTab();
         Controller.writeClassAndFunction("VENDINGMACHINE:notifyNeighbours()");
         Tile t = this.getPosition();

@@ -1,5 +1,8 @@
 package com.company;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -30,7 +33,7 @@ public class Maze {
     /**
      * Betölti a hardcoded pályát, amit a proto használ.
      */
-    static public void init(){
+    static public void init() throws IOException {
         for(int i=0; i<14; i++){
             tiles.add(new Tile());
         }
@@ -41,11 +44,16 @@ public class Maze {
         tiles.add(15, new Wardrobe());
         tiles.add(18, new Exit());
         tiles.add(20, new WeakTile());
+        for(int i=0;i<21;i++){
+        tiles.get(i).setName("t"+i);}
         tiles.get(9).decreaseStrength(10000);
         tiles.get(18).setEntry(tiles.get(0));
         Sofa s1=new Sofa();
+        s1.setName("s1");
         VendingMachine v1=new VendingMachine();
+        v1.setName("v1");
         Arcade a1=new Arcade();
+        a1.setName("a1");
         items.add(a1);
         items.add(v1);
         items.add(s1);
@@ -180,7 +188,7 @@ public class Maze {
      * Rekurzív függvény, a panda mindig meghívja
      * a sorban következő pandára, amikor kimennek a kijáraton, vagy.
      */
-    static void removePanda(Panda p) {
+    static void removePanda(Panda p) throws IOException {
         Controller.incTab();
         Controller.writeClassAndFunction("MAZE:removePanda(p)");
         if(p.getNextPanda()!=null)
@@ -192,7 +200,7 @@ public class Maze {
     /**
      * @param p A Maze-ről levevendő panda
      */
-    static void removeOnePanda(Panda p) {
+    static void removeOnePanda(Panda p) throws IOException {
         Controller.incTab();
         Controller.writeClassAndFunction("MAZE:removeOnePanda(p)");
         pandas.remove(p);
@@ -203,7 +211,7 @@ public class Maze {
      * @param o
      * Kiveszi o-t az orangutans-ból.
      */
-    static void removeOrangutan(Orangutan o) {
+    static void removeOrangutan(Orangutan o) throws IOException {
         Controller.incTab();
         Controller.writeClassAndFunction("MAZE:removeOrangutan(o)");
         orangutans.remove(o);
@@ -223,6 +231,14 @@ public class Maze {
 
     static int getPandaSize(){
         return pandas.size();
+    }
+
+    static int getOrangutanSize(){
+        return orangutans.size();
+    }
+
+    static int getTileSize(){
+        return tiles.size();
     }
 
     static Tile getTile(int i) {

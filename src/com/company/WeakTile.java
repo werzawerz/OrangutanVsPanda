@@ -1,6 +1,9 @@
 package com.company;
 
 import javax.naming.ldap.Control;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * Olyan csempe, ami egy bizonyos rálépés után eltörik. Nyilvántartja, hogy mennyi
@@ -19,7 +22,7 @@ public class WeakTile extends Tile {
      * törli azt.
      */
     @Override
-    void accept(Orangutan o) {
+    void accept(Orangutan o) throws IOException {
         Controller.incTab();
         Controller.writeClassAndFunction("WEAKTILE:accept(o)");
         decreaseStrength(1);
@@ -27,6 +30,9 @@ public class WeakTile extends Tile {
             //TODO
         }
         else {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            writer.append(o.getName()+" dead\n");
+            writer.close();
             remove(o);
             Maze.removeOrangutan(o);
         }
@@ -38,7 +44,7 @@ public class WeakTile extends Tile {
      * Magára rakja az Pandat, ha “élete” 0, akkor pedig törli azt.
      */
     @Override
-    void accept(Panda p) {
+    void accept(Panda p) throws IOException {
         Controller.incTab();
         Controller.writeClassAndFunction("WEAKTILE:accept(p)");
         decreaseStrength(1);
@@ -46,6 +52,9 @@ public class WeakTile extends Tile {
             //todo
         }
         else {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            writer.append(p.getName()+" dead\n");
+            writer.close();
             remove(p);
             Maze.removeOnePanda(p);
         }
@@ -56,9 +65,12 @@ public class WeakTile extends Tile {
      * @param i
      * Csökkenti a strength attributum értékét i-vel
      */
-    void decreaseStrength(int i) {
+    void decreaseStrength(int i) throws IOException {
         /*Controller.incTab();
         Controller.writeClassAndFunction("WEAKTILE:decreaseStrength(i)");*/
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        writer.append(i+" dead\n");
+        writer.close();
         strength -= i;
         //Controller.decTab();
     }

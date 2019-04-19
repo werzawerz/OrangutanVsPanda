@@ -1,5 +1,8 @@
 package com.company;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -11,8 +14,10 @@ public class Arcade extends Item{
      * Ez a függvény értesíti a szomszédos csempéken álló
      * pandákat, hogy csengetés történt.
      */
-    public void notifyNeighbours()
-    {
+    public void notifyNeighbours() throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        writer.append(this.getName()+" sound\n");
+        writer.close();
         Controller.incTab();
         Controller.writeClassAndFunction("ARCADE:notifyNeighbours()");
         Tile t = this.getPosition();

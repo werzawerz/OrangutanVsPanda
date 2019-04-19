@@ -1,5 +1,9 @@
 package com.company;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  * A játékos által irányított karaktereket szimbolizáló osztály. Felelőssége az általa
  * vezetett pandák, és a követendő út nyilvántartása.
@@ -30,7 +34,7 @@ public class Orangutan extends Animal {
             return 1 + getPandaNum(p.getNextPanda());
     }
 
-    public boolean collideWith(Orangutan o){
+    public boolean collideWith(Orangutan o) throws IOException {
 
         if (o.getNextPanda() == null && this.getNextPanda() != null && o.gettimeToSteal() == 0) {
             o.setNextPanda(this.getNextPanda());
@@ -55,7 +59,7 @@ public class Orangutan extends Animal {
      * A pandas tömbböt kiüríti, amikor a kijáraton ki lettek
      * vezetve.
      */
-    void destroyPandas(){
+    void destroyPandas() throws IOException {
         Controller.incTab();
         Controller.writeClassAndFunction("ORANGUTAN:destroyPandas()");
         Maze.removePanda(getNextPanda());
@@ -67,11 +71,16 @@ public class Orangutan extends Animal {
      * @param t Tile
      * Az oránugután átlép a t csempére.
      */
-    public void move(Tile t){
+    public void move(Tile t) throws IOException {
 
         Controller.incTab();
         Controller.writeClassAndFunction("ORANGUTAN:move(t)");
         if(t.canIMove(this)){
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            writer.append(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
+            writer.close();
+
             getPosition().remove(this);
             if(nextPanda!=null)
             {

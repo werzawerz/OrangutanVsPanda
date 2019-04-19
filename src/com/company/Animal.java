@@ -1,5 +1,7 @@
 package com.company;
 
+import java.io.IOException;
+
 /**
  * A helyváltoztatásra képes játékelemeket reprezentálja. Absztrakt osztály, konkrét
  * példányai lehetnek az orángutánok, és különböző pandák.
@@ -14,22 +16,22 @@ public abstract class Animal extends Thing {
      * Üres függvény, felüldefiniálandó, állatokként
      * változó. Leszármazottaknál bővebben lesz tárgyalva.
      */
-    public void move(Tile t){}
+    public void move(Tile t) throws IOException {}
 
     /**
      * Üres függvény.
      */
-    void jump(){}
+    void jump() throws IOException {}
 
     /**
      * Üres függvény.
      */
-    void scare(){}
+    void scare() throws IOException {}
 
     /**
      * Üres függvény.
      */
-    void sit(Tile t){}
+    void sit(Tile t) throws IOException {}
 
     /**
      * @return Visszaadja a sorban következő Panda-t.

@@ -1,4 +1,5 @@
 package com.company;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
@@ -7,7 +8,7 @@ import java.util.Timer;
  */
 public class MyTimer extends Thread{
 
-    public void tick() {
+    public void tick() throws IOException {
         for(int i=0; i<Maze.getPandaSize();i++){
             Panda temp=Maze.getPanda(i);
             int rand = new Random().nextInt(temp.getPosition().getNeighbourSize());

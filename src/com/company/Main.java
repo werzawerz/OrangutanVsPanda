@@ -1,8 +1,6 @@
 package com.company;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Main {
 
@@ -29,7 +27,7 @@ public class Main {
             "Panda collides with taken Sofa",
             "Orangutan leads Pandas"};*/
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         boolean exit=false;
         Maze.init();
 
@@ -116,6 +114,13 @@ public class Main {
                     exit=true;
                     break;
             }*/
+                BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out"));
+                writer.write("");
+
+                writer.close();
+
+
+
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             try {
                 selectedEvent = br.readLine();

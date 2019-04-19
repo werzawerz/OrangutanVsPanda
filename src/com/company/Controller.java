@@ -65,7 +65,7 @@ public class Controller {
         }
     }
 
-    public static void doWork(String line) {
+    public static void doWork(String line) throws IOException {
         String lineArr[] = line.split(" ");
         switch(lineArr[0]) {
             case "load":
@@ -89,37 +89,41 @@ public class Controller {
         }
     }
 
-    public static void putAnim(String animal, String tile) {
+    public static void putAnim(String animal, String tile) throws IOException {
         tile = tile.substring(1);
         int tileNum = Integer.parseInt(tile);
         Tile t = Maze.getTile(tileNum-1);
         if(animal.charAt(0) == 'o') {
             Orangutan o = new Orangutan();
+            o.setName(animal);
             t.accept(o);
             o.setPosition(t);
             Maze.addOrangutan(o);
         }
         if(animal.charAt(0) == 'l') {
             LazyPanda lp = new LazyPanda();
+            lp.setName(animal);
             t.accept(lp);
             lp.setPosition(t);
             Maze.addPanda(lp);
         }
         if(animal.charAt(0) == 's') {
             ScaredPanda sp = new ScaredPanda();
+            sp.setName(animal);
             t.accept(sp);
             sp.setPosition(t);
             Maze.addPanda(sp);
         }
         if(animal.charAt(0) == 'j') {
             JumpingPanda jp = new JumpingPanda();
+            jp.setName(animal);
             t.accept(jp);
             jp.setPosition(t);
             Maze.addPanda(jp);
         }
     }
 
-    static void makeFollow(String a1, String a2) {
+    static void makeFollow(String a1, String a2) throws IOException {
         Orangutan o;
         Panda pFollowing;
         Panda pFollower;
@@ -139,7 +143,7 @@ public class Controller {
         }
     }
 
-    static void moveAnim(String a, String t) {
+    static void moveAnim(String a, String t) throws IOException {
         Animal anim;
         int TileNum = Integer.parseInt(t.substring(1));
         Tile tile = Maze.getTile(TileNum-1);
@@ -154,7 +158,7 @@ public class Controller {
         anim.move(tile);
     }
 
-    static void makeSound(String t) {
+    static void makeSound(String t) throws IOException {
         int TileNum = Integer.parseInt(t.substring(1));
         Tile tile = Maze.getTile(TileNum-1);
         Item i = tile.getItem();
@@ -202,7 +206,7 @@ public class Controller {
         readFile("Test8.txt");
     }
 
-    static public void  orangutanPicksUpPanda(){
+    static public void  orangutanPicksUpPanda() throws IOException {
         Orangutan o=new Orangutan();
         ScaredPanda sp=new ScaredPanda();
         Tile t=new Tile();
@@ -215,7 +219,7 @@ public class Controller {
         o.move(t);
     }
 
-    static void pandaStepsOnWeakTile() {
+    static void pandaStepsOnWeakTile() throws IOException {
         WeakTile wt = new WeakTile();
         JumpingPanda jp = new JumpingPanda();
         Tile t = new Tile();
@@ -226,7 +230,7 @@ public class Controller {
         jp.move(wt);
     }
 
-    static void pandaStepsOnBrokenWeakTile() {
+    static void pandaStepsOnBrokenWeakTile() throws IOException {
         WeakTile wt = new WeakTile();
         JumpingPanda jp = new JumpingPanda();
         Tile t = new Tile();
@@ -237,7 +241,7 @@ public class Controller {
         jp.move(wt);
     }
 
-    static public void pandaCollidesWithTakenSofa(){
+    static public void pandaCollidesWithTakenSofa() throws IOException {
         ScaredPanda p1 = new ScaredPanda();
         Tile t1 = new Tile();
         Tile t2 = new Tile();
@@ -251,7 +255,7 @@ public class Controller {
         p1.move(t1);
     }
 
-    static  public  void  pandaCollidesWithVendingMachine(){
+    static  public  void  pandaCollidesWithVendingMachine() throws IOException {
         ScaredPanda p1 = new ScaredPanda();
         Tile t1 = new Tile();
         Tile t2 = new Tile();
@@ -264,8 +268,7 @@ public class Controller {
         p1.move(t1);
     }
 
-    static public void PandaCollidesWithArcade()
-    {
+    static public void PandaCollidesWithArcade() throws IOException {
         ScaredPanda p1 = new ScaredPanda();
         Tile t1 = new Tile();
         Tile t2 = new Tile();
@@ -289,8 +292,7 @@ public class Controller {
     /**
      * JumpingPanda ugrik a VendingMachine jelzésére.
      */
-    static  public  void JumpingPandaJumps()
-    {
+    static  public  void JumpingPandaJumps() throws IOException {
         Tile t1 = new Tile();
         Tile t2 = new Tile();
         JumpingPanda j = new JumpingPanda();
@@ -307,8 +309,7 @@ public class Controller {
     /**
      * Panda egy mezőről a másikra lép.
      */
-    static public void PandaMoves()
-    {
+    static public void PandaMoves() throws IOException {
         Tile t1 = new Tile();
         Tile t2 = new Tile();
         ScaredPanda p = new ScaredPanda();
@@ -323,8 +324,7 @@ public class Controller {
     /**
      * Az orángután lép, és vezeti a pandákat.
      */
-    static public void OrangutanLeadsPanda()
-    {
+    static public void OrangutanLeadsPanda() throws IOException {
         Tile t1 = new Tile();
         Tile t2 = new Tile();
         Tile t3 = new Tile();
