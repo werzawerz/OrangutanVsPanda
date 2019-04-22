@@ -24,14 +24,14 @@ public abstract class Panda extends Animal {
      * bekerül a sorba, false-t ad vissza.
      */
     public boolean collideWith(Orangutan o) throws IOException {
-        String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
+        /*String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
         Controller.incTab();
-        Controller.writeClassAndFunction(s);
+        Controller.writeClassAndFunction(s);*/
 
         setFollow(true);
         setFollowingA(o);
         o.setNextPanda(this);
-        Controller.decTab();
+        //Controller.decTab();
         return false;
     }
 
@@ -43,6 +43,7 @@ public abstract class Panda extends Animal {
 
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
             writer.append(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
+            System.out.print(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
             writer.close();
             getPosition().remove(this);
             if(nextPanda!=null)
@@ -69,10 +70,11 @@ public abstract class Panda extends Animal {
      * Beállítja a follow flaget.
      */
     void setFollow(boolean b){
-        String s = this.getClass().getSimpleName().toUpperCase() + ":setFollow(b)";
-        Controller.incTab();
+        //String s = this.getClass().getSimpleName().toUpperCase() + ":setFollow(b)";
+        /*Controller.incTab();
         Controller.writeClassAndFunction(s);
-        Controller.decTab();
+        Controller.decTab();*/
+        follow=b;
 
     }
 
@@ -80,25 +82,27 @@ public abstract class Panda extends Animal {
      * Rekurzív, a sor felbontását végzi el.
      */
     void release() throws IOException {
-        String s = this.getClass().getSimpleName().toUpperCase() + ":release()";
+       /* String s = this.getClass().getSimpleName().toUpperCase() + ":release()";
         Controller.incTab();
-        Controller.writeClassAndFunction(s);
+        Controller.writeClassAndFunction(s);*/
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
         writer.append(this.getName()+" leaves "+this.followingA.getName() +"\n");
+        System.out.print(this.getName()+" leaves "+this.followingA.getName() +"\n");
         writer.close();
         if(getNextPanda()!=null)
             getNextPanda().setNextPanda(null);
-        Controller.decTab();
+        //Controller.decTab();
     }
 
     void setFollowingA(Animal a) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
-        writer.append(this.getName()+" follow"+a.getName()+"\n");
+        writer.append(this.getName()+" follow "+a.getName()+"\n");
+        System.out.print(this.getName()+" follow "+a.getName()+"\n");
         writer.close();
-        String s = this.getClass().getSimpleName().toUpperCase() + ":setFollowingA(a)";
-        Controller.incTab();
+        //String s = this.getClass().getSimpleName().toUpperCase() + ":setFollowingA(a)";
+        /*Controller.incTab();
         Controller.writeClassAndFunction(s);
-        Controller.decTab();
+        Controller.decTab();*/
 
         followingA = a;
     }

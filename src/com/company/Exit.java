@@ -21,21 +21,25 @@ public class Exit extends Tile {
      * orángutánt a bejárati csempére.
      */
     void accept(Orangutan o) throws IOException {
-        Controller.incTab();
-        Controller.writeClassAndFunction("EXIT:accept(o)");
+       /* Controller.incTab();
+        Controller.writeClassAndFunction("EXIT:accept(o)");*/
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
-        writer.append(o.getName()+" exits");
+        writer.append(o.getName()+" exits ");
+        System.out.print(o.getName()+" exits ");
         if(o.nextPanda!=null)
         {
             Panda pa=o.nextPanda;
             writer.append(pa.getName()+" ");
+            System.out.print(pa.getName()+" ");
             while(pa.nextPanda!=null)
             {
                 pa=pa.nextPanda;
                 writer.append(pa.getName()+" ");
+                System.out.print(pa.getName()+" ");
             }
         }
-        writer.append("\n");
+        writer.append(o.getPandaNum(o.nextPanda)+"\n");
+        System.out.println(o.getPandaNum(o.nextPanda)+"\n");
         writer.close();
         int pandaNum = o.getPandaNum(o.getNextPanda());
         Game.addPoints(pandaNum);
@@ -44,10 +48,11 @@ public class Exit extends Tile {
         if(o.getNextPanda()!=null) {
             o.destroyPandas();
         }
-        Controller.decTab();
-        BufferedWriter writer2 = new BufferedWriter(new FileWriter("Valami.out", true));
-        writer.append("\n");
-        writer2.close();
+        //Controller.decTab();
+/*        BufferedWriter writer2 = new BufferedWriter(new FileWriter("Valami.out", true));
+        System.out.print("\n");
+        writer2.append("\n");
+        writer2.close();*/
     }
 
     void setEntry(Tile t) {

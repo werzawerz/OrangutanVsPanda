@@ -17,9 +17,9 @@ public class Sofa extends Item{
     private boolean empty = true;
 
     public  boolean collideWith(Panda p){
-        Controller.incTab();
+/*        Controller.incTab();
         Controller.writeClassAndFunction("SOFA:collideWith(p)");
-        Controller.decTab();
+        Controller.decTab();*/
         return empty;
     }
 
@@ -32,9 +32,10 @@ public class Sofa extends Item{
     public  void notifyNeighbours() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
         writer.append(this.getName()+" sound\n");
+        System.out.print(this.getName()+" sound\n");
         writer.close();
-        Controller.incTab();
-        Controller.writeClassAndFunction("SOFA:notifyNeighbours()");
+        /*Controller.incTab();
+        Controller.writeClassAndFunction("SOFA:notifyNeighbours()");*/
         Tile t = this.getPosition();
         ArrayList<Tile> tiles = t.getNeighbours();
         for(int i=0;i<tiles.size();i++){
@@ -43,7 +44,7 @@ public class Sofa extends Item{
                 a.sit(this.getPosition());
         getPosition().getNeighbours().get(0).getAnimal().sit(this.getPosition());
         }
-        Controller.decTab();
+        //Controller.decTab();
 
     }
 

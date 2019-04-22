@@ -21,10 +21,10 @@ public class Wardrobe extends Tile {
      * p-t átlépteti a szomszédos szekrényre.
      */
     public void accept(Panda p) throws IOException {
-        Controller.incTab();
-        Controller.writeClassAndFunction("WARDROBE:accept(p)");
+        /*Controller.incTab();
+        Controller.writeClassAndFunction("WARDROBE:accept(p)");*/
         neighbourWardrobe.getNeighbours().get(0).accept(p);
-        Controller.decTab();
+        /*Controller.decTab();*/
     }
 
     /**
@@ -32,10 +32,10 @@ public class Wardrobe extends Tile {
      * o-t átlépteti a szomszédos szekrényre.
      */
     public void accept(Orangutan o) throws IOException {
-        Controller.incTab();
-        Controller.writeClassAndFunction("WARDROBE:accept(o)");
+/*        Controller.incTab();
+        Controller.writeClassAndFunction("WARDROBE:accept(o)");*/
         neighbourWardrobe.getNeighbours().get(0).accept(o);
-        Controller.decTab();
+        //Controller.decTab();
     }
 
 

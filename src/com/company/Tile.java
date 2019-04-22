@@ -31,15 +31,15 @@ public class Tile {
      * hogy Animal a léphet-e rá, ennek megfelelő a visszatérési érték.
      */
     boolean canIMove(Orangutan o) throws IOException {
-        String s = this.getClass().getSimpleName().toUpperCase() +  ":canIMove(o)";
+        /*String s = this.getClass().getSimpleName().toUpperCase() +  ":canIMove(o)";
         Controller.incTab();
-        Controller.writeClassAndFunction(s);
+        Controller.writeClassAndFunction(s);*/
         boolean bul = true;
         if(occupiedBy!=null)
             bul =  occupiedBy.collideWith(o);
         if(item!=null)
             bul = item.collideWith(o);
-        Controller.decTab();
+        //Controller.decTab();
         return bul;
     }
 
@@ -47,10 +47,10 @@ public class Tile {
      * @param p ?????????????????????????????????????
      * @return ?????????????????????????? Kérdéses cucc
      */
-    boolean canIMove(Panda p){
-        String s = this.getClass().getSimpleName().toUpperCase() +  ":canIMove(p)";
+    boolean canIMove(Panda p) throws IOException{
+        /*String s = this.getClass().getSimpleName().toUpperCase() +  ":canIMove(p)";
         Controller.incTab();
-        Controller.writeClassAndFunction(s);
+        Controller.writeClassAndFunction(s);*/
         boolean bul = true;
         if(occupiedBy!=null) {
             bul = occupiedBy.collideWith(p);
@@ -58,7 +58,7 @@ public class Tile {
         if(item!=null) {
            bul = item.collideWith(p);
         }
-        Controller.decTab();
+        //Controller.decTab();
         return bul;
     }
 
@@ -67,10 +67,10 @@ public class Tile {
      * Az o-t rálépteti magára.
      */
     void accept(Orangutan o) throws IOException {
-        String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(o)";
+        /*String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(o)";
         Controller.incTab();
         Controller.writeClassAndFunction(s);
-        Controller.decTab();
+        Controller.decTab();*/
         occupiedBy = o;
         o.setPosition(this);
     }
@@ -80,10 +80,10 @@ public class Tile {
      * A p-t rálépteti magára.
      */
     void accept(Panda p) throws IOException {
-        String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(p)";
+        /*String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(p)";
         Controller.incTab();
         Controller.writeClassAndFunction(s);
-        Controller.decTab();
+        Controller.decTab();*/
         occupiedBy = p;
         p.setPosition(this);
     }
@@ -94,10 +94,10 @@ public class Tile {
      */
     void remove(Animal a)
     {
-        String s = this.getClass().getSimpleName().toUpperCase() + ":remove(a)";
+        /*String s = this.getClass().getSimpleName().toUpperCase() + ":remove(a)";
         Controller.incTab();
         Controller.writeClassAndFunction(s);
-        Controller.decTab();
+        Controller.decTab();*/
         occupiedBy = null;
     }
 
@@ -113,10 +113,10 @@ public class Tile {
      * tömböt.
      */
     ArrayList<Tile> getNeighbours(){
-        String s = this.getClass().getSimpleName().toUpperCase() + ":getNeighbours()";
+        /*String s = this.getClass().getSimpleName().toUpperCase() + ":getNeighbours()";
         Controller.incTab();
         Controller.writeClassAndFunction(s);
-        Controller.decTab();
+        Controller.decTab();*/
         return neighbours;
     }
 
@@ -125,10 +125,10 @@ public class Tile {
      * Visszaadja a a Tile-on levő Animal-t.
      */
      Animal getAnimal(){
-         String s = this.getClass().getSimpleName().toUpperCase() + ":getAnimal()";
+        /* String s = this.getClass().getSimpleName().toUpperCase() + ":getAnimal()";
          Controller.incTab();
          Controller.writeClassAndFunction(s);
-         Controller.decTab();
+         Controller.decTab();*/
         return occupiedBy;
     }
 

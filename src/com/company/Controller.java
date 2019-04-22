@@ -31,10 +31,10 @@ public class Controller {
      *          amely az s stringben van átadva
      */
     static public void writeClassAndFunction(String s) {
-        for(int i = 0; i<tab; i++) {
+/*        for(int i = 0; i<tab; i++) {
             System.out.print("\t");
         }
-        System.out.println(s);
+        System.out.println(s);*/
     }
 
     /**
@@ -56,6 +56,7 @@ public class Controller {
             String line = br.readLine();
 
             while (line != null) {
+
                 doWork(line);
                 line = br.readLine();
             }
@@ -152,7 +153,7 @@ public class Controller {
             anim = Maze.getOrangutan(ONum-1);
         }
         else {
-            int PNum = Integer.parseInt(a.substring(1));
+            int PNum = Integer.parseInt(a.substring(2));
             anim = Maze.getPanda(PNum-1);
         }
         anim.move(tile);

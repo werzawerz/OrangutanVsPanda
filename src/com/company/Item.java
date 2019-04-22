@@ -15,9 +15,9 @@ public class Item extends Thing {
      * amiről tudniuk kellene.
      */
     public void notifyNeighbours() throws IOException {
-        String s = this.getClass().getName().toUpperCase() + ":notifyNeighbours()";
-        Controller.incTab();
+        //String s = this.getClass().getName().toUpperCase() + ":notifyNeighbours()";
+       /* Controller.incTab();
         Controller.writeClassAndFunction(s);
-        Controller.decTab();
+        Controller.decTab();*/
     }
 }

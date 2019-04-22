@@ -129,7 +129,7 @@ public class Main {
                 exit=true;
             }
             else {
-                Controller.readFile(selectedEvent);
+                Controller.doWork(selectedEvent);
             }
         }
 

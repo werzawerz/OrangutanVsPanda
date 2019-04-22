@@ -14,7 +14,7 @@ public class WeakTile extends Tile {
     /**
      * A fenmaradó rálépés a törésig.
      */
-    private int strength;
+    private int strength=1000;
 
     /**
      * @param o : a WeakTilera lépni akaró orángután
@@ -23,8 +23,8 @@ public class WeakTile extends Tile {
      */
     @Override
     void accept(Orangutan o) throws IOException {
-        Controller.incTab();
-        Controller.writeClassAndFunction("WEAKTILE:accept(o)");
+/*        Controller.incTab();
+        Controller.writeClassAndFunction("WEAKTILE:accept(o)");*/
         decreaseStrength(1);
         if(strength>0) {
             //TODO
@@ -32,11 +32,12 @@ public class WeakTile extends Tile {
         else {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
             writer.append(o.getName()+" dead\n");
+            System.out.print(o.getName()+" dead\n");
             writer.close();
             remove(o);
             Maze.removeOrangutan(o);
         }
-        Controller.decTab();
+        //Controller.decTab();
     }
 
     /**
@@ -45,8 +46,8 @@ public class WeakTile extends Tile {
      */
     @Override
     void accept(Panda p) throws IOException {
-        Controller.incTab();
-        Controller.writeClassAndFunction("WEAKTILE:accept(p)");
+/*        Controller.incTab();
+        Controller.writeClassAndFunction("WEAKTILE:accept(p)");*/
         decreaseStrength(1);
         if(strength>0) {
             //todo
@@ -54,11 +55,12 @@ public class WeakTile extends Tile {
         else {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
             writer.append(p.getName()+" dead\n");
+            System.out.print(p.getName()+" dead\n");
             writer.close();
             remove(p);
             Maze.removeOnePanda(p);
         }
-        Controller.decTab();
+        //Controller.decTab();
     }
 
     /**
@@ -68,8 +70,10 @@ public class WeakTile extends Tile {
     void decreaseStrength(int i) throws IOException {
         /*Controller.incTab();
         Controller.writeClassAndFunction("WEAKTILE:decreaseStrength(i)");*/
+        if(strength<1) return;
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
-        writer.append(i+" dead\n");
+        writer.append(getName()+"-");
+        System.out.print(getName()+"-");
         writer.close();
         strength -= i;
         //Controller.decTab();

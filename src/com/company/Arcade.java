@@ -17,15 +17,16 @@ public class Arcade extends Item{
     public void notifyNeighbours() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
         writer.append(this.getName()+" sound\n");
+        System.out.print(this.getName()+" sound\n");
         writer.close();
-        Controller.incTab();
-        Controller.writeClassAndFunction("ARCADE:notifyNeighbours()");
+/*        Controller.incTab();
+        Controller.writeClassAndFunction("ARCADE:notifyNeighbours()");*/
         Tile t = this.getPosition();
         ArrayList<Tile> tiles = t.getNeighbours();
         for(int i=0;i<tiles.size();i++){
             Animal a = tiles.get(i).getAnimal();
             if(a!=null)
                 a.scare();}
-        Controller.decTab();
+        //Controller.decTab();
     }
 }

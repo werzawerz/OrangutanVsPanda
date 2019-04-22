@@ -45,7 +45,7 @@ public class Maze {
         tiles.add(18, new Exit());
         tiles.add(20, new WeakTile());
         for(int i=0;i<21;i++){
-        tiles.get(i).setName("t"+i);}
+        tiles.get(i).setName("t"+(i+1));}
         tiles.get(9).decreaseStrength(10000);
         tiles.get(18).setEntry(tiles.get(0));
         Sofa s1=new Sofa();
@@ -168,6 +168,8 @@ public class Maze {
         tiles.get(20).setNeighbours(tiles.get(19));
         tiles.get(20).setNeighbours(tiles.get(16));
         tiles.get(20).setNeighbours(tiles.get(18));
+
+        Controller.clearScreen();
     }
 
     /**
@@ -189,22 +191,22 @@ public class Maze {
      * a sorban következő pandára, amikor kimennek a kijáraton, vagy.
      */
     static void removePanda(Panda p) throws IOException {
-        Controller.incTab();
-        Controller.writeClassAndFunction("MAZE:removePanda(p)");
+        /*Controller.incTab();
+        Controller.writeClassAndFunction("MAZE:removePanda(p)");*/
         if(p.getNextPanda()!=null)
             removePanda(p.getNextPanda());
         pandas.remove(p);
-        Controller.decTab();
+        //Controller.decTab();
     }
 
     /**
      * @param p A Maze-ről levevendő panda
      */
     static void removeOnePanda(Panda p) throws IOException {
-        Controller.incTab();
-        Controller.writeClassAndFunction("MAZE:removeOnePanda(p)");
+/*        Controller.incTab();
+        Controller.writeClassAndFunction("MAZE:removeOnePanda(p)");*/
         pandas.remove(p);
-        Controller.decTab();
+        //Controller.decTab();
     }
 
     /**
@@ -212,10 +214,10 @@ public class Maze {
      * Kiveszi o-t az orangutans-ból.
      */
     static void removeOrangutan(Orangutan o) throws IOException {
-        Controller.incTab();
-        Controller.writeClassAndFunction("MAZE:removeOrangutan(o)");
+        /*Controller.incTab();
+        Controller.writeClassAndFunction("MAZE:removeOrangutan(o)");*/
         orangutans.remove(o);
-        Controller.decTab();
+        //Controller.decTab();
     }
 
     /**

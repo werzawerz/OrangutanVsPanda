@@ -1,5 +1,7 @@
 package com.company;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -20,10 +22,14 @@ public abstract class Thing {
      * Leszármazottban felül van írva. Itt csak false-szal tér vissza.
      */
     public boolean collideWith(Orangutan o) throws IOException {
-        String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
+        /*String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
         Controller.incTab();
         Controller.writeClassAndFunction(s);
-        Controller.decTab();
+        Controller.decTab();*/
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        writer.append(this.getName()+" refuse "+ o.getName()+"\n");
+        writer.close();
+        System.out.print(this.getName()+" refuse "+ o.getName()+"\n");
         return false;
     }
 
@@ -39,11 +45,15 @@ public abstract class Thing {
      * Akkor hívódik meg, amikor egy leszármazottja találkozik egy Panda-val.
      * Leszármazottban felül van írva. Itt csak false-szal tér vissza.
      */
-    public boolean collideWith(Panda p){
-        String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(p)";
+    public boolean collideWith(Panda p) throws IOException{
+        /*String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(p)";
         Controller.incTab();
         Controller.writeClassAndFunction(s);
-        Controller.decTab();
+        Controller.decTab();*/
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        writer.append(this.getName()+" refuse "+ p.getName()+"\n");
+        writer.close();
+        System.out.print(this.getName()+" refuse "+ p.getName()+"\n");
         return false;
     }
 
