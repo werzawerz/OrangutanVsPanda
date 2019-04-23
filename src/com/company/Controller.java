@@ -3,28 +3,9 @@ package com.company;
 import java.io.*;
 
 /**
- * A use-caseket intéző osztály, ami a tabulálásért is felel.
+ * A teszteseteket intéző osztály, ami a beviteli nyelv függvényeit is tartalmazza.
  */
 public class Controller {
-
-    /**
-     * tabulálások száma
-     */
-    static private int tab = -1;
-
-    /**
-     * tabulálás növelése
-     */
-    static public void incTab() {
-        tab++;
-    }
-
-    /**
-     * tabulálás csökkentése
-     */
-    static public void decTab() {
-        tab--;
-    }
 
     /**
      * @param s a tabulálással együtt kiirja az osztály és függvény nevet
