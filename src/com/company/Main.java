@@ -115,7 +115,7 @@ public class Main {
                     exit=true;
                     break;
             }*/
-                BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out"));
+                BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt"));
                 writer.write("");
 
                 writer.close();

@@ -31,7 +31,7 @@ public class WeakTile extends Tile {
             //TODO
         }
         else {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(o.getName()+" dead\n");
             System.out.print(o.getName()+" dead\n");
             writer.close();
@@ -54,7 +54,7 @@ public class WeakTile extends Tile {
             //todo
         }
         else {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(p.getName()+" dead\n");
             System.out.print(p.getName()+" dead\n");
             writer.close();
@@ -71,7 +71,7 @@ public class WeakTile extends Tile {
     void decreaseStrength(int i) throws IOException {
         if(strength<1) return;
         if(i>0 && i<10000) {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(getName() + "-" + i + "\n");
             System.out.print(getName() + "-" + i + "\n");
             writer.close();

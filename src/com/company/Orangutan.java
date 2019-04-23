@@ -45,7 +45,7 @@ public class Orangutan extends Animal {
         }
         else
         {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(this.getName()+" refuse "+ o.getName()+"\n");
             writer.close();
             System.out.print(this.getName()+" refuse "+ o.getName()+"\n");
@@ -85,7 +85,7 @@ public class Orangutan extends Animal {
         Controller.writeClassAndFunction("ORANGUTAN:move(t)");*/
         if(t.canIMove(this)){
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
             writer.close();
             System.out.print(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");

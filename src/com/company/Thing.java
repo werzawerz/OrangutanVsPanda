@@ -26,7 +26,7 @@ public abstract class Thing {
         Controller.incTab();
         Controller.writeClassAndFunction(s);
         Controller.decTab();*/
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.append(this.getName()+" refuse "+ o.getName()+"\n");
         writer.close();
         System.out.print(this.getName()+" refuse "+ o.getName()+"\n");
@@ -50,7 +50,7 @@ public abstract class Thing {
         Controller.incTab();
         Controller.writeClassAndFunction(s);
         Controller.decTab();*/
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.append(this.getName()+" refuse "+ p.getName()+"\n");
         writer.close();
         System.out.print(this.getName()+" refuse "+ p.getName()+"\n");

@@ -23,7 +23,7 @@ public class Exit extends Tile {
     void accept(Orangutan o) throws IOException {
        /* Controller.incTab();
         Controller.writeClassAndFunction("EXIT:accept(o)");*/
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.append(o.getName()+" exits ");
         System.out.print(o.getName()+" exits ");
         exitAll(o.nextPanda);
@@ -61,7 +61,7 @@ public class Exit extends Tile {
     void exitAll(Panda p) throws IOException{
         if(p!=null)
         {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(p.getName()+" ");
             System.out.print(p.getName()+" ");
             exitAll(p.nextPanda);

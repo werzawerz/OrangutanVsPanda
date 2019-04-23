@@ -32,7 +32,7 @@ public abstract class Panda extends Animal {
         setFollowingA(o);
         o.setNextPanda(this);}
         else{
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(this.getName()+" refuse "+o.getName()+"\n");
             writer.close();
         }
@@ -46,7 +46,7 @@ public abstract class Panda extends Animal {
         Controller.writeClassAndFunction(s);
         if(t.canIMove(this)) {
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
             System.out.print(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
             writer.close();
@@ -67,7 +67,7 @@ public abstract class Panda extends Animal {
      * marad, false-t ad vissza.
      */
     public boolean collideWith(Panda p) throws IOException{
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.append(this.getName()+" refuse "+ p.getName()+"\n");
         writer.close();
         System.out.print(this.getName()+" refuse "+ p.getName()+"\n");
@@ -94,7 +94,7 @@ public abstract class Panda extends Animal {
        /* String s = this.getClass().getSimpleName().toUpperCase() + ":release()";
         Controller.incTab();
         Controller.writeClassAndFunction(s);*/
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.append(this.getName()+" leaves "+this.followingA.getName() +"\n");
         System.out.print(this.getName()+" leaves "+this.followingA.getName() +"\n");
         writer.close();
@@ -104,7 +104,7 @@ public abstract class Panda extends Animal {
     }
 
     void setFollowingA(Animal a) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.append(this.getName()+" follow "+a.getName()+"\n");
         System.out.print(this.getName()+" follow "+a.getName()+"\n");
         writer.close();

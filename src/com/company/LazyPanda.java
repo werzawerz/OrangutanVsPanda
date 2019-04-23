@@ -17,7 +17,7 @@ public class LazyPanda extends Panda {
     void sit(Tile t) throws IOException {
        /* Controller.incTab();
         Controller.writeClassAndFunction("LAZYPANDA:sit(t)");*/
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.append(this.getName()+" sits "+t.getName()+"\n");
         System.out.print(this.getName()+" sits "+t.getName()+"\n");
         writer.close();

@@ -38,7 +38,7 @@ public class Wardrobe extends Tile {
 /*        Controller.incTab();
         Controller.writeClassAndFunction("WARDROBE:accept(o)");*/
         o.setPosition(this);
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.append(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
         writer.close();
         System.out.print(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
