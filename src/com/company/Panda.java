@@ -27,10 +27,15 @@ public abstract class Panda extends Animal {
         /*String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
         Controller.incTab();
         Controller.writeClassAndFunction(s);*/
-
-        setFollow(true);
+        if(!follow)
+        {setFollow(true);
         setFollowingA(o);
-        o.setNextPanda(this);
+        o.setNextPanda(this);}
+        else{
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            writer.append(this.getName()+" refuse "+o.getName()+"\n");
+            writer.close();
+        }
         //Controller.decTab();
         return false;
     }
