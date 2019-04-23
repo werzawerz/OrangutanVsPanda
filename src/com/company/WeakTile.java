@@ -69,8 +69,6 @@ public class WeakTile extends Tile {
      * Csökkenti a strength attributum értékét i-vel
      */
     void decreaseStrength(int i) throws IOException {
-        /*Controller.incTab();
-        Controller.writeClassAndFunction("WEAKTILE:decreaseStrength(i)");*/
         if(strength<1) return;
         if(i>0 && i<10000) {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
@@ -79,7 +77,6 @@ public class WeakTile extends Tile {
             writer.close();
         }
         strength -= i;
-        //Controller.decTab();
     }
 
     public void setStrength(int i) {
