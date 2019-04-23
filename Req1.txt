@@ -1,0 +1,10 @@
+sp1 follow o1
+sp2 follow sp1
+o1 t15->t19
+sp1 t14->t15
+sp2 t13->t14
+o1 exits sp1 sp2 : 2
+
+o1 t19->t1
+sp1 t15->t19
+sp2 t14->t15

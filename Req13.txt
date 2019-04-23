@@ -1,0 +1,5 @@
+lp1 follow sp2
+sp2 follow o1
+a1 sound
+lp1 leaves sp2
+sp2 leaves o1

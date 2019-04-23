@@ -1,0 +1,6 @@
+t12-1
+sp1 follow o1
+sp2 follow sp1
+o1 t6->t5
+sp1 t11->t6
+sp2 t12->t11
