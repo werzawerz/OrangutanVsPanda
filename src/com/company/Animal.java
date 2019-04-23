@@ -55,9 +55,6 @@ public abstract class Animal extends Thing {
      * A p-t beteszi a nextPanda változóba.
      */
     protected void setNextPanda(Panda p) {
-/*        String s = this.getClass().getSimpleName().toUpperCase() + ":setNextPanda()";
-        Controller.incTab();
-        Controller.writeClassAndFunction(s);
-        Controller.decTab();*/
+
         nextPanda=p;}
 }

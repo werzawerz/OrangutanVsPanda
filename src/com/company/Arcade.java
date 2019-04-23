@@ -16,7 +16,7 @@ public class Arcade extends Item{
      */
     public void notifyNeighbours() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-        writer.append(this.getName()+" sound\n");
+        writer.write(this.getName()+" sound\n");
         System.out.print(this.getName()+" sound\n");
         writer.close();
 /*        Controller.incTab();

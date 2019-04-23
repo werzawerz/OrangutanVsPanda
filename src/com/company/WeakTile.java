@@ -23,8 +23,7 @@ public class WeakTile extends Tile {
      */
     @Override
     void accept(Orangutan o) throws IOException {
-/*        Controller.incTab();
-        Controller.writeClassAndFunction("WEAKTILE:accept(o)");*/
+
         o.setPosition(this);
         decreaseStrength(1);
         if(strength>0) {
@@ -38,7 +37,7 @@ public class WeakTile extends Tile {
             remove(o);
             Maze.removeOrangutan(o);
         }
-        //Controller.decTab();
+
     }
 
     /**
@@ -47,8 +46,7 @@ public class WeakTile extends Tile {
      */
     @Override
     void accept(Panda p) throws IOException {
-/*        Controller.incTab();
-        Controller.writeClassAndFunction("WEAKTILE:accept(p)");*/
+
         decreaseStrength(1);
         if(strength>0) {
             //todo
@@ -61,7 +59,6 @@ public class WeakTile extends Tile {
             remove(p);
             Maze.removeOnePanda(p);
         }
-        //Controller.decTab();
     }
 
     /**

@@ -24,7 +24,7 @@ public class Exit extends Tile {
        /* Controller.incTab();
         Controller.writeClassAndFunction("EXIT:accept(o)");*/
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-        writer.append(o.getName()+" exits ");
+        writer.write(o.getName()+" exits ");
         System.out.print(o.getName()+" exits ");
         exitAll(o.nextPanda);
         /*
@@ -41,7 +41,7 @@ public class Exit extends Tile {
             }
         }
         */
-        writer.append(": "+o.getPandaNum(o.nextPanda)+"\n");
+        writer.write(": "+o.getPandaNum(o.nextPanda)+"\n");
         System.out.println(": "+o.getPandaNum(o.nextPanda)+"\n");
         writer.close();
         int pandaNum = o.getPandaNum(o.getNextPanda());
@@ -62,7 +62,7 @@ public class Exit extends Tile {
         if(p!=null)
         {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-            writer.append(p.getName()+" ");
+            writer.write(p.getName()+" ");
             System.out.print(p.getName()+" ");
             exitAll(p.nextPanda);
         }
