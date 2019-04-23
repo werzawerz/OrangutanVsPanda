@@ -4,6 +4,7 @@ package com.company;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Random;
 
 /**
  * A pálya olyan csempéje, amire rálépve egy másik,
@@ -42,6 +43,13 @@ public class Wardrobe extends Tile {
         writer.close();
         System.out.print(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
         o.setPosition(this.neighbourWardrobe);
+        /* EZ MAJD FOG KELLENI A REAL GAME-hez
+
+        while(o.position==this.neighbourWardrobe){
+            int rand = new Random().nextInt(neighbourWardrobe.getNeighbourSize());
+            o.move(neighbourWardrobe.getNeighbours().get(rand));
+        }
+        */
         o.move(neighbourWardrobe.getNeighbours().get(0));
 
         //Controller.decTab();

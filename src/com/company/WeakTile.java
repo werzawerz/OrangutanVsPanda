@@ -25,6 +25,7 @@ public class WeakTile extends Tile {
     void accept(Orangutan o) throws IOException {
 /*        Controller.incTab();
         Controller.writeClassAndFunction("WEAKTILE:accept(o)");*/
+        o.setPosition(this);
         decreaseStrength(1);
         if(strength>0) {
             //TODO
