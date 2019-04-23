@@ -199,12 +199,9 @@ public class Maze {
      * a sorban következő pandára, amikor kimennek a kijáraton, vagy.
      */
     static void removePanda(Panda p) throws IOException {
-        /*Controller.incTab();
-        Controller.writeClassAndFunction("MAZE:removePanda(p)");*/
         if(p.getNextPanda()!=null)
             removePanda(p.getNextPanda());
         pandas.remove(p);
-        //Controller.decTab();
     }
 
     /**
