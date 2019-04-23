@@ -2,6 +2,6 @@ put o1 t6
 put sp1 t11
 put sp2 t12
 sp1 follow o1
-sp2 follow p1
+sp2 follow sp1
 put o2 t5
 step o2 t11
