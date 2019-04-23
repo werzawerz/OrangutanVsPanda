@@ -61,7 +61,11 @@ public abstract class Panda extends Animal {
      * Panda Panda-val ütközik, mindenki a helyén
      * marad, false-t ad vissza.
      */
-    public boolean collideWith(Panda p){
+    public boolean collideWith(Panda p) throws IOException{
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        writer.append(this.getName()+" refuse "+ p.getName()+"\n");
+        writer.close();
+        System.out.print(this.getName()+" refuse "+ p.getName()+"\n");
         return false;
     }
 
