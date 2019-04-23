@@ -1,3 +1,3 @@
-put p1 t9
-put p2 t8
-step p2 t9
+put sp1 t9
+put sp2 t8
+step sp2 t9

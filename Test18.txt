@@ -1,2 +1,2 @@
-put p1 t17
-move p1 t18
+put sp1 t17
+move sp1 t18

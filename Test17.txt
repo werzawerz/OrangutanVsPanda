@@ -1,2 +1,2 @@
-put p1 t5
-step p1 t10 
+put sp1 t5
+step sp1 t10

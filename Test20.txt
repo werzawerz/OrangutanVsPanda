@@ -1,2 +1,2 @@
-put p1 t6
-p1 step t7
+put sp1 t6
+sp1 step t7
