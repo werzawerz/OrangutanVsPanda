@@ -26,6 +26,8 @@ public class Exit extends Tile {
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
         writer.append(o.getName()+" exits ");
         System.out.print(o.getName()+" exits ");
+        exitAll(o.nextPanda);
+        /*
         if(o.nextPanda!=null)
         {
             Panda pa=o.nextPanda;
@@ -38,6 +40,7 @@ public class Exit extends Tile {
                 System.out.print(pa.getName()+" ");
             }
         }
+        */
         writer.append(o.getPandaNum(o.nextPanda)+"\n");
         System.out.println(o.getPandaNum(o.nextPanda)+"\n");
         writer.close();
@@ -53,6 +56,18 @@ public class Exit extends Tile {
         System.out.print("\n");
         writer2.append("\n");
         writer2.close();*/
+    }
+
+    void exitAll(Panda p) throws IOException{
+        if(p!=null)
+        {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            writer.append(p.getName()+" ");
+            System.out.print(p.getName()+" ");
+            exitAll(p.nextPanda);
+        }
+        else
+            return;
     }
 
     void setEntry(Tile t) {

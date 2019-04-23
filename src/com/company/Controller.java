@@ -140,6 +140,7 @@ public class Controller {
         else {
             PNum = Integer.parseInt(a2.substring(2));
             pFollowing = Maze.getPanda(PNum-1);
+            pFollowing.setNextPanda(pFollower);
             pFollower.setFollowingA(pFollowing);
         }
     }
