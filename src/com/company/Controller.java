@@ -75,17 +75,12 @@ public class Controller {
                 writer.close();
                 Maze.init();
                 readFile(lineArr[1]);
+                int n= Integer. parseInt(lineArr[1].substring(3));
                 ProcessBuilder builder = new ProcessBuilder(
-                        "cmd.exe", "/c", "fc \"C:\\Program Files\\Microsoft SQL Server\" && dir");
+                        "cmd.exe", "/c", "fc C:\\Users\\Downloads\\com\\company\\Valami.txt " +
+                        "C:\\Users\\Downloads\\com\\company\\Req"+n+".txt");
                 builder.redirectErrorStream(true);
                 Process p = builder.start();
-                BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
-                String line2;
-                while (true) {
-                    line2 = r.readLine();
-                    if (line2 == null) { break; }
-                    System.out.println(line2);
-                }
                 break;
             case "put" :
                 putAnim(lineArr[1], lineArr[2]);
