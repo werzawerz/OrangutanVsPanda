@@ -27,6 +27,5 @@ public class Arcade extends Item{
             Animal a = tiles.get(i).getAnimal();
             if(a!=null)
                 a.scare();}
-        //Controller.decTab();
     }
 }
