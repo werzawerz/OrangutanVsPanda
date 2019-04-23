@@ -36,11 +36,14 @@ public class Wardrobe extends Tile {
     public void accept(Orangutan o) throws IOException {
 /*        Controller.incTab();
         Controller.writeClassAndFunction("WARDROBE:accept(o)");*/
+        o.setPosition(this);
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
         writer.append(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
         writer.close();
         System.out.print(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
-        neighbourWardrobe.getNeighbours().get(0).accept(o);
+        o.setPosition(this.neighbourWardrobe);
+        o.move(neighbourWardrobe.getNeighbours().get(0));
+
         //Controller.decTab();
     }
 
