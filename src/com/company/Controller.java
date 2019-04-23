@@ -55,8 +55,8 @@ public class Controller {
                 readFile(lineArr[1]);
                 int n= Integer. parseInt(lineArr[1].substring(4,lineArr[1].length()-4));
                 ProcessBuilder builder = new ProcessBuilder(
-                        "cmd.exe", "/c", "fc C:\\Users\\Downloads\\com\\company\\Valami.txt " +
-                        "C:\\Users\\Downloads\\com\\company\\Req"+n+".txt");
+                        "cmd.exe", "/c", "fc C:\\JAVAslat_proto\\src\\Valami.txt " +
+                        "C:\\JAVAslat_proto\\Req"+n+".txt");
                 builder.redirectErrorStream(true);
                 Process p = builder.start();
                 BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
