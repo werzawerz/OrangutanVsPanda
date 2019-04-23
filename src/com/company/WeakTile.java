@@ -72,8 +72,8 @@ public class WeakTile extends Tile {
         Controller.writeClassAndFunction("WEAKTILE:decreaseStrength(i)");*/
         if(strength<1) return;
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
-        writer.append(getName()+"-");
-        System.out.print(getName()+"-");
+        writer.append(getName()+"-"+i+"\n");
+        System.out.print(getName()+"-"+i+"\n");
         writer.close();
         strength -= i;
         //Controller.decTab();

@@ -1,2 +1,2 @@
 put jp1 t12
-a sound
+t7 sound

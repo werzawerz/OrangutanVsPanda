@@ -144,8 +144,8 @@ public class Maze {
         tiles.get(14).setNeighbours(tiles.get(17));
         tiles.get(14).setNeighbours(tiles.get(18));
 
-        tiles.get(15).setNeighbours(tiles.get(9));
         tiles.get(15).setNeighbours(tiles.get(16));
+        tiles.get(15).setNeighbours(tiles.get(9));
         tiles.get(15).setNeighbours(tiles.get(19));
         tiles.get(15).setNeighbourWardrobe(tiles.get(3));
 
@@ -174,10 +174,6 @@ public class Maze {
         tiles.get(20).setNeighbours(tiles.get(16));
         tiles.get(20).setNeighbours(tiles.get(18));
 
-        System.out.print("\b");
-        System.out.print("\b");
-        System.out.print("\b");
-        System.out.print("\b");
     }
 
     /**
