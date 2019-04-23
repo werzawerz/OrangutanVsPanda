@@ -70,6 +70,9 @@ public class Controller {
         String lineArr[] = line.split(" ");
         switch(lineArr[0]) {
             case "load":
+                BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt"));
+                writer.write("");
+                writer.close();
                 Maze.init();
                 readFile(lineArr[1]);
                 break;
@@ -80,6 +83,7 @@ public class Controller {
                 moveAnim(lineArr[1], lineArr[2]);
                 break;
             default:
+                System.out.println("Wrong command");
                 break;
         }
         if(lineArr.length>1) {
@@ -133,7 +137,7 @@ public class Controller {
         Orangutan o;
         Panda pFollowing;
         Panda pFollower;
-        int PNum = Integer.parseInt(a1.substring(2));
+        int PNum = Integer. parseInt(a1.substring(2));
         pFollower = Maze.getPanda(PNum-1);
         pFollower.setFollow(true);
         if(a2.charAt(0)=='o') {

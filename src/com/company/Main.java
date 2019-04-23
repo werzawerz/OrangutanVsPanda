@@ -115,12 +115,6 @@ public class Main {
                     exit=true;
                     break;
             }*/
-                BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt"));
-                writer.write("");
-
-                writer.close();
-
-
 
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             try {
