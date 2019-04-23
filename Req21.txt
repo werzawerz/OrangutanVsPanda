@@ -1,0 +1,4 @@
+t12-1
+sp1 follow o1
+sp2 follow sp1
+sp1 refuse o2
