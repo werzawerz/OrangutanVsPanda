@@ -70,6 +70,7 @@ public class Controller {
         String lineArr[] = line.split(" ");
         switch(lineArr[0]) {
             case "load":
+                Maze.init();
                 readFile(lineArr[1]);
                 break;
             case "put" :
