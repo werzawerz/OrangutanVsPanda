@@ -44,7 +44,6 @@ public abstract class Panda extends Animal {
 
     public void move(Tile t) throws IOException {
         String s = this.getClass().getSimpleName().toUpperCase() + ":move(t)";
-        Controller.incTab();
         Controller.writeClassAndFunction(s);
         if(t.canIMove(this)) {
 
@@ -59,7 +58,6 @@ public abstract class Panda extends Animal {
             }
             t.accept(this);
         }
-        Controller.decTab();
     }
 
     /**
