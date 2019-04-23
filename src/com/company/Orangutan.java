@@ -43,7 +43,14 @@ public class Orangutan extends Animal {
             this.setNextPanda(null);
             return true;
         }
-        return false;
+        else
+        {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+            writer.append(this.getName()+" refuse "+ o.getName()+"\n");
+            writer.close();
+            System.out.print(this.getName()+" refuse "+ o.getName()+"\n");
+            return false;
+        }
     }
 
     /**
