@@ -29,7 +29,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         boolean exit=false;
-        Maze.init();
+        Maze m= new Maze();
+        m.init();
 
         while(!exit) {
             /*for (int i = 0; i < useCase.length; i++) {
@@ -127,6 +128,9 @@ public class Main {
             } catch (IOException e) { }
             if(selectedEvent.equals("exit")) {
                 exit=true;
+            }
+            else if(selectedEvent.equals("reset")){
+                m.init();
             }
             else {
                 Controller.doWork(selectedEvent);

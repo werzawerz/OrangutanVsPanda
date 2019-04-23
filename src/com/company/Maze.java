@@ -13,27 +13,31 @@ public class Maze {
     /**
      * A pálya csempéit tartalmazó tömb.
      */
-    static private ArrayList<Tile> tiles = new ArrayList<Tile>();
+    static private ArrayList<Tile> tiles;
 
     /**
      * A pályán lévő pandákat tartalmazó tömb.
      */
-    static private ArrayList<Panda> pandas =  new ArrayList<Panda>();
+    static private ArrayList<Panda> pandas ;
 
     /**
      * A pályán lévő Orángutánokat tartalmazó tömb.
      */
-    static private ArrayList<Orangutan> orangutans = new ArrayList<Orangutan>();
+    static private ArrayList<Orangutan> orangutans;
 
     /**
      * A pályán lévő, nem mozgó elemek tömbje.
      */
-    static private ArrayList<Item> items = new ArrayList<Item>();
+    static private ArrayList<Item> items;
 
     /**
      * Betölti a hardcoded pályát, amit a proto használ.
      */
     static public void init() throws IOException {
+        tiles=new ArrayList<>();
+        pandas=new ArrayList<>();
+        orangutans = new ArrayList<>();
+        items = new ArrayList<Item>();
         for(int i=0; i<14; i++){
             tiles.add(new Tile());
         }
@@ -143,6 +147,7 @@ public class Maze {
         tiles.get(15).setNeighbours(tiles.get(9));
         tiles.get(15).setNeighbours(tiles.get(16));
         tiles.get(15).setNeighbours(tiles.get(19));
+        tiles.get(15).setNeighbourWardrobe(tiles.get(3));
 
         tiles.get(16).setNeighbours(tiles.get(9));
         tiles.get(16).setNeighbours(tiles.get(15));

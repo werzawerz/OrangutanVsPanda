@@ -69,10 +69,6 @@ public class Controller {
     public static void doWork(String line) throws IOException {
         String lineArr[] = line.split(" ");
         switch(lineArr[0]) {
-            case "reset":
-                Maze.init();
-                System.gc();
-                break;
             case "load":
                 readFile(lineArr[1]);
                 break;
