@@ -83,7 +83,6 @@ public class Controller {
                 moveAnim(lineArr[1], lineArr[2]);
                 break;
             default:
-                System.out.println("Wrong command");
                 break;
         }
         if(lineArr.length>1) {
