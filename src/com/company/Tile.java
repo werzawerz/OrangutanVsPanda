@@ -1,5 +1,7 @@
 package com.company;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -72,6 +74,12 @@ public class Tile {
         Controller.writeClassAndFunction(s);
         Controller.decTab();*/
         occupiedBy = o;
+        /*
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        writer.append(o.getName()+" "+o.position.getName()+"->"+this.getName()+"\n");
+        writer.close();
+        System.out.print(o.getName()+" "+o.position.getName()+"->"+this.getName()+"\n");
+        */
         o.setPosition(this);
     }
 
@@ -85,6 +93,12 @@ public class Tile {
         Controller.writeClassAndFunction(s);
         Controller.decTab();*/
         occupiedBy = p;
+        /*
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        writer.append(p.getName()+" "+p.position.getName()+"->"+this.getName()+"\n");
+        writer.close();
+        System.out.print(p.getName()+" "+p.position.getName()+"->"+this.getName()+"\n");
+        */
         p.setPosition(this);
     }
 

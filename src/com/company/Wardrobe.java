@@ -1,6 +1,8 @@
 package com.company;
 
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -34,6 +36,10 @@ public class Wardrobe extends Tile {
     public void accept(Orangutan o) throws IOException {
 /*        Controller.incTab();
         Controller.writeClassAndFunction("WARDROBE:accept(o)");*/
+        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
+        writer.append(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
+        writer.close();
+        System.out.print(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
         neighbourWardrobe.getNeighbours().get(0).accept(o);
         //Controller.decTab();
     }
