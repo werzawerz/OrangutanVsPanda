@@ -169,7 +169,10 @@ public class Maze {
         tiles.get(20).setNeighbours(tiles.get(16));
         tiles.get(20).setNeighbours(tiles.get(18));
 
-        Controller.clearScreen();
+        System.out.print("\b");
+        System.out.print("\b");
+        System.out.print("\b");
+        System.out.print("\b");
     }
 
     /**

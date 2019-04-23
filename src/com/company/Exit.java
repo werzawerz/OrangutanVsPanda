@@ -41,8 +41,8 @@ public class Exit extends Tile {
             }
         }
         */
-        writer.append(o.getPandaNum(o.nextPanda)+"\n");
-        System.out.println(o.getPandaNum(o.nextPanda)+"\n");
+        writer.append(": "+o.getPandaNum(o.nextPanda)+"\n");
+        System.out.println(": "+o.getPandaNum(o.nextPanda)+"\n");
         writer.close();
         int pandaNum = o.getPandaNum(o.getNextPanda());
         Game.addPoints(pandaNum);

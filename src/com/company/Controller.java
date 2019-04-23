@@ -69,6 +69,10 @@ public class Controller {
     public static void doWork(String line) throws IOException {
         String lineArr[] = line.split(" ");
         switch(lineArr[0]) {
+            case "reset":
+                Maze.init();
+                System.gc();
+                break;
             case "load":
                 readFile(lineArr[1]);
                 break;
@@ -81,12 +85,16 @@ public class Controller {
             default:
                 break;
         }
-        switch(lineArr[1]) {
-            case "follow" :
-                makeFollow(lineArr[0], lineArr[2]);
-                break;
-            case "sound" :
-                makeSound(lineArr[0]);
+        if(lineArr.length>1) {
+            switch (lineArr[1]) {
+                case "follow":
+                    makeFollow(lineArr[0], lineArr[2]);
+                    break;
+                case "sound":
+                    makeSound(lineArr[0]);
+                default:
+                    break;
+            }
         }
     }
 
