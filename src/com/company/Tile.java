@@ -20,7 +20,7 @@ public class Tile {
     /**
      * A csempén tartózkodó Animal.
      */
-    private Animal occupiedBy;
+    protected Animal occupiedBy;
     /**
      * A csempén lévő pályaelem.
      */
@@ -37,8 +37,12 @@ public class Tile {
         Controller.incTab();
         Controller.writeClassAndFunction(s);*/
         boolean bul = true;
-        if(occupiedBy!=null)
-            bul =  occupiedBy.collideWith(o);
+        if(occupiedBy!=null) {
+            bul = occupiedBy.collideWith(o);
+            if (!bul) {
+                return false;
+            }
+        }
         if(item!=null)
             bul = item.collideWith(o);
         //Controller.decTab();
@@ -56,6 +60,9 @@ public class Tile {
         boolean bul = true;
         if(occupiedBy!=null) {
             bul = occupiedBy.collideWith(p);
+            if (!bul) {
+                return false;
+            }
         }
         if(item!=null) {
            bul = item.collideWith(p);
