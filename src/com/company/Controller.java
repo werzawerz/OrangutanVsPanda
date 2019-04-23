@@ -78,6 +78,13 @@ public class Controller {
                         "C:\\Users\\Downloads\\com\\company\\Req"+n+".txt");
                 builder.redirectErrorStream(true);
                 Process p = builder.start();
+                BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+                String temp;
+                while (true) {
+                    temp = r.readLine();
+                    if (temp == null) { break; }
+                    System.out.println(temp);
+                }
                 break;
             case "put" :
                 putAnim(lineArr[1], lineArr[2]);
