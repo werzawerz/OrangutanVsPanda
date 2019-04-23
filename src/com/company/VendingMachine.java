@@ -23,7 +23,7 @@ public class VendingMachine extends Item{
         Tile t = this.getPosition();
         ArrayList<Tile> tiles = t.getNeighbours();
         for(int i=0;i<tiles.size();i++){
-        Animal a = tiles.get(0).getAnimal();
+            Animal a = tiles.get(i).getAnimal();
         if(a!=null)
         a.jump();}
         //Controller.decTab();

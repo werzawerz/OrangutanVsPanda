@@ -39,10 +39,10 @@ public class Sofa extends Item{
         Tile t = this.getPosition();
         ArrayList<Tile> tiles = t.getNeighbours();
         for(int i=0;i<tiles.size();i++){
-            Animal a = tiles.get(0).getAnimal();
+            Animal a = tiles.get(i).getAnimal();
             if(a!=null)
                 a.sit(this.getPosition());
-        getPosition().getNeighbours().get(0).getAnimal().sit(this.getPosition());
+       // getPosition().getNeighbours().get(0).getAnimal().sit(this.getPosition());
         }
         //Controller.decTab();
 
