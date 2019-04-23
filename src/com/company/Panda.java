@@ -30,7 +30,8 @@ public abstract class Panda extends Animal {
         if(!follow)
         {setFollow(true);
         setFollowingA(o);
-        o.setNextPanda(this);}
+        o.setNextPanda(this);
+        }
         else{
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
             writer.append(this.getName()+" refuse "+o.getName()+"\n");

@@ -75,7 +75,7 @@ public class Controller {
                 writer.close();
                 Maze.init();
                 readFile(lineArr[1]);
-                int n= Integer. parseInt(lineArr[1].substring(3));
+                int n= Integer. parseInt(lineArr[1].substring(4,lineArr[1].length()-4));
                 ProcessBuilder builder = new ProcessBuilder(
                         "cmd.exe", "/c", "fc C:\\Users\\Downloads\\com\\company\\Valami.txt " +
                         "C:\\Users\\Downloads\\com\\company\\Req"+n+".txt");
