@@ -38,7 +38,58 @@ public class Maze {
         pandas=new ArrayList<>();
         orangutans = new ArrayList<>();
         items = new ArrayList<Item>();
-        for(int i=0; i<14; i++){
+
+        for(int i=0; i<37; i++){
+            tiles.add(new Tile());
+        }
+        tiles.add(29, new WeakTile());
+        tiles.add(25, new WeakTile());
+        tiles.add(34, new Wardrobe());
+        tiles.add(40, new Wardrobe());
+        tiles.add(23, new Exit());
+
+        tiles.get(34).setNeighbourWardrobe(tiles.get(40));
+        tiles.get(40).setNeighbourWardrobe(tiles.get(34));
+
+        tiles.get(23).setEntry(tiles.get(15));
+
+        tiles.get(0).setNeighbours(new Tile[]{tiles.get(1),
+                tiles.get(15)});
+        tiles.get(1).setNeighbours(new Tile[]{tiles.get(0),
+                tiles.get(15), tiles.get(14)});
+        tiles.get(2).setNeighbours(new Tile[]{tiles.get(3),
+                tiles.get(13), tiles.get(14)});
+        tiles.get(3).setNeighbours(new Tile[]{tiles.get(2),
+                tiles.get(13), tiles.get(4)});
+        tiles.get(4).setNeighbours(new Tile[]{tiles.get(3),
+                tiles.get(5), tiles.get(13)});
+        tiles.get(5).setNeighbours(new Tile[]{tiles.get(4),
+                tiles.get(6), tiles.get(12)});
+        tiles.get(6).setNeighbours(new Tile[]{tiles.get(5),
+                tiles.get(6), tiles.get(12), tiles.get(11)});
+        tiles.get(7).setNeighbours(new Tile[]{tiles.get(6),
+                tiles.get(8), tiles.get(10)});
+        tiles.get(8).setNeighbours(new Tile[]{tiles.get(7),
+                tiles.get(9)});
+        tiles.get(9).setNeighbours(new Tile[]{tiles.get(8),
+                tiles.get(10), tiles.get(23)});
+        tiles.get(10).setNeighbours(new Tile[]{tiles.get(7),
+                tiles.get(9), tiles.get(11), tiles.get(23)});
+        tiles.get(11).setNeighbours(new Tile[]{tiles.get(10),
+                tiles.get(6), tiles.get(23), tiles.get(22), tiles.get(12)});
+        tiles.get(12).setNeighbours(new Tile[]{tiles.get(6),
+                tiles.get(11), tiles.get(21), tiles.get(22), tiles.get(10),
+                tiles.get(19), tiles.get(13), tiles.get(4), tiles.get(5)});
+        tiles.get(13).setNeighbours(new Tile[]{tiles.get(2),
+                tiles.get(3), tiles.get(4), tiles.get(12), tiles.get(19),
+                tiles.get(18), tiles.get(17), tiles.get(16), tiles.get(14)});
+        tiles.get(14).setNeighbours(new Tile[]{tiles.get(1),
+                tiles.get(15), tiles.get(16), tiles.get(13), tiles.get(2)});
+        tiles.get(15).setNeighbours(new Tile[]{tiles.get(0),
+                tiles.get(1), tiles.get(14), tiles.get(16), tiles.get(30),
+                tiles.get(32), tiles.get(31)});
+
+        /*for(int i=0; i<14; i++){
             tiles.add(new Tile());
         }
         tiles.add(1, new WeakTile());
@@ -173,6 +224,7 @@ public class Maze {
         tiles.get(20).setNeighbours(tiles.get(19));
         tiles.get(20).setNeighbours(tiles.get(16));
         tiles.get(20).setNeighbours(tiles.get(18));
+*/
 
     }
 
