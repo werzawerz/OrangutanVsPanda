@@ -23,6 +23,8 @@ public class MyTimer extends Thread{
             }
         }
 
+        Game.drawAll();
+
 
     }
 
