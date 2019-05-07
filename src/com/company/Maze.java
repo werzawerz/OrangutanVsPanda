@@ -30,6 +30,9 @@ public class Maze {
      */
     static private ArrayList<Item> items;
 
+
+    static private ArrayList<ThingView> thingViews;
+
     /**
      * Betölti a hardcoded pályát, amit a proto használ.
      */

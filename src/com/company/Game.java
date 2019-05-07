@@ -17,4 +17,8 @@ public class Game {
             System.out.println("Panda have won");
         }
     }
+
+    static void drawAll(){
+
+    }
 }
