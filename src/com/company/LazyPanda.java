@@ -15,13 +15,12 @@ public class LazyPanda extends Panda {
      * pandát rálépteti a fotel csempéjére, t-re, és kivonja a mozgásból.
      */
     void sit(Tile t) throws IOException {
-       /* Controller.incTab();
-        Controller.writeClassAndFunction("LAZYPANDA:sit(t)");*/
+
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-        writer.append(this.getName()+" sits "+t.getName()+"\n");
+        writer.write(this.getName()+" sits "+t.getName()+"\n");
         System.out.print(this.getName()+" sits "+t.getName()+"\n");
         writer.close();
         move(t);
-        //Controller.decTab();
+
     }
 }

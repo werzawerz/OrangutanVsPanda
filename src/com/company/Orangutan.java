@@ -86,7 +86,7 @@ public class Orangutan extends Animal {
         if(t.canIMove(this)){
 
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-            writer.append(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
+            writer.write(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
             writer.close();
             System.out.print(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
             getPosition().remove(this);
