@@ -88,26 +88,17 @@ public class Maze {
         tiles.get(15).setNeighbours(new Tile[]{tiles.get(0),
                 tiles.get(1), tiles.get(14), tiles.get(16), tiles.get(30),
                 tiles.get(32), tiles.get(31)});
-        tiles.get(16).setNeighbours(new Tile[]{tiles.get(13),
-                tiles.get(14), tiles.get(15), tiles.get(17), tiles.get(30)});
-        tiles.get(17).setNeighbours(new Tile[]{tiles.get(13),
-                tiles.get(16), tiles.get(18), tiles.get(29)});
-        tiles.get(18).setNeighbours(new Tile[]{tiles.get(13),
-                tiles.get(17), tiles.get(19), tiles.get(27), tiles.get(28)});
-        tiles.get(19).setNeighbours(new Tile[]{tiles.get(12),
-                tiles.get(13), tiles.get(18), tiles.get(20), tiles.get(27)});
-        tiles.get(20).setNeighbours(new Tile[]{tiles.get(12),
-                tiles.get(19), tiles.get(21), tiles.get(26), tiles.get(27)});
-        tiles.get(31).setNeighbours(new Tile[]{tiles.get(15),
-                tiles.get(32)});
-        tiles.get(32).setNeighbours(new Tile[]{tiles.get(15),
-                tiles.get(30), tiles.get(31), tiles.get(33)});
-        tiles.get(33).setNeighbours(new Tile[]{tiles.get(29),
-                tiles.get(32)});
-        tiles.get(34).setNeighbours(new Tile[]{tiles.get(28),
-                tiles.get(29), tiles.get(35)});
-        tiles.get(35).setNeighbours(new Tile[]{tiles.get(27),
-                tiles.get(28), tiles.get(34)});
+        tiles.get(21).setNeighbours(new Tile[]{tiles.get(20), tiles.get(22), tiles.get(25),tiles.get(12)});
+        tiles.get(22).setNeighbours(new Tile[] {tiles.get(21), tiles.get(11), tiles.get(23), tiles.get(12), tiles.get(24)});
+        tiles.get(23).setNeighbours(new Tile[] {tiles.get(9), tiles.get(10),tiles.get(11),tiles.get(22), tiles.get(24), tiles.get(39), tiles.get(40)});
+        tiles.get(24).setNeighbours(new Tile[]{tiles.get(22), tiles.get(25),tiles.get(39),tiles.get(23)});
+        tiles.get(25).setNeighbours(new Tile[]{tiles.get(21),tiles.get(26),tiles.get(37),tiles.get(38),tiles.get(24)});
+        tiles.get(26).setNeighbours(new Tile[]{tiles.get(20),tiles.get(27),tiles.get(36),tiles.get(25)});
+        tiles.get(27).setNeighbours(new Tile[]{tiles.get(19),tiles.get(18),tiles.get(28),tiles.get(35),tiles.get(36),tiles.get(26),tiles.get(20)});
+        tiles.get(28).setNeighbours(new Tile[]{tiles.get(18),tiles.get(29),tiles.get(34),tiles.get(35),tiles.get(27)});
+        tiles.get(29).setNeighbours(new Tile[]{tiles.get(17),tiles.get(30),tiles.get(33),tiles.get(34),tiles.get(28)});
+        tiles.get(30).setNeighbours(new Tile[]{tiles.get(16),tiles.get(32),tiles.get(15),tiles.get(29)});
+
 
         /*for(int i=0; i<14; i++){
             tiles.add(new Tile());
