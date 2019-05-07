@@ -19,8 +19,6 @@ public class Arcade extends Item{
         writer.write(this.getName()+" sound\n");
         System.out.print(this.getName()+" sound\n");
         writer.close();
-/*        Controller.incTab();
-        Controller.writeClassAndFunction("ARCADE:notifyNeighbours()");*/
         Tile t = this.getPosition();
         ArrayList<Tile> tiles = t.getNeighbours();
         for(int i=0;i<tiles.size();i++){
