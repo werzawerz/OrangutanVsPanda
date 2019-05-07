@@ -133,6 +133,30 @@ public class Maze {
                 tiles.get(39)});
         tiles.get(41).setNeighbours(new Tile[]{tiles.get(37),
                 tiles.get(38)});
+
+        pandas.add(new JumpingPanda());
+        pandas.add(new JumpingPanda());
+        pandas.add(new LazyPanda());
+        pandas.add(new LazyPanda());
+        pandas.add(new ScaredPanda());
+        pandas.add(new ScaredPanda());
+
+        tiles.get(2).accept(pandas.get(0));
+        tiles.get(18).accept(pandas.get(1));
+        tiles.get(4).accept(pandas.get(2));
+        tiles.get(9).accept(pandas.get(3));
+        tiles.get(10).accept(pandas.get(4));
+        tiles.get(37).accept(pandas.get(5));
+
+        tiles.get(12).setItem(new Arcade());
+        items.add(tiles.get(12).getItem());
+
+        tiles.get(41).setItem(new Sofa());
+        items.add(tiles.get(41).getItem());
+
+        tiles.get(27).setItem(new VendingMachine());
+        items.add(tiles.get(27).getItem());
+
         /*for(int i=0; i<14; i++){
             tiles.add(new Tile());
         }
