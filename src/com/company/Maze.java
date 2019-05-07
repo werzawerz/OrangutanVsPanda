@@ -38,7 +38,25 @@ public class Maze {
         pandas=new ArrayList<>();
         orangutans = new ArrayList<>();
         items = new ArrayList<Item>();
-        for(int i=0; i<14; i++){
+
+        for(int i=0; i<37; i++){
+            tiles.add(new Tile());
+        }
+        tiles.add(29, new WeakTile());
+        tiles.add(25, new WeakTile());
+        tiles.add(34, new Wardrobe());
+        tiles.add(40, new Wardrobe());
+        tiles.add(23, new Exit());
+
+        tiles.get(34).setNeighbourWardrobe(tiles.get(40));
+        tiles.get(40).setNeighbourWardrobe(tiles.get(34));
+
+        tiles.get(23).setEntry(tiles.get(15));
+
+
+
+
+        /*for(int i=0; i<14; i++){
             tiles.add(new Tile());
         }
         tiles.add(1, new WeakTile());
@@ -173,6 +191,7 @@ public class Maze {
         tiles.get(20).setNeighbours(tiles.get(19));
         tiles.get(20).setNeighbours(tiles.get(16));
         tiles.get(20).setNeighbours(tiles.get(18));
+*/
 
     }
 

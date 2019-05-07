@@ -28,7 +28,8 @@ public class WeakTile extends Tile {
         o.setPosition(this);
         decreaseStrength(1);
         if(strength>0) {
-            //TODO
+            this.occupiedBy = o;
+            o.setPosition(this);
         }
         else {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
@@ -51,7 +52,8 @@ public class WeakTile extends Tile {
         Controller.writeClassAndFunction("WEAKTILE:accept(p)");*/
         decreaseStrength(1);
         if(strength>0) {
-            //todo
+            this.occupiedBy = p;
+            p.setPosition(this);
         }
         else {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
