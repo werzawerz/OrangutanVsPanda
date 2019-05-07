@@ -162,8 +162,11 @@ public class Tile {
     /**
      * @param t t-t hozzáadja a szomszédos tileok közé
      */
-    void setNeighbours(Tile t) {
-        neighbours.add(t);
+    void setNeighbours(Tile[] t) {
+
+        for(int i=0; i<t.length; i++){
+            neighbours.add(t[i]);
+        }
     }
 
     public void setItem(Item i) {
