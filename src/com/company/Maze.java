@@ -118,7 +118,18 @@ public class Maze {
         tiles.get(28).setNeighbours(new Tile[]{tiles.get(18),tiles.get(29),tiles.get(34),tiles.get(35),tiles.get(27)});
         tiles.get(29).setNeighbours(new Tile[]{tiles.get(17),tiles.get(30),tiles.get(33),tiles.get(34),tiles.get(28)});
         tiles.get(30).setNeighbours(new Tile[]{tiles.get(16),tiles.get(32),tiles.get(15),tiles.get(29)});
-
+        tiles.get(36).setNeighbours(new Tile[]{tiles.get(26),
+                tiles.get(27), tiles.get(37)});
+        tiles.get(37).setNeighbours(new Tile[]{tiles.get(36),
+                tiles.get(25), tiles.get(41)});
+        tiles.get(38).setNeighbours(new Tile[]{tiles.get(25),
+                tiles.get(39), tiles.get(41)});
+        tiles.get(39).setNeighbours(new Tile[]{tiles.get(23),
+                tiles.get(24), tiles.get(38), tiles.get(40)});
+        tiles.get(40).setNeighbours(new Tile[]{tiles.get(23),
+                tiles.get(39)});
+        tiles.get(41).setNeighbours(new Tile[]{tiles.get(37),
+                tiles.get(38)});
         /*for(int i=0; i<14; i++){
             tiles.add(new Tile());
         }
