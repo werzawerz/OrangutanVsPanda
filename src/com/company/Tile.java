@@ -13,6 +13,8 @@ public class Tile {
 
     private String name;
 
+    private TileView view;
+
     /**
      * A szomszédos csempéket tartalmazó tömb.
      */
@@ -189,4 +191,5 @@ public class Tile {
 
     public String getName() {return  name;}
     public void setName(String s) {name=s;}
+    public TileView getView(){return view;}
 }
