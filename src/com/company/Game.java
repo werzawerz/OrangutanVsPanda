@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Game {
 
     static private int points;
@@ -19,6 +21,18 @@ public class Game {
     }
 
     static void drawAll(){
+
+        ArrayList<Tile> tiles = Maze.getTiles();
+        ArrayList<ThingView> things = Maze.getThings();
+
+        int cnt=0;
+        for(Tile t : tiles){
+            tiles.get(cnt).getView().draw();
+        }
+
+        for(ThingView t:things){
+            t.draw();
+        }
 
     }
 }

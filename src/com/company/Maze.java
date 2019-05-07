@@ -379,4 +379,8 @@ public class Maze {
     static ArrayList<Item> getItems(){
         return items;
     }
+
+    static ArrayList<Tile> getTiles(){return tiles;}
+
+    static ArrayList<ThingView> getThings() {return thingViews;}
 }
