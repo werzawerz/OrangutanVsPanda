@@ -14,9 +14,10 @@ public class VendingMachine extends Item{
      * Ertesiti a szomszedos tile-okat a sipszorol, ha pedig van ott animal, meghivja a jump fuggvenyet.
      */
     public void notifyNeighbours() throws IOException {
+        //System.out.println("heey");
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.append(this.getName()+" sound\n");
-        System.out.print(this.getName()+" sound\n");
+        //System.out.print(this.getName()+" sound\n");
         writer.close();
        /* Controller.incTab();
         Controller.writeClassAndFunction("VENDINGMACHINE:notifyNeighbours()");*/

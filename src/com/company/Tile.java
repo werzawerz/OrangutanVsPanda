@@ -64,10 +64,13 @@ public class Tile {
                 return false;
             }
         }
+       //System.out.println(bul);
         if(item!=null) {
            bul = item.collideWith(p);
         }
         //Controller.decTab();
+
+
         return bul;
     }
 

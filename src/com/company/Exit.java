@@ -24,9 +24,8 @@ public class Exit extends Tile {
        /* Controller.incTab();
         Controller.writeClassAndFunction("EXIT:accept(o)");*/
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-        writer.append(o.getName()+" exits ");
+        writer.append(o.getName()+" exits : "+o.getPandaNum(o.nextPanda)+"\n");
         System.out.print(o.getName()+" exits ");
-        writer.close();
         exitAll(o.nextPanda);
         /*
         if(o.nextPanda!=null)
@@ -42,10 +41,9 @@ public class Exit extends Tile {
             }
         }
         */
-        BufferedWriter writer2 = new BufferedWriter(new FileWriter("Valami.txt", true));
-        writer2.append(": "+o.getPandaNum(o.nextPanda)+"\n");
-        System.out.print(": "+o.getPandaNum(o.nextPanda)+"\n");
-        writer2.close();
+        //writer.append(": "+o.getPandaNum(o.nextPanda)+"\n");
+        //System.out.println(": "+o.getPandaNum(o.nextPanda)+"\n");
+        writer.close();
         int pandaNum = o.getPandaNum(o.getNextPanda());
         Game.addPoints(pandaNum);
         o.setPosition(this);
@@ -66,8 +64,8 @@ public class Exit extends Tile {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(p.getName()+" ");
             System.out.print(p.getName()+" ");
-            writer.close();
             exitAll(p.nextPanda);
+            writer.close();
         }
         else
             return;
