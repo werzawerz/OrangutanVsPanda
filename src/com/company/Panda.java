@@ -91,16 +91,10 @@ public abstract class Panda extends Animal {
      * Rekurzív, a sor felbontását végzi el.
      */
     void release() throws IOException {
-       /* String s = this.getClass().getSimpleName().toUpperCase() + ":release()";
-        Controller.incTab();
-        Controller.writeClassAndFunction(s);*/
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-        writer.append(this.getName()+" leaves "+this.followingA.getName() +"\n");
-        System.out.print(this.getName()+" leaves "+this.followingA.getName() +"\n");
-        writer.close();
+
         if(getNextPanda()!=null)
             getNextPanda().setNextPanda(null);
-        //Controller.decTab();
+
     }
 
     void setFollowingA(Animal a) throws IOException {

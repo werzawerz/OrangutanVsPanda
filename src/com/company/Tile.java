@@ -37,9 +37,7 @@ public class Tile {
      * hogy Animal a léphet-e rá, ennek megfelelő a visszatérési érték.
      */
     boolean canIMove(Orangutan o) throws IOException {
-        /*String s = this.getClass().getSimpleName().toUpperCase() +  ":canIMove(o)";
-        Controller.incTab();
-        Controller.writeClassAndFunction(s);*/
+
         boolean bul = true;
         if(occupiedBy!=null) {
             bul = occupiedBy.collideWith(o);
@@ -58,9 +56,7 @@ public class Tile {
      * @return ?????????????????????????? Kérdéses cucc
      */
     boolean canIMove(Panda p) throws IOException{
-        /*String s = this.getClass().getSimpleName().toUpperCase() +  ":canIMove(p)";
-        Controller.incTab();
-        Controller.writeClassAndFunction(s);*/
+
         boolean bul = true;
         if(occupiedBy!=null) {
             bul = occupiedBy.collideWith(p);
@@ -68,11 +64,10 @@ public class Tile {
                 return false;
             }
         }
-       //System.out.println(bul);
+
         if(item!=null) {
            bul = item.collideWith(p);
         }
-        //Controller.decTab();
 
 
         return bul;
@@ -125,7 +120,7 @@ public class Tile {
         /*String s = this.getClass().getSimpleName().toUpperCase() + ":remove(a)";
         Controller.incTab();
         Controller.writeClassAndFunction(s);
-        Controller.decTab();*/
+        Controller.decTab();**/
         occupiedBy = null;
 
 

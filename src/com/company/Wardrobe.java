@@ -28,10 +28,9 @@ public class Wardrobe extends Tile {
      * p-t átlépteti a szomszédos szekrényre.
      */
     public void accept(Panda p) throws IOException {
-        /*Controller.incTab();
-        Controller.writeClassAndFunction("WARDROBE:accept(p)");*/
+
         neighbourWardrobe.getNeighbours().get(0).accept(p);
-        /*Controller.decTab();*/
+
     }
 
     /**
@@ -39,24 +38,17 @@ public class Wardrobe extends Tile {
      * o-t átlépteti a szomszédos szekrényre.
      */
     public void accept(Orangutan o) throws IOException {
-/*        Controller.incTab();
-        Controller.writeClassAndFunction("WARDROBE:accept(o)");*/
+
         o.setPosition(this);
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.append(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
         writer.close();
         System.out.print(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
         o.setPosition(this.neighbourWardrobe);
-        /* EZ MAJD FOG KELLENI A REAL GAME-hez
 
-        while(o.position==this.neighbourWardrobe){
-            int rand = new Random().nextInt(neighbourWardrobe.getNeighbourSize());
-            o.move(neighbourWardrobe.getNeighbours().get(rand));
-        }
-        */
         o.move(neighbourWardrobe.getNeighbours().get(0));
 
-        //Controller.decTab();
+
     }
 
 

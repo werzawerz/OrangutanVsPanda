@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.TimerTask;
 
 public class Main {
@@ -18,6 +19,14 @@ public class Main {
             public void run() {
                 g.drawInit();
                 m.moveAllPandas();
+                ArrayList<Item> items =  m.getItems();
+                for(Item i : items) {
+                    try {
+                        i.notifyNeighbours();
+                    }catch(IOException ioe) {
+
+                    }
+                }
 
 
             }
