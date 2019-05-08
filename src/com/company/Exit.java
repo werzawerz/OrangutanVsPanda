@@ -1,5 +1,6 @@
 package com.company;
 
+import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -73,5 +74,9 @@ public class Exit extends Tile {
 
     void setEntry(Tile t) {
         entry = t;
+    }
+
+    public void setUpTileView(int x, int y) {
+        view = new TileView(x,y, Color.red);
     }
 }

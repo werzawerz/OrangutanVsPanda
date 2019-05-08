@@ -18,14 +18,16 @@ public class Game extends MouseAdapter implements ActionListener {
     JPanel menuPanel;
     Orangutan orangutanClicked;
     JFrame jf = new JFrame("Orangutan vs Pandas");
+    Maze m= new Maze();
     static private int points;
-    public Game() {
+    public Game() throws IOException {
         //jf.super("OrangutanVSPandas");
-
+        m.init();
         gamePanel = new JPanel();
         menuPanel = menu();
         jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
-        jf.add(gamePanel);
+        jf.add(menuPanel);
+        //jf.add(gamePanel);
         jf.setSize(800, 600);
         jf.setLocationRelativeTo(null);
         jf.addMouseListener(this);
@@ -90,21 +92,28 @@ public class Game extends MouseAdapter implements ActionListener {
         int x = e.getX();
         int y = e.getY();
         ArrayList<Orangutan> os = Maze.getOrangutans();
+        if(orangutanClicked == null){
         for(Orangutan o : os){
-
-            if (mouseinRect(x, y, o.getPosition().getView().getX(), o.getPosition().getView().getX(), o.getPosition().getView().getY(), o.getPosition().getView().getY())){
+           // gamePanel.getGraphics().setColor(Color.BLACK);
+           // gamePanel.getGraphics().drawRect(o.getPosition().getView().getX(), o.getPosition().getView().getY(), 55, 55);
+            if (mouseinRect(x, y, o.getPosition().getView().getX()+10, o.getPosition().getView().getX()+65, o.getPosition().getView().getY()+30, o.getPosition().getView().getY()+85)){
                 System.out.println("GECCIII");
                 orangutanClicked = o;
                 break;
             }
-        }
+        }}
         if (orangutanClicked != null) {
             ArrayList<Tile> neigh = orangutanClicked.getPosition().getNeighbours();
             for(Tile t : neigh){
 
-                if (mouseinRect(x, y, t.getView().getX(), t.getView().getX(), t.getView().getY(), t.getView().getY())){
+                if (mouseinRect(x, y, t.getView().getX()+10, t.getView().getX()+65, t.getView().getY()+30, t.getView().getY()+85)){
                     System.out.println("FASZOM");
-
+                    try {
+                        orangutanClicked.move(t);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                    orangutanClicked = null;
                     break;
                 }
             }
@@ -124,8 +133,27 @@ public class Game extends MouseAdapter implements ActionListener {
                 menuPanel.setVisible(false);
                 jf.remove(menuPanel);
                 jf.add(gamePanel);
-                gamePanel.setBackground(Color.DARK_GRAY);
-                this.drawAll();
+                drawInit();
+                //gamePanel.setBackground(Color.DARK_GRAY);
+                drawAll();
+                MyTimer t = new MyTimer();
+                t.scheduleAtFixedRate(new TimerTask() {
+                    @Override
+                    public void run() {
+                        drawInit();
+                        m.moveAllPandas();
+                        ArrayList<Item> items =  m.getItems();
+                        for(Item i : items) {
+                            try {
+                                i.notifyNeighbours();
+                            }catch(IOException ioe) {
+
+                            }
+                        }
+
+
+                    }
+                }, 0, 2000);
 
                 break;
             }

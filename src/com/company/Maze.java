@@ -78,6 +78,8 @@ public class Maze {
         tiles.get(39).setUpTileView(tiles.get(40).getView().getX() + 65, tiles.get(40).getView().getY() - 75);
         tiles.get(40).setUpTileView(tiles.get(40).getView().getX() + 85, tiles.get(40).getView().getY() - 135);
         tiles.get(38).setUpTileView(tiles.get(38).getView().getX() + 65, tiles.get(38).getView().getY() - 40);
+        tiles.get(31).setUpTileView(tiles.get(31).getView().getX()-25, tiles.get(31).getView().getY() -35);
+        tiles.get(32).setUpTileView(tiles.get(32).getView().getX(), tiles.get(32).getView().getY() +45);
         tiles.get(34).setNeighbourWardrobe(tiles.get(40));
         tiles.get(40).setNeighbourWardrobe(tiles.get(34));
 
@@ -192,10 +194,6 @@ public class Maze {
 
         orangutans.add(new Orangutan());
         tiles.get(30).accept(orangutans.get(1));
-
-        for(int i=0; i<tiles.size(); i++){
-            System.out.println(i+tiles.get(i).getClass().toString());
-        }
     }
 
     static ArrayList<Orangutan> getOrangutans(){

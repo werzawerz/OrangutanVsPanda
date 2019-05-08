@@ -56,4 +56,8 @@ public class Wardrobe extends Tile {
         this.neighbourWardrobe = neighbourWardrobe;
     }
 
+    public void setUpTileView(int x, int y) {
+        view = new TileView(x,y, new Color(102,51,0));
+    }
+
 }
