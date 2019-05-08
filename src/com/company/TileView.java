@@ -3,6 +3,8 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Line2D;
+import java.util.ArrayList;
 
 public class TileView extends JPanel implements Drawable{
     private int x;
@@ -14,14 +16,34 @@ public class TileView extends JPanel implements Drawable{
         this.y = y;
         color = c;
     }
+
+    public int getX() {
+        return x;
+    }
+    public int getY() {
+        return y;
+    }
+
+
     public void draw(Graphics g){
         paintComponent(g);
     }
     public void paintComponent(Graphics g){
        // super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g;
         g.setColor(Color.BLUE);
-        g.drawOval(x, y, 35, 35);
+
+        ArrayList<Tile> tiles = Maze.getTiles();
+
+        for(Tile t : tiles) {
+            ArrayList<Tile> neigh = t.getNeighbours();
+            for(Tile neighbour : neigh) {
+                Line2D lin = new Line2D.Float(t.getView().getX()+17, t.getView().getY()+17, neighbour.getView().getX()+17, neighbour.getView().getY()+17);
+
+                g2.draw(lin);
+            }
+        }
+        g.fillOval(x, y, 35, 35);
         //g.fillRect(25, 25, 50, 50);
-        System.out.println(x);
     }
 }
