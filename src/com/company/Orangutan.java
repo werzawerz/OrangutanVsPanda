@@ -16,7 +16,7 @@ public class Orangutan extends Animal {
 
     Orangutan(){
         try {
-            Maze.addThingView(new ThingView(this, ImageIO.read(new File("/sofa.png"))));
+            Maze.addThingView(new ThingView(this, ImageIO.read(new File("orangutan.png"))));
         }catch(IOException e){
             e.printStackTrace();
         }

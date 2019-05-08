@@ -82,7 +82,8 @@ public class Game extends JFrame implements ActionListener {
                 this.remove(menuPanel);
                 this.add(gamePanel);
                 gamePanel.setBackground(Color.DARK_GRAY);
-                drawAll();
+                this.drawAll();
+
                 break;
             }
             case "Exit" : {

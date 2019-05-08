@@ -21,7 +21,7 @@ public class Sofa extends Item{
 
     Sofa(){
         try {
-            Maze.addThingView(new ThingView(this, ImageIO.read(new File("/sofa.png"))));
+            Maze.addThingView(new ThingView(this, ImageIO.read(new File("sofa.png"))));
         }catch(IOException e){
             e.printStackTrace();
         }

@@ -15,7 +15,7 @@ public class VendingMachine extends Item{
 
     VendingMachine(){
         try {
-            Maze.addThingView(new ThingView(this, ImageIO.read(new File("/sofa.png"))));
+            Maze.addThingView(new ThingView(this, ImageIO.read(new File("vending.png"))));
         }catch(IOException e){
             e.printStackTrace();
         }
