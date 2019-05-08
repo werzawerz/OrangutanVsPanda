@@ -18,14 +18,21 @@ public class Game extends MouseAdapter implements ActionListener {
     JPanel menuPanel;
     Orangutan orangutanClicked;
     JFrame jf = new JFrame("Orangutan vs Pandas");
+    JLabel pointLabel;
     Maze m= new Maze();
     static private int points;
     public Game() throws IOException {
         //jf.super("OrangutanVSPandas");
         m.init();
         gamePanel = new JPanel();
+        gamePanel.setLayout(null);
         menuPanel = menu();
+        pointLabel = new JLabel();
+        pointLabel.setText("Pontok: "+Integer.toString(points));
         jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
+        jf.add(gamePanel);
+        pointLabel.setBounds(722,10,80,40);
+        gamePanel.add(pointLabel);
         jf.add(menuPanel);
         //jf.add(gamePanel);
         jf.setSize(800, 600);
@@ -53,8 +60,7 @@ public class Game extends MouseAdapter implements ActionListener {
 
         ArrayList<Tile> tiles = Maze.getTiles();
         ArrayList<ThingView> things = Maze.getThings();
-
-        int cnt=0;
+        pointLabel.setText("Pontok: "+Integer.toString(points));
         for(Tile t : tiles){
             t.getView().draw(gamePanel.getGraphics());
         }
@@ -62,6 +68,8 @@ public class Game extends MouseAdapter implements ActionListener {
         for(ThingView t:things){
             t.draw(gamePanel.getGraphics());
         }
+
+
 
     }
     void drawAll(){
