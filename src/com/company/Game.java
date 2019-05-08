@@ -5,10 +5,18 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Game extends JFrame {
-
+    JPanel gamePanel ;
     static private int points;
+    public Game() {
+        super();
+        gamePanel = new JPanel();
+        this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+        setContentPane(gamePanel);
 
-
+        this.setSize(800, 600);
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+    }
     static void addPoints(int i) {
         points += i;
 
@@ -30,12 +38,12 @@ public class Game extends JFrame {
 
         int cnt=0;
         for(Tile t : tiles){
-            tiles.get(cnt).getView().draw(this.getGraphics());
+            t.getView().draw(gamePanel.getGraphics());
         }
 
-        for(ThingView t:things){
-            t.draw(this.getGraphics());
-        }
+//        for(ThingView t:things){
+     //       t.draw(this.getGraphics());
+     //   }
 
     }
 }
