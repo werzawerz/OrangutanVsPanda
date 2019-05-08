@@ -31,19 +31,19 @@ public class TileView extends JPanel implements Drawable{
     public void paintComponent(Graphics g){
        // super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
-        g.setColor(Color.BLUE);
+        g.setColor(Color.RED);
 
         ArrayList<Tile> tiles = Maze.getTiles();
 
         for(Tile t : tiles) {
             ArrayList<Tile> neigh = t.getNeighbours();
             for(Tile neighbour : neigh) {
-                Line2D lin = new Line2D.Float(t.getView().getX()+17, t.getView().getY()+17, neighbour.getView().getX()+17, neighbour.getView().getY()+17);
+                Line2D lin = new Line2D.Float(t.getView().getX()+20, t.getView().getY()+20, neighbour.getView().getX()+20, neighbour.getView().getY()+20);
 
                 g2.draw(lin);
             }
         }
-        g.fillOval(x, y, 35, 35);
+        g.fillOval(x, y, 40, 40);
         //g.fillRect(25, 25, 50, 50);
     }
 }
