@@ -11,6 +11,7 @@ public class Main {
         Game g = new Game();
         Maze m= new Maze();
         m.init();
+
         MyTimer t = new MyTimer();
         t.scheduleAtFixedRate(new TimerTask() {
             @Override

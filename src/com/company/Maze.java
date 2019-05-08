@@ -41,7 +41,7 @@ public class Maze {
         pandas=new ArrayList<>();
         orangutans = new ArrayList<>();
         items = new ArrayList<Item>();
-
+        thingViews = new ArrayList<ThingView>();
         for(int i=0; i<37; i++){
             tiles.add(new Tile());
         }
@@ -268,6 +268,7 @@ public class Maze {
     }
 
     static ArrayList<Tile> getTiles(){return tiles;}
+    static ArrayList<Panda> getPandas(){return pandas;}
 
     static ArrayList<ThingView> getThings() {return thingViews;}
 

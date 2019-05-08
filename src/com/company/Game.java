@@ -21,7 +21,7 @@ public class Game extends JFrame implements ActionListener {
         gamePanel = new JPanel();
         menuPanel = menu();
         this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
-        this.add(menuPanel);
+        this.add(gamePanel);
         this.setSize(800, 600);
         this.setLocationRelativeTo(null);
 
@@ -54,9 +54,9 @@ public class Game extends JFrame implements ActionListener {
             System.out.println("fdhs");
         }
 
-//        for(ThingView t:things){
-     //       t.draw(this.getGraphics());
-     //   }
+        for(ThingView t:things){
+            t.draw(gamePanel.getGraphics());
+        }
 
     }
     JPanel menu(){
