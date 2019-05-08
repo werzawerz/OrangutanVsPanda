@@ -9,6 +9,7 @@ public class Game extends JFrame {
     static private int points;
     public Game() {
         super();
+        
         gamePanel = new JPanel();
         this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
         setContentPane(gamePanel);

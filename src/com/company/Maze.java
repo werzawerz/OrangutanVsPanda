@@ -178,6 +178,7 @@ public class Maze {
         tiles.get(27).setItem(new VendingMachine());
         items.add(tiles.get(27).getItem());
 
+
     }
 
     /**
