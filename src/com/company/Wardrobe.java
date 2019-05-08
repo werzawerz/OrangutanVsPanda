@@ -43,7 +43,7 @@ public class Wardrobe extends Tile {
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.append(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
         writer.close();
-        System.out.print(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
+        //System.out.print(o.getName()+" "+this.getName()+"->"+this.neighbourWardrobe.getName()+"\n");
         o.setPosition(this.neighbourWardrobe);
 
         o.move(neighbourWardrobe.getNeighbours().get(0));

@@ -5,27 +5,29 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.TimerTask;
 
-public class Game extends JFrame implements ActionListener {
+public class Game extends MouseAdapter implements ActionListener {
     JPanel gamePanel;
     JPanel menuPanel;
+    JFrame jf = new JFrame("Orangutan vs Pandas");
     static private int points;
     public Game() {
-        super();
+        //jf.super("OrangutanVSPandas");
 
         gamePanel = new JPanel();
         menuPanel = menu();
-        this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
-        this.add(gamePanel);
-        this.setSize(800, 600);
-        this.setLocationRelativeTo(null);
+        jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
+        jf.add(gamePanel);
+        jf.setSize(800, 600);
+        jf.setLocationRelativeTo(null);
 
-        this.setVisible(true);
+        jf.setVisible(true);
     }
 
 
@@ -87,8 +89,8 @@ public class Game extends JFrame implements ActionListener {
         switch(e.getActionCommand()) {
             case "Play" : {
                 menuPanel.setVisible(false);
-                this.remove(menuPanel);
-                this.add(gamePanel);
+                jf.remove(menuPanel);
+                jf.add(gamePanel);
                 gamePanel.setBackground(Color.DARK_GRAY);
                 this.drawAll();
 
