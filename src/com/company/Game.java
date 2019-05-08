@@ -90,21 +90,23 @@ public class Game extends MouseAdapter implements ActionListener {
         int x = e.getX();
         int y = e.getY();
         ArrayList<Orangutan> os = Maze.getOrangutans();
+        if(orangutanClicked == null){
         for(Orangutan o : os){
-
-            if (mouseinRect(x, y, o.getPosition().getView().getX(), o.getPosition().getView().getX(), o.getPosition().getView().getY(), o.getPosition().getView().getY())){
+           // gamePanel.getGraphics().setColor(Color.BLACK);
+           // gamePanel.getGraphics().drawRect(o.getPosition().getView().getX(), o.getPosition().getView().getY(), 55, 55);
+            if (mouseinRect(x, y, o.getPosition().getView().getX()+10, o.getPosition().getView().getX()+65, o.getPosition().getView().getY()+30, o.getPosition().getView().getY()+85)){
                 System.out.println("GECCIII");
                 orangutanClicked = o;
                 break;
             }
-        }
+        }}
         if (orangutanClicked != null) {
             ArrayList<Tile> neigh = orangutanClicked.getPosition().getNeighbours();
             for(Tile t : neigh){
 
-                if (mouseinRect(x, y, t.getView().getX(), t.getView().getX(), t.getView().getY(), t.getView().getY())){
+                if (mouseinRect(x, y, t.getView().getX()+10, t.getView().getX()+65, t.getView().getY()+30, t.getView().getY()+85)){
                     System.out.println("FASZOM");
-
+                    orangutanClicked = null;
                     break;
                 }
             }
