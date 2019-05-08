@@ -185,6 +185,12 @@ public class Maze {
         tiles.get(27).getItem().setPosition(tiles.get(27));
         items.add(tiles.get(27).getItem());
 
+        orangutans.add(new Orangutan());
+        tiles.get(14).accept(orangutans.get(0));
+
+        orangutans.add(new Orangutan());
+        tiles.get(30).accept(orangutans.get(1));
+
         for(int i=0; i<tiles.size(); i++){
             System.out.println(i+tiles.get(i).getClass().toString());
         }
