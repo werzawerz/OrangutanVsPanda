@@ -295,13 +295,15 @@ public class Maze {
 
     static void moveAllPandas() {
         for(Panda p : pandas) {
-            int neigbourNum = p.getPosition().getNeighbourSize();
-            Random rand = new Random();
-            int moveHere = rand.nextInt(neigbourNum);
-            try {
-                p.move(p.getPosition().getNeighbours().get(moveHere));
-            }catch(IOException ie) {
+            if(!p.isFollowing()) {
+                int neigbourNum = p.getPosition().getNeighbourSize();
+                Random rand = new Random();
+                int moveHere = rand.nextInt(neigbourNum);
+                try {
+                    p.move(p.getPosition().getNeighbours().get(moveHere));
+                } catch (IOException ie) {
 
+                }
             }
         }
     }

@@ -110,6 +110,8 @@ public abstract class Panda extends Animal {
         followingA = a;
     }
 
+    boolean isFollowing(){return follow;}
+
 
 
 }
