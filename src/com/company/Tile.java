@@ -127,6 +127,7 @@ public class Tile {
         Controller.writeClassAndFunction(s);
         Controller.decTab();*/
         occupiedBy = null;
+
     }
 
     /**
