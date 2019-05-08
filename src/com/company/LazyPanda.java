@@ -1,6 +1,8 @@
 package com.company;
 
+import javax.imageio.ImageIO;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -8,6 +10,14 @@ import java.io.IOException;
  * Az a panda, amelyik, fotel mellé ér, leül rá.
  */
 public class LazyPanda extends Panda {
+
+    LazyPanda(){
+        try {
+            Maze.addThingView(new ThingView(this, ImageIO.read(new File("panda.png"))));
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
 
     /**
      * @param t Tile

@@ -1,6 +1,8 @@
 package com.company;
 
+import javax.imageio.ImageIO;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,6 +11,14 @@ import java.util.ArrayList;
  * Sipszot ad ki a kornyezo mezokre.
  */
 public class VendingMachine extends Item{
+
+    VendingMachine(){
+        try {
+            Maze.addThingView(new ThingView(this, ImageIO.read(new File("panda.png"))));
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
 
     /**
      * Ertesiti a szomszedos tile-okat a sipszorol, ha pedig van ott animal, meghivja a jump fuggvenyet.

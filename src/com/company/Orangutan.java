@@ -1,6 +1,8 @@
 package com.company;
 
+import javax.imageio.ImageIO;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -9,6 +11,16 @@ import java.io.IOException;
  * vezetett pandák, és a követendő út nyilvántartása.
  */
 public class Orangutan extends Animal {
+
+
+    Orangutan(){
+        try {
+            Maze.addThingView(new ThingView(this, ImageIO.read(new File("orangutan.png"))));
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
     /**
      * A követendő út csempéi.
      */

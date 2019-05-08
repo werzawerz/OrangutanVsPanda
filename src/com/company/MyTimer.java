@@ -6,7 +6,7 @@ import java.util.Timer;
 /**
  * Az idozitésért felelős osztály
  */
-public class MyTimer extends Thread{
+public class MyTimer extends Timer{
 
     public void tick() throws IOException {
         for(int i=0; i<Maze.getPandaSize();i++){
