@@ -128,6 +128,7 @@ public class Tile {
         Controller.decTab();*/
         occupiedBy = null;
 
+
     }
 
     /**

@@ -16,7 +16,7 @@ public class Main {
         t.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                g.drawAll();
+                g.drawInit();
                 m.moveAllPandas();
 
 
