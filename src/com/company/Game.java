@@ -43,7 +43,7 @@ public class Game extends JFrame implements ActionListener {
         }
     }
 
-    void drawAll(){
+    void drawInit(){
 
         ArrayList<Tile> tiles = Maze.getTiles();
         ArrayList<ThingView> things = Maze.getThings();
@@ -57,6 +57,15 @@ public class Game extends JFrame implements ActionListener {
             t.draw(gamePanel.getGraphics());
         }
 
+    }
+    void drawAll(){
+        ArrayList<Panda> pandas = Maze.getPandas();
+        ArrayList<ThingView> things = Maze.getThings();
+        for (Panda p : pandas) {
+            for(ThingView t:things) {
+                if (p.getPosition().equals(t.getObj().getPosition())) t.draw(gamePanel.getGraphics());
+            }
+        }
     }
     JPanel menu(){
         JPanel menu = new JPanel();

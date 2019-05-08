@@ -15,12 +15,14 @@ public class ThingView extends JPanel implements Drawable {
         img =i;
     }
 
+    Thing getObj(){
+        return obj;
+    }
+
     public void draw(Graphics g){
         paintComponent(g);
     }
     public void paintComponent(Graphics g){
-
-        Tile x = obj.getPosition();
 
             g.drawImage(img, obj.getPosition().getView().getX()+12, obj.getPosition().getView().getY()+14, null);
 
