@@ -106,6 +106,11 @@ public class Game extends MouseAdapter implements ActionListener {
 
                 if (mouseinRect(x, y, t.getView().getX()+10, t.getView().getX()+65, t.getView().getY()+30, t.getView().getY()+85)){
                     System.out.println("FASZOM");
+                    try {
+                        orangutanClicked.move(t);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
                     orangutanClicked = null;
                     break;
                 }
