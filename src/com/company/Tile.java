@@ -192,4 +192,8 @@ public class Tile {
     public String getName() {return  name;}
     public void setName(String s) {name=s;}
     public TileView getView(){return view;}
+
+    public void setUpTileView(int x, int y) {
+        view = new TileView(x,y);
+    }
 }
