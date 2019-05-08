@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.TimerTask;
 
 public class Game extends JFrame implements ActionListener {
     JPanel gamePanel;
@@ -26,6 +27,8 @@ public class Game extends JFrame implements ActionListener {
 
         this.setVisible(true);
     }
+
+
     static void addPoints(int i) {
         points += i;
 

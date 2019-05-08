@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.*;
+import java.util.TimerTask;
 
 public class Main {
 
@@ -10,7 +11,16 @@ public class Main {
         Game g = new Game();
         Maze m= new Maze();
         m.init();
-        //g.drawAll();
+        MyTimer t = new MyTimer();
+        t.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("Ketmasodpercenkent");
+
+            }
+        }, 0, 2000);
+
+        g.drawAll();
 
     }
 }

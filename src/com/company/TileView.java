@@ -44,6 +44,6 @@ public class TileView extends JPanel implements Drawable{
             }
         }
 
-        //g.fillRect(25, 25, 50, 50);
+
     }
 }
