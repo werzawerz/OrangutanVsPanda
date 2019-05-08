@@ -73,7 +73,7 @@ public class Maze {
         }
         tiles.get(39).setUpTileView(tiles.get(40).getView().getX() + 65, tiles.get(40).getView().getY() - 75);
         tiles.get(40).setUpTileView(tiles.get(40).getView().getX() + 85, tiles.get(40).getView().getY() - 135);
-
+        tiles.get(38).setUpTileView(tiles.get(38).getView().getX() + 65, tiles.get(38).getView().getY() - 40);
         tiles.get(34).setNeighbourWardrobe(tiles.get(40));
         tiles.get(40).setNeighbourWardrobe(tiles.get(34));
 

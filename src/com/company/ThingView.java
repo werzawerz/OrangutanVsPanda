@@ -22,7 +22,7 @@ public class ThingView extends JPanel implements Drawable {
 
         Tile x = obj.getPosition();
 
-            g.drawImage(img, obj.getPosition().getView().getX()+15, obj.getPosition().getView().getY()+18, null);
+            g.drawImage(img, obj.getPosition().getView().getX()+12, obj.getPosition().getView().getY()+14, null);
 
     }
 

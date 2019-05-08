@@ -31,7 +31,7 @@ public class TileView extends JPanel implements Drawable{
     public void paintComponent(Graphics g){
        // super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
-        g.setColor(Color.RED);
+        g.setColor(Color.GREEN);
         g.fillOval(x, y, 55, 55);
         ArrayList<Tile> tiles = Maze.getTiles();
 
