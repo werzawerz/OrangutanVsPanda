@@ -18,9 +18,8 @@ public class Game extends JFrame {
         gamePanel = new JPanel();
         menuPanel = menu();
         this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
-        //setContentPane(gamePanel);
-        //add(gamePanel);
-        getContentPane().add(menuPanel);
+        getContentPane().add(gamePanel);
+        //getContentPane().add(menuPanel);
         this.setSize(800, 600);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -56,20 +55,14 @@ public class Game extends JFrame {
     }
     JPanel menu(){
         JPanel menu = new JPanel();
-        try {
             JButton play = new JButton("Play");
             JButton exit = new JButton("Exit");
-            BufferedImage myPic = ImageIO.read(new File("images/menu.png"));
-            JLabel picLabel = new JLabel(new ImageIcon(myPic));
 
             play.setBounds(100, 500, 200, 40);
             exit.setBounds(500, 500, 200, 40);
             menu.setLayout(null);
-            //menu.add(picLabel);
             menu.add(play);
             menu.add(exit);
-        }
-        catch(IOException e){}
         return menu;
     }
 }
