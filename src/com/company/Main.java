@@ -10,9 +10,7 @@ public class Main {
         Game g = new Game();
         Maze m= new Maze();
         m.init();
-
-        g.drawAll();
-
+        //g.drawAll();
 
     }
 }

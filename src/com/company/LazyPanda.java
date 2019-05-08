@@ -1,6 +1,7 @@
 package com.company;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -12,11 +13,13 @@ import java.io.IOException;
 public class LazyPanda extends Panda {
 
     LazyPanda(){
+
         try {
-            Maze.addThingView(new ThingView(this, ImageIO.read(new File("panda.png"))));
+            Maze.addThingView(new ThingView(this, ImageIO.read(new File("/sofa.png"))));
         }catch(IOException e){
             e.printStackTrace();
         }
+
     }
 
     /**

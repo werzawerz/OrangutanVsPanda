@@ -3,25 +3,27 @@ package com.company;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Game extends JFrame {
+public class Game extends JFrame implements ActionListener {
     JPanel gamePanel;
     JPanel menuPanel;
     static private int points;
     public Game() {
         super();
-        
+
         gamePanel = new JPanel();
         menuPanel = menu();
         this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
-        getContentPane().add(gamePanel);
-        //getContentPane().add(menuPanel);
+        this.add(menuPanel);
         this.setSize(800, 600);
         this.setLocationRelativeTo(null);
+
         this.setVisible(true);
     }
     static void addPoints(int i) {
@@ -46,6 +48,7 @@ public class Game extends JFrame {
         int cnt=0;
         for(Tile t : tiles){
             t.getView().draw(gamePanel.getGraphics());
+            System.out.println("fdhs");
         }
 
 //        for(ThingView t:things){
@@ -55,14 +58,34 @@ public class Game extends JFrame {
     }
     JPanel menu(){
         JPanel menu = new JPanel();
-            JButton play = new JButton("Play");
-            JButton exit = new JButton("Exit");
+            JButton btnPlay = new JButton("Play");
+            JButton btnExit = new JButton("Exit");
 
-            play.setBounds(100, 500, 200, 40);
-            exit.setBounds(500, 500, 200, 40);
+            btnPlay.setBounds(100, 500, 200, 40);
+            btnExit.setBounds(500, 500, 200, 40);
             menu.setLayout(null);
-            menu.add(play);
-            menu.add(exit);
+            menu.add(btnPlay);
+            menu.add(btnExit);
+            btnPlay.addActionListener(this);
+            btnExit.addActionListener(this);
         return menu;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        switch(e.getActionCommand()) {
+            case "Play" : {
+                menuPanel.setVisible(false);
+                this.remove(menuPanel);
+                this.add(gamePanel);
+                gamePanel.setBackground(Color.DARK_GRAY);
+                drawAll();
+                break;
+            }
+            case "Exit" : {
+                System.exit(0);
+                break;
+            }
+        }
     }
 }
