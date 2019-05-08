@@ -65,12 +65,14 @@ public class Maze {
         }
 
         for(int i=24; i<=32;i++) {
-            tiles.get(i).setUpTileView(690-(i-24)*80, 380);
+            tiles.get(i).setUpTileView(660-(i-24)*80, 380);
         }
 
         for(int i=33; i<=41; i++) {
-            tiles.get(i).setUpTileView((i-33)*80+20, 500);
+            tiles.get(i).setUpTileView((i-33)*80+90, 500);
         }
+        tiles.get(39).setUpTileView(tiles.get(40).getView().getX() + 65, tiles.get(40).getView().getY() - 75);
+        tiles.get(40).setUpTileView(tiles.get(40).getView().getX() + 85, tiles.get(40).getView().getY() - 135);
 
         tiles.get(34).setNeighbourWardrobe(tiles.get(40));
         tiles.get(40).setNeighbourWardrobe(tiles.get(34));
