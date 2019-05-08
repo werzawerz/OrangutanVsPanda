@@ -1,7 +1,10 @@
 package com.company;
 
 
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
@@ -12,6 +15,7 @@ import java.util.Random;
  * Felelőssége a másik szekrény nyilvántartása.
  */
 public class Wardrobe extends Tile {
+
 
     /**
      * A szomszéd szekrény, melyre át kell teleportálnia a rá lépő állatot.
@@ -59,4 +63,5 @@ public class Wardrobe extends Tile {
     public void setNeighbourWardrobe(Tile neighbourWardrobe) {
         this.neighbourWardrobe = neighbourWardrobe;
     }
+
 }

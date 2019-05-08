@@ -1,5 +1,6 @@
 package com.company;
 
+import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,7 +14,7 @@ public class Tile {
 
     private String name;
 
-    private TileView view;
+    protected TileView view;
 
     /**
      * A szomszédos csempéket tartalmazó tömb.
@@ -27,6 +28,7 @@ public class Tile {
      * A csempén lévő pályaelem.
      */
     private Item item;
+
 
     /**
      * @param o Orangutan: a Tile-ra lépni akaró Orangutan
@@ -194,6 +196,6 @@ public class Tile {
     public TileView getView(){return view;}
 
     public void setUpTileView(int x, int y) {
-        view = new TileView(x,y);
+        view = new TileView(x,y, Color.blue);
     }
 }
