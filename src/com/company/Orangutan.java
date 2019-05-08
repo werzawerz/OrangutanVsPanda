@@ -61,7 +61,7 @@ public class Orangutan extends Animal {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(this.getName()+" refuse "+ o.getName()+"\n");
             writer.close();
-            System.out.print(this.getName()+" refuse "+ o.getName()+"\n");
+           // System.out.print(this.getName()+" refuse "+ o.getName()+"\n");
             return false;
         }
     }
@@ -101,7 +101,7 @@ public class Orangutan extends Animal {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.write(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
             writer.close();
-            System.out.print(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
+          //  System.out.print(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
             getPosition().remove(this);
             if(nextPanda!=null)
             {

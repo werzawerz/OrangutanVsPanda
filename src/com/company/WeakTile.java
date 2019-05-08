@@ -56,7 +56,7 @@ public class WeakTile extends Tile {
         else {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(p.getName()+" dead\n");
-            System.out.print(p.getName()+" dead\n");
+          //  System.out.print(p.getName()+" dead\n");
             writer.close();
             remove(p);
             Maze.removeOnePanda(p);
@@ -72,7 +72,7 @@ public class WeakTile extends Tile {
         if(i>0 && i<10000) {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(getName() + "-" + i + "\n");
-            System.out.print(getName() + "-" + i + "\n");
+          //  System.out.print(getName() + "-" + i + "\n");
             writer.close();
         }
         strength -= i;

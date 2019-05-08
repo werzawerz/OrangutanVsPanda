@@ -30,7 +30,7 @@ public class Arcade extends Item{
     public void notifyNeighbours() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.write(this.getName()+" sound\n");
-        System.out.print(this.getName()+" sound\n");
+      //  System.out.print(this.getName()+" sound\n");
         writer.close();
         Tile t = this.getPosition();
         ArrayList<Tile> tiles = t.getNeighbours();

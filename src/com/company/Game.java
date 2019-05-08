@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -15,6 +16,7 @@ import java.util.TimerTask;
 public class Game extends MouseAdapter implements ActionListener {
     JPanel gamePanel;
     JPanel menuPanel;
+    Orangutan orangutanClicked;
     JFrame jf = new JFrame("Orangutan vs Pandas");
     static private int points;
     public Game() {
@@ -26,7 +28,7 @@ public class Game extends MouseAdapter implements ActionListener {
         jf.add(gamePanel);
         jf.setSize(800, 600);
         jf.setLocationRelativeTo(null);
-
+        jf.addMouseListener(this);
         jf.setVisible(true);
     }
 
@@ -83,8 +85,39 @@ public class Game extends MouseAdapter implements ActionListener {
             btnExit.addActionListener(this);
         return menu;
     }
+        @Override
+    public void mousePressed(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+        ArrayList<Orangutan> os = Maze.getOrangutans();
+        for(Orangutan o : os){
 
-    @Override
+            if (mouseinRect(x, y, o.getPosition().getView().getX(), o.getPosition().getView().getX(), o.getPosition().getView().getY(), o.getPosition().getView().getY())){
+                System.out.println("GECCIII");
+                orangutanClicked = o;
+                break;
+            }
+        }
+        if (orangutanClicked != null) {
+            ArrayList<Tile> neigh = orangutanClicked.getPosition().getNeighbours();
+            for(Tile t : neigh){
+
+                if (mouseinRect(x, y, t.getView().getX(), t.getView().getX(), t.getView().getY(), t.getView().getY())){
+                    System.out.println("FASZOM");
+
+                    break;
+                }
+            }
+        }
+    }
+
+    public boolean mouseinRect(int x, int y, int x1, int x2, int y1, int y2) {
+        if (x > x1 && x < x2)
+            if (y > y1 && y < y2) return true;
+        return false;
+    }
+
+        @Override
     public void actionPerformed(ActionEvent e) {
         switch(e.getActionCommand()) {
             case "Play" : {
