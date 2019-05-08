@@ -18,14 +18,16 @@ public class Game extends MouseAdapter implements ActionListener {
     JPanel menuPanel;
     Orangutan orangutanClicked;
     JFrame jf = new JFrame("Orangutan vs Pandas");
+    Maze m= new Maze();
     static private int points;
-    public Game() {
+    public Game() throws IOException {
         //jf.super("OrangutanVSPandas");
-
+        m.init();
         gamePanel = new JPanel();
         menuPanel = menu();
         jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
-        jf.add(gamePanel);
+        jf.add(menuPanel);
+        //jf.add(gamePanel);
         jf.setSize(800, 600);
         jf.setLocationRelativeTo(null);
         jf.addMouseListener(this);
@@ -131,8 +133,27 @@ public class Game extends MouseAdapter implements ActionListener {
                 menuPanel.setVisible(false);
                 jf.remove(menuPanel);
                 jf.add(gamePanel);
-                gamePanel.setBackground(Color.DARK_GRAY);
-                this.drawAll();
+                drawInit();
+                //gamePanel.setBackground(Color.DARK_GRAY);
+                drawAll();
+                MyTimer t = new MyTimer();
+                t.scheduleAtFixedRate(new TimerTask() {
+                    @Override
+                    public void run() {
+                        drawInit();
+                        m.moveAllPandas();
+                        ArrayList<Item> items =  m.getItems();
+                        for(Item i : items) {
+                            try {
+                                i.notifyNeighbours();
+                            }catch(IOException ioe) {
+
+                            }
+                        }
+
+
+                    }
+                }, 0, 2000);
 
                 break;
             }

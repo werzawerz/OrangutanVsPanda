@@ -194,10 +194,6 @@ public class Maze {
 
         orangutans.add(new Orangutan());
         tiles.get(30).accept(orangutans.get(1));
-
-        for(int i=0; i<tiles.size(); i++){
-            System.out.println(i+tiles.get(i).getClass().toString());
-        }
     }
 
     static ArrayList<Orangutan> getOrangutans(){
