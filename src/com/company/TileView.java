@@ -38,7 +38,7 @@ public class TileView extends JPanel implements Drawable{
         for(Tile t : tiles) {
             ArrayList<Tile> neigh = t.getNeighbours();
             for(Tile neighbour : neigh) {
-                Line2D lin = new Line2D.Float(t.getView().getX()+20, t.getView().getY()+20, neighbour.getView().getX()+20, neighbour.getView().getY()+20);
+                Line2D lin = new Line2D.Float(t.getView().getX()+27, t.getView().getY()+27, neighbour.getView().getX()+27, neighbour.getView().getY()+27);
 
                 g2.draw(lin);
             }
