@@ -46,11 +46,12 @@ public class Maze {
         for(int i=0; i<37; i++){
             tiles.add(new Tile());
         }
-        tiles.add(29, new WeakTile());
+        tiles.add(23, new Exit());
         tiles.add(25, new WeakTile());
+        tiles.add(29, new WeakTile());
         tiles.add(34, new Wardrobe());
         tiles.add(40, new Wardrobe());
-        tiles.add(23, new Exit());
+
 
         //Tileok pozicioja 0 es 8 kozott
         for(int i=0; i<=8; i++) {
@@ -184,7 +185,9 @@ public class Maze {
         tiles.get(27).getItem().setPosition(tiles.get(27));
         items.add(tiles.get(27).getItem());
 
-
+        for(int i=0; i<tiles.size(); i++){
+            System.out.println(i+tiles.get(i).getClass().toString());
+        }
     }
 
     /**
