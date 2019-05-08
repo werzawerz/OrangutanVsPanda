@@ -14,7 +14,7 @@ public class WeakTile extends Tile {
     /**
      * A fenmaradó rálépés a törésig.
      */
-    private int strength=1000;
+    private int strength=20;
 
     /**
      * @param o : a WeakTilera lépni akaró orángután
