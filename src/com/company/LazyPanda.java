@@ -31,7 +31,7 @@ public class LazyPanda extends Panda {
 
         BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
         writer.write(this.getName()+" sits "+t.getName()+"\n");
-        System.out.print(this.getName()+" sits "+t.getName()+"\n");
+        //System.out.print(this.getName()+" sits "+t.getName()+"\n");
         writer.close();
         move(t);
 

@@ -34,6 +34,8 @@ public class Maze {
 
     static private ArrayList<ThingView> thingViews;
 
+
+
     /**
      * Betölti a hardcoded pályát, amit a proto használ.
      */
@@ -194,6 +196,10 @@ public class Maze {
         for(int i=0; i<tiles.size(); i++){
             System.out.println(i+tiles.get(i).getClass().toString());
         }
+    }
+
+    static ArrayList<Orangutan> getOrangutans(){
+        return orangutans;
     }
 
     /**

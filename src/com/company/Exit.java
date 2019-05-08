@@ -63,7 +63,7 @@ public class Exit extends Tile {
         {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(p.getName()+" ");
-            System.out.print(p.getName()+" ");
+           // System.out.print(p.getName()+" ");
             exitAll(p.nextPanda);
             writer.close();
         }
