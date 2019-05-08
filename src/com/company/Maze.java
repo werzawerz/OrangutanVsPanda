@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * A pályát, és a különböző pályaelemeket nyilvántartó osztály.
@@ -275,5 +276,20 @@ public class Maze {
 
     static ArrayList<ThingView> getThings() {return thingViews;}
 
+
+
     static void addThingView(ThingView t){thingViews.add(t);}
+
+    static void moveAllPandas() {
+        for(Panda p : pandas) {
+            int neigbourNum = p.getPosition().getNeighbourSize();
+            Random rand = new Random();
+            int moveHere = rand.nextInt(neigbourNum);
+            try {
+                p.move(p.getPosition().getNeighbours().get(moveHere));
+            }catch(IOException ie) {
+
+            }
+        }
+    }
 }

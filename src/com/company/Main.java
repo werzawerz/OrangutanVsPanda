@@ -11,17 +11,19 @@ public class Main {
         Game g = new Game();
         Maze m= new Maze();
         m.init();
-        g.drawInit();
+
         MyTimer t = new MyTimer();
         t.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                System.out.println("Ketmasodpercenkent");
-                g.drawAll();
+
+                m.moveAllPandas();
+
+
             }
         }, 0, 2000);
 
-       // g.drawAll();
+        g.drawAll();
 
     }
 }

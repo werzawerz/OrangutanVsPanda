@@ -1,2 +1,56 @@
 sp1 refuse sp2
 sp2 t8->t9
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null refuse null
+null null->null
+null null->null
+null null->null
+null refuse null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null refuse null
+null refuse null
+null null->null
+null null->null
+null null->null
+null refuse null
+null refuse null
+null null->null
+null null->null
+null refuse null
+null null->null
+null refuse null
+null null->null
+null null->null
+null null->null
+null null->null
+null refuse null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null null->null
+null refuse null
+null null->null
+null null->null
