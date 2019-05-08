@@ -193,6 +193,6 @@ public class Tile {
     public TileView getView(){return view;}
 
     public void setUpTileView(int x, int y) {
-        view = new TileView(x,y, Color.blue);
+        view = new TileView(x,y, Color.green);
     }
 }
