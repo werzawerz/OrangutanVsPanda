@@ -51,6 +51,27 @@ public class Maze {
         tiles.add(40, new Wardrobe());
         tiles.add(23, new Exit());
 
+        //Tileok pozicioja 0 es 8 kozott
+        for(int i=0; i<=8; i++) {
+            tiles.get(i).setUpTileView(i*80+20, 20);
+        }
+
+        for(int i=9; i<=14;i++) {
+            tiles.get(i).setUpTileView(640-(i-9)*100, 140);
+        }
+
+        for(int i=15; i<=23; i++) {
+            tiles.get(i).setUpTileView((i-15)*80+20, 260);
+        }
+
+        for(int i=24; i<=32;i++) {
+            tiles.get(i).setUpTileView(690-(i-24)*80, 380);
+        }
+
+        for(int i=33; i<=41; i++) {
+            tiles.get(i).setUpTileView((i-33)*80+20, 500);
+        }
+
         tiles.get(34).setNeighbourWardrobe(tiles.get(40));
         tiles.get(40).setNeighbourWardrobe(tiles.get(34));
 
