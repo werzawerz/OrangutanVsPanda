@@ -172,12 +172,15 @@ public class Maze {
         tiles.get(37).accept(pandas.get(5));
 
         tiles.get(12).setItem(new Arcade());
+        tiles.get(12).getItem().setPosition(tiles.get(12));
         items.add(tiles.get(12).getItem());
 
         tiles.get(41).setItem(new Sofa());
+        tiles.get(41).getItem().setPosition(tiles.get(41));
         items.add(tiles.get(41).getItem());
 
         tiles.get(27).setItem(new VendingMachine());
+        tiles.get(27).getItem().setPosition(tiles.get(27));
         items.add(tiles.get(27).getItem());
 
 

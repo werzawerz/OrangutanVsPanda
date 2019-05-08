@@ -20,6 +20,8 @@ public class ThingView extends JPanel implements Drawable {
     }
     public void paintComponent(Graphics g){
 
+        Tile x = obj.getPosition();
+
             g.drawImage(img, obj.getPosition().getView().getX()+15, obj.getPosition().getView().getY()+18, null);
 
     }

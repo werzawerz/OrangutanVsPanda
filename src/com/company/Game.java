@@ -51,7 +51,6 @@ public class Game extends JFrame implements ActionListener {
         int cnt=0;
         for(Tile t : tiles){
             t.getView().draw(gamePanel.getGraphics());
-            System.out.println("fdhs");
         }
 
         for(ThingView t:things){

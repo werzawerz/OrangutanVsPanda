@@ -16,7 +16,7 @@ public class Arcade extends Item{
     Arcade(){
 
         try {
-            Maze.addThingView(new ThingView(this, ImageIO.read(new File("sofa.png"))));
+            Maze.addThingView(new ThingView(this, ImageIO.read(new File("arcade.png"))));
         }catch(IOException e){
             e.printStackTrace();
         }
