@@ -221,6 +221,12 @@ public class Maze {
     static void removePanda(Panda p) throws IOException {
         if(p.getNextPanda()!=null)
             removePanda(p.getNextPanda());
+        p.getPosition().setAnimal(null);
+        for(ThingView tv : thingViews){
+            if(tv.getObj()==p){
+                thingViews.remove(tv);
+            }
+        }
         pandas.remove(p);
     }
 
