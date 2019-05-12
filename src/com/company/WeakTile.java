@@ -65,6 +65,8 @@ public class WeakTile extends Tile {
         strength -= i;
     }
 
+    public int getStrength() {return strength;}
+
     public void setStrength(int i) {
         strength = i;
     }
