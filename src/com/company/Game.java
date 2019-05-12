@@ -128,7 +128,7 @@ public class Game extends MouseAdapter implements ActionListener {
 
             BufferedImage myPicture = ImageIO.read(new File("menu.png"));
             JLabel picLabel = new JLabel(new ImageIcon(myPicture));
-            picLabel.setBounds(272, 50, 256, 256);
+            picLabel.setBounds(200, 100, 400, 300);
             menu.add(picLabel);
 
             btnPlay.setBounds(100, 500, 200, 40);
