@@ -32,10 +32,11 @@ public class WeakTile extends Tile {
         }
         else {
             Panda p = o.getNextPanda();
-            while(p.getNextPanda() != null) {
+            if (p != null) {
+            while(p.getNextPanda() != null && Maze.getOrangutanSize() > 0) {
                 p.setFollow(false);
                 p = p.getNextPanda();
-            }
+            }}
             Maze.removeOrangutan(o);
             remove(o);
         }

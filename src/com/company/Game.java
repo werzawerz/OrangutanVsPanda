@@ -22,6 +22,7 @@ public class Game extends MouseAdapter implements ActionListener {
      * a menühöz tartozó panel
      */
     JPanel menuPanel;
+    JLabel endText;
     /**
      * melyik orángutánnal akarunk lépni
      */
@@ -50,13 +51,16 @@ public class Game extends MouseAdapter implements ActionListener {
         gamePanel.setLayout(null);
         menuPanel = menu();
         pointLabel = new JLabel();
+        endText = new JLabel();
+        endText.setBounds(400,300,100,100);
+
         pointLabel.setText("Pontok: "+Integer.toString(points));
         jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
         jf.add(gamePanel);
         pointLabel.setBounds(722,10,80,40);
         gamePanel.add(pointLabel);
         jf.add(menuPanel);
-        //jf.add(gamePanel);
+
         jf.setSize(800, 600);
         jf.setLocationRelativeTo(null);
         jf.addMouseListener(this);
@@ -130,7 +134,6 @@ public class Game extends MouseAdapter implements ActionListener {
             JLabel picLabel = new JLabel(new ImageIcon(myPicture));
             picLabel.setBounds(200, 100, 400, 300);
             menu.add(picLabel);
-
             btnPlay.setBounds(100, 500, 200, 40);
             btnExit.setBounds(500, 500, 200, 40);
             menu.setLayout(null);
@@ -220,7 +223,30 @@ public class Game extends MouseAdapter implements ActionListener {
 
                             }
                         }
-
+                        if (Maze.getPandaSize() == 0) {
+                            endText.setText("You won");
+                            endText.setBounds(300,300,100,60);
+                            endText.setFont(new Font(endText.getName(), Font.PLAIN, 20));
+                            menuPanel.setVisible(false);
+                            gamePanel.setVisible(false);
+                            jf.remove(menuPanel);
+                            jf.remove(gamePanel);
+                            endText.setVisible(true);
+                            jf.add(endText);
+                            t.cancel();
+                        }
+                        else if(Maze.getOrangutanSize() == 0){
+                            endText.setText("You lost");
+                            endText.setBounds(300,300,100,60);
+                            endText.setFont(new Font(endText.getName(), Font.PLAIN, 20));
+                            menuPanel.setVisible(false);
+                            gamePanel.setVisible(false);
+                            jf.remove(menuPanel);
+                            jf.remove(gamePanel);
+                            endText.setVisible(true);
+                            jf.add(endText);
+                            t.cancel();
+                        }
 
                     }
                 }, 0, 2000);
