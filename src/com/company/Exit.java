@@ -37,6 +37,10 @@ public class Exit extends Tile {
 
     }
 
+    /**
+     * @param p p pandát eltünteti a maze pandas tömbjéből
+     * @throws IOException
+     */
     void exitAll(Panda p) throws IOException{
         if(p!=null)
         {

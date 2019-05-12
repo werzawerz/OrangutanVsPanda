@@ -54,6 +54,7 @@ public class Maze {
         tiles.add(34, new Wardrobe());
         tiles.add(40, new Wardrobe());
 
+        int xfga = 3;
 
         //Tileok pozicioja 0 es 8 kozott
         for(int i=0; i<=8; i++) {

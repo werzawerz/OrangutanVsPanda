@@ -129,6 +129,7 @@ public class Game extends MouseAdapter implements ActionListener {
     }
 
     public boolean mouseinRect(int x, int y, int x1, int x2, int y1, int y2) {
+        int xfga = 3;
         if (x > x1 && x < x2)
             if (y > y1 && y < y2) return true;
         return false;
