@@ -22,14 +22,6 @@ public abstract class Thing {
      * Leszármazottban felül van írva. Itt csak false-szal tér vissza.
      */
     public boolean collideWith(Orangutan o) throws IOException {
-        /*String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
-        Controller.incTab();
-        Controller.writeClassAndFunction(s);
-        Controller.decTab();*/
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-        writer.write(this.getName()+" refuse "+ o.getName()+"\n");
-        writer.close();
-        System.out.print(this.getName()+" refuse "+ o.getName()+"\n");
         return false;
     }
 
@@ -46,11 +38,6 @@ public abstract class Thing {
      * Leszármazottban felül van írva. Itt csak false-szal tér vissza.
      */
     public boolean collideWith(Panda p) throws IOException{
-
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-        writer.write(this.getName()+" refuse "+ p.getName()+"\n");
-        writer.close();
-        System.out.print(this.getName()+" refuse "+ p.getName()+"\n");
         return false;
     }
 

@@ -76,7 +76,6 @@ public class Orangutan extends Animal {
     void destroyPandas() throws IOException {
         Maze.removePanda(getNextPanda());
         removePanda();
-
     }
 
     /**

@@ -39,14 +39,9 @@ public abstract class Panda extends Animal {
     }
 
     public void move(Tile t) throws IOException {
-        String s = this.getClass().getSimpleName().toUpperCase() + ":move(t)";
-        Controller.writeClassAndFunction(s);
+
         if(t.canIMove(this)) {
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-            writer.append(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
-           // System.out.print(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
-            writer.close();
             getPosition().remove(this);
             if(nextPanda!=null)
             {
@@ -63,10 +58,6 @@ public abstract class Panda extends Animal {
      * marad, false-t ad vissza.
      */
     public boolean collideWith(Panda p) throws IOException{
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-        writer.append(this.getName()+" refuse "+ p.getName()+"\n");
-        writer.close();
-     //   System.out.print(this.getName()+" refuse "+ p.getName()+"\n");
         return false;
     }
 
@@ -75,10 +66,6 @@ public abstract class Panda extends Animal {
      * Beállítja a follow flaget.
      */
     void setFollow(boolean b){
-        //String s = this.getClass().getSimpleName().toUpperCase() + ":setFollow(b)";
-        /*Controller.incTab();
-        Controller.writeClassAndFunction(s);
-        Controller.decTab();*/
         follow=b;
 
     }
@@ -94,14 +81,6 @@ public abstract class Panda extends Animal {
     }
 
     void setFollowingA(Animal a) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-        writer.append(this.getName()+" follow "+a.getName()+"\n");
-      //  System.out.print(this.getName()+" follow "+a.getName()+"\n");
-        writer.close();
-        //String s = this.getClass().getSimpleName().toUpperCase() + ":setFollowingA(a)";
-        /*Controller.incTab();
-        Controller.writeClassAndFunction(s);
-        Controller.decTab();*/
 
         followingA = a;
     }

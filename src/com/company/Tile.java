@@ -47,7 +47,7 @@ public class Tile {
         }
         if(item!=null)
             bul = item.collideWith(o);
-        //Controller.decTab();
+
         return bul;
     }
 
@@ -78,17 +78,9 @@ public class Tile {
      * Az o-t rálépteti magára.
      */
     void accept(Orangutan o) throws IOException {
-        /*String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(o)";
-        Controller.incTab();
-        Controller.writeClassAndFunction(s);
-        Controller.decTab();*/
+
         occupiedBy = o;
-        /*
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
-        writer.append(o.getName()+" "+o.position.getName()+"->"+this.getName()+"\n");
-        writer.close();
-        System.out.print(o.getName()+" "+o.position.getName()+"->"+this.getName()+"\n");
-        */
+
         o.setPosition(this);
     }
 
@@ -97,17 +89,9 @@ public class Tile {
      * A p-t rálépteti magára.
      */
     void accept(Panda p) throws IOException {
-        /*String s = this.getClass().getSimpleName().toUpperCase() +  ":accept(p)";
-        Controller.incTab();
-        Controller.writeClassAndFunction(s);
-        Controller.decTab();*/
+
         occupiedBy = p;
-        /*
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.out", true));
-        writer.append(p.getName()+" "+p.position.getName()+"->"+this.getName()+"\n");
-        writer.close();
-        System.out.print(p.getName()+" "+p.position.getName()+"->"+this.getName()+"\n");
-        */
+
         p.setPosition(this);
     }
 
@@ -117,13 +101,7 @@ public class Tile {
      */
     void remove(Animal a)
     {
-        /*String s = this.getClass().getSimpleName().toUpperCase() + ":remove(a)";
-        Controller.incTab();
-        Controller.writeClassAndFunction(s);
-        Controller.decTab();**/
         occupiedBy = null;
-
-
     }
 
     /**
@@ -138,10 +116,7 @@ public class Tile {
      * tömböt.
      */
     ArrayList<Tile> getNeighbours(){
-        /*String s = this.getClass().getSimpleName().toUpperCase() + ":getNeighbours()";
-        Controller.incTab();
-        Controller.writeClassAndFunction(s);
-        Controller.decTab();*/
+
         return neighbours;
     }
 
@@ -150,10 +125,7 @@ public class Tile {
      * Visszaadja a a Tile-on levő Animal-t.
      */
      Animal getAnimal(){
-        /* String s = this.getClass().getSimpleName().toUpperCase() + ":getAnimal()";
-         Controller.incTab();
-         Controller.writeClassAndFunction(s);
-         Controller.decTab();*/
+
         return occupiedBy;
     }
 

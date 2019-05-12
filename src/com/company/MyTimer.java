@@ -23,7 +23,6 @@ public class MyTimer extends Timer{
             }
         }
 
-       // Game.drawAll();
 
 
     }

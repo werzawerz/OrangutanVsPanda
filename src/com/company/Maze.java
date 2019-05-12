@@ -34,8 +34,6 @@ public class Maze {
 
     static private ArrayList<ThingView> thingViews;
 
-
-
     /**
      * Betölti a hardcoded pályát, amit a proto használ.
      */
@@ -54,9 +52,6 @@ public class Maze {
         tiles.add(34, new Wardrobe());
         tiles.add(40, new Wardrobe());
 
-        int xfga = 3;
-
-        //Tileok pozicioja 0 es 8 kozott
         for(int i=0; i<=8; i++) {
             tiles.get(i).setUpTileView(i*80+20, 20);
         }
@@ -236,8 +231,7 @@ public class Maze {
      * @param p A Maze-ről levevendő panda
      */
     static void removeOnePanda(Panda p) throws IOException {
-/*        Controller.incTab();
-        Controller.writeClassAndFunction("MAZE:removeOnePanda(p)");*/
+
         p.getPosition().setAnimal(null);
         for(int i = 0; i<thingViews.size();i++){
             if(thingViews.get(i).getObj()==p){
@@ -245,7 +239,7 @@ public class Maze {
             }
         }
         pandas.remove(p);
-        //Controller.decTab();
+
     }
 
     /**
@@ -253,11 +247,9 @@ public class Maze {
      * Kiveszi o-t az orangutans-ból.
      */
     static void removeOrangutan(Orangutan o) throws IOException {
-        /*Controller.incTab();
-        Controller.writeClassAndFunction("MAZE:removeOrangutan(o)");*/
 
         orangutans.remove(o);
-        //Controller.decTab();
+
     }
 
     /**

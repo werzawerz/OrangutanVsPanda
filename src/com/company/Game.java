@@ -22,7 +22,6 @@ public class Game extends MouseAdapter implements ActionListener {
     Maze m= new Maze();
     static private int points;
     public Game() throws IOException {
-        //jf.super("OrangutanVSPandas");
         m.init();
         gamePanel = new JPanel();
         gamePanel.setLayout(null);
@@ -102,8 +101,6 @@ public class Game extends MouseAdapter implements ActionListener {
         ArrayList<Orangutan> os = Maze.getOrangutans();
         if(orangutanClicked == null){
         for(Orangutan o : os){
-           // gamePanel.getGraphics().setColor(Color.BLACK);
-           // gamePanel.getGraphics().drawRect(o.getPosition().getView().getX(), o.getPosition().getView().getY(), 55, 55);
             if (mouseinRect(x, y, o.getPosition().getView().getX()+10, o.getPosition().getView().getX()+65, o.getPosition().getView().getY()+30, o.getPosition().getView().getY()+85)){
                 System.out.println("Kivalaszt");
                 orangutanClicked = o;
@@ -143,7 +140,6 @@ public class Game extends MouseAdapter implements ActionListener {
                 jf.remove(menuPanel);
                 jf.add(gamePanel);
                 drawInit();
-                //gamePanel.setBackground(Color.DARK_GRAY);
                 drawAll();
                 MyTimer t = new MyTimer();
                 t.scheduleAtFixedRate(new TimerTask() {

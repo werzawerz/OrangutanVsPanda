@@ -24,9 +24,6 @@ public class Exit extends Tile {
     void accept(Orangutan o) throws IOException {
 
         exitAll(o.nextPanda);
-
-        System.out.println("diumdisum");
-
         int pandaNum = o.getPandaNum(o.getNextPanda());
         Game.addPoints(pandaNum);
         o.setPosition(this);
@@ -44,12 +41,9 @@ public class Exit extends Tile {
     void exitAll(Panda p) throws IOException{
         if(p!=null)
         {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-            writer.append(p.getName()+" ");
+
             Maze.removePanda(p);
-           // exitAll(p.nextPanda);
-           // Maze.removeOnePanda(p);
-            writer.close();
+
         }
         else
             return;
