@@ -25,7 +25,6 @@ public class Orangutan extends Animal {
     /**
      * A követendő út csempéi.
      */
-    private Tile[] path;
     int timeToSteal;
 
     int gettimeToSteal(){
@@ -58,10 +57,6 @@ public class Orangutan extends Animal {
         }
         else
         {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-            writer.append(this.getName()+" refuse "+ o.getName()+"\n");
-            writer.close();
-           // System.out.print(this.getName()+" refuse "+ o.getName()+"\n");
             return false;
         }
     }

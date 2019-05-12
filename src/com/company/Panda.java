@@ -24,21 +24,17 @@ public abstract class Panda extends Animal {
      * bekerül a sorba, false-t ad vissza.
      */
     public boolean collideWith(Orangutan o) throws IOException {
-        /*String s = this.getClass().getSimpleName().toUpperCase() + ":collideWith(o)";
-        Controller.incTab();
-        Controller.writeClassAndFunction(s);*/
+
         if(!follow)
-        {setFollow(true);
-        setFollowingA(o);
-        o.setNextPanda(this);
+        {   setFollow(true);
+            setFollowingA(o);
+            Animal a = o;
+            while(a.getNextPanda()!=null) {
+                a = a.getNextPanda();
+            }
+            a.setNextPanda(this);
         }
-        else{
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-            writer.append(this.getName()+" refuse "+o.getName()+"\n");
-         //   System.out.println(this.getName()+" refuse "+o.getName()+"\n");
-            writer.close();
-        }
-        //Controller.decTab();
+
         return false;
     }
 
