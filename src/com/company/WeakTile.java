@@ -14,7 +14,7 @@ public class WeakTile extends Tile {
     /**
      * A fenmaradó rálépés a törésig.
      */
-    private int strength=20;
+    private int strength=3;
 
     /**
      * @param o : a WeakTilera lépni akaró orángután
@@ -31,9 +31,8 @@ public class WeakTile extends Tile {
             o.setPosition(this);
         }
         else {
-
-            remove(o);
             Maze.removeOrangutan(o);
+            remove(o);
         }
 
     }

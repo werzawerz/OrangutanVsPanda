@@ -94,7 +94,10 @@ public class Game extends MouseAdapter implements ActionListener {
         ArrayList<ThingView> things = Maze.getThings();
         pointLabel.setText("Pontok: "+Integer.toString(points));
         for(Tile t : tiles){
-            t.getView().draw(gamePanel.getGraphics());
+            if(t.getStrength()<=0)
+                t.getView().color=new Color(0,0,0);
+            else
+                t.getView().draw(gamePanel.getGraphics());
         }
 
         for(ThingView t:things){
@@ -104,14 +107,27 @@ public class Game extends MouseAdapter implements ActionListener {
 
 
     }
-
+    void drawAll(){
+        ArrayList<Panda> pandas = Maze.getPandas();
+        ArrayList<ThingView> things = Maze.getThings();
+        for (Panda p : pandas) {
+            for(ThingView t:things) {
+                if (p.getPosition().equals(t.getObj().getPosition())) t.draw(gamePanel.getGraphics());
+            }
+        }
+    }
     /**
      * @return léterhozza a menü JPaneljét
      */
-    JPanel menu(){
-        JPanel menu = new JPanel();
+    JPanel menu() throws IOException {
+            JPanel menu = new JPanel();
             JButton btnPlay = new JButton("Play");
             JButton btnExit = new JButton("Exit");
+
+            BufferedImage myPicture = ImageIO.read(new File("menu.png"));
+            JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+            picLabel.setBounds(272, 50, 256, 256);
+            menu.add(picLabel);
 
             btnPlay.setBounds(100, 500, 200, 40);
             btnExit.setBounds(500, 500, 200, 40);
@@ -134,6 +150,8 @@ public class Game extends MouseAdapter implements ActionListener {
         ArrayList<Orangutan> os = Maze.getOrangutans();
         if(orangutanClicked == null){
         for(Orangutan o : os){
+           // gamePanel.getGraphics().setColor(Color.BLACK);
+           // gamePanel.getGraphics().drawRect(o.getPosition().getView().getX(), o.getPosition().getView().getY(), 55, 55);
             if (mouseinRect(x, y, o.getPosition().getView().getX()+10, o.getPosition().getView().getX()+65, o.getPosition().getView().getY()+30, o.getPosition().getView().getY()+85)){
                 System.out.println("Kivalaszt");
                 orangutanClicked = o;

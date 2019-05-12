@@ -163,8 +163,11 @@ public class Tile {
     public String getName() {return  name;}
     public void setName(String s) {name=s;}
     public TileView getView(){return view;}
+    public int getStrength(){
+        return 1;
+    }
 
     public void setUpTileView(int x, int y) {
-        view = new TileView(x,y, Color.green);
+            view = new TileView(x,y, Color.green);
     }
 }

@@ -248,6 +248,12 @@ public class Maze {
      */
     static void removeOrangutan(Orangutan o) throws IOException {
 
+        o.getPosition().setAnimal(null);
+        for(int i = 0; i<thingViews.size();i++){
+            if(thingViews.get(i).getObj()==o){
+                thingViews.remove(thingViews.get(i));
+            }
+        }
         orangutans.remove(o);
 
     }
@@ -301,13 +307,13 @@ public class Maze {
     static void addThingView(ThingView t){thingViews.add(t);}
 
     static void moveAllPandas() {
-        for(Panda p : pandas) {
-            if(!p.isFollowing()) {
-                int neigbourNum = p.getPosition().getNeighbourSize();
+        for(int i=0; i<pandas.size(); i++) {
+            if(!pandas.get(i).isFollowing()) {
+                int neigbourNum = pandas.get(i).getPosition().getNeighbourSize();
                 Random rand = new Random();
                 int moveHere = rand.nextInt(neigbourNum);
                 try {
-                    p.move(p.getPosition().getNeighbours().get(moveHere));
+                    pandas.get(i).move(pandas.get(i).getPosition().getNeighbours().get(moveHere));
                 } catch (IOException ie) {
 
                 }
