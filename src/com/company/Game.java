@@ -152,10 +152,9 @@ public class Game extends MouseAdapter implements ActionListener {
         ArrayList<Orangutan> os = Maze.getOrangutans();
         if(orangutanClicked == null){
         for(Orangutan o : os){
-           // gamePanel.getGraphics().setColor(Color.BLACK);
-           // gamePanel.getGraphics().drawRect(o.getPosition().getView().getX(), o.getPosition().getView().getY(), 55, 55);
+
             if (mouseinRect(x, y, o.getPosition().getView().getX()+10, o.getPosition().getView().getX()+65, o.getPosition().getView().getY()+30, o.getPosition().getView().getY()+85)){
-                System.out.println("Kivalaszt");
+
                 orangutanClicked = o;
                 break;
             }
@@ -165,7 +164,7 @@ public class Game extends MouseAdapter implements ActionListener {
             for(Tile t : neigh){
 
                 if (mouseinRect(x, y, t.getView().getX()+10, t.getView().getX()+65, t.getView().getY()+30, t.getView().getY()+85)){
-                    System.out.println("Lep");
+
                     try {
                         orangutanClicked.move(t);
                     } catch (IOException e1) {
