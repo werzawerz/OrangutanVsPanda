@@ -35,7 +35,7 @@ public class Maze {
     static private ArrayList<ThingView> thingViews;
 
     /**
-     * Betölti a hardcoded pályát, amit a proto használ.
+     * Betölti a hardcoded pályát
      */
     static public void init() throws IOException {
         tiles=new ArrayList<>();

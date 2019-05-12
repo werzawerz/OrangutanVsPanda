@@ -14,13 +14,36 @@ import java.util.ArrayList;
 import java.util.TimerTask;
 
 public class Game extends MouseAdapter implements ActionListener {
+    /**
+     * a játékhoz tartozó panel
+     */
     JPanel gamePanel;
+    /**
+     * a menühöz tartozó panel
+     */
     JPanel menuPanel;
+    /**
+     * melyik orángutánnal akarunk lépni
+     */
     Orangutan orangutanClicked;
+    /**
+     * a program JFramee
+     */
     JFrame jf = new JFrame("Orangutan vs Pandas");
+    /**
+     * a pontokat megjelenitő label
+     */
     JLabel pointLabel;
     Maze m= new Maze();
+    /**
+     * a játékos által szerzett pontok
+     */
     static private int points;
+
+    /**
+     * @throws IOException
+     * játék konstruktora, mely beállitja a játék grafikus megjelenitését
+     */
     public Game() throws IOException {
         m.init();
         gamePanel = new JPanel();
@@ -41,11 +64,18 @@ public class Game extends MouseAdapter implements ActionListener {
     }
 
 
+    /**
+     * @param i pontokat i-vel növelő fv
+     */
     static void addPoints(int i) {
         points += i;
 
     }
 
+    /**
+     * @param orangutanWon
+     * a játék végén meghivandó függvény
+     */
     static void endGame(boolean orangutanWon) {
         if(orangutanWon) {
             System.out.println("Orangutans have won");
@@ -55,6 +85,9 @@ public class Game extends MouseAdapter implements ActionListener {
         }
     }
 
+    /**
+     * a pályán végzett rajzolásokat megvalósitó metódus
+     */
     void drawInit(){
 
         ArrayList<Tile> tiles = Maze.getTiles();
@@ -71,15 +104,10 @@ public class Game extends MouseAdapter implements ActionListener {
 
 
     }
-    void drawAll(){
-        ArrayList<Panda> pandas = Maze.getPandas();
-        ArrayList<ThingView> things = Maze.getThings();
-        for (Panda p : pandas) {
-            for(ThingView t:things) {
-                if (p.getPosition().equals(t.getObj().getPosition())) t.draw(gamePanel.getGraphics());
-            }
-        }
-    }
+
+    /**
+     * @return léterhozza a menü JPaneljét
+     */
     JPanel menu(){
         JPanel menu = new JPanel();
             JButton btnPlay = new JButton("Play");
@@ -94,6 +122,11 @@ public class Game extends MouseAdapter implements ActionListener {
             btnExit.addActionListener(this);
         return menu;
     }
+
+    /**
+     * @param e
+     * kattintás esetén meghivandó függvény
+     */
         @Override
     public void mousePressed(MouseEvent e) {
         int x = e.getX();
@@ -125,6 +158,16 @@ public class Game extends MouseAdapter implements ActionListener {
         }
     }
 
+    /**
+     * @param x
+     * @param y
+     * @param x1
+     * @param x2
+     * @param y1
+     * @param y2
+     * Eldönti hogy az x,y pont benne van-e a x1,y1 és x2,y2 által alakotott téglalapban
+     * @return
+     */
     public boolean mouseinRect(int x, int y, int x1, int x2, int y1, int y2) {
         int xfga = 3;
         if (x > x1 && x < x2)
@@ -132,6 +175,10 @@ public class Game extends MouseAdapter implements ActionListener {
         return false;
     }
 
+    /**
+     * @param e
+     * gombnyomásra meghivandó metódus
+     */
         @Override
     public void actionPerformed(ActionEvent e) {
         switch(e.getActionCommand()) {
@@ -140,7 +187,6 @@ public class Game extends MouseAdapter implements ActionListener {
                 jf.remove(menuPanel);
                 jf.add(gamePanel);
                 drawInit();
-                drawAll();
                 MyTimer t = new MyTimer();
                 t.scheduleAtFixedRate(new TimerTask() {
                     @Override

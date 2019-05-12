@@ -7,10 +7,25 @@ import java.awt.geom.Line2D;
 import java.util.ArrayList;
 
 public class TileView extends JPanel implements Drawable{
+    /**
+     * x koordináta
+     */
     private int x;
+    /**
+     * y koordináta
+     */
     private int y;
+    /**
+     * szin
+     */
     Color color;
 
+    /**
+     * @param x
+     * @param y
+     * @param c
+     * konstruktor
+     */
     public TileView(int x, int y, Color c) {
         this.x = x;
         this.y = y;
@@ -28,6 +43,11 @@ public class TileView extends JPanel implements Drawable{
     public void draw(Graphics g){
         paintComponent(g);
     }
+
+    /**
+     * @param g
+     * x,z koordinátákra kirajzol egy kört
+     */
     public void paintComponent(Graphics g){
 
         Graphics2D g2 = (Graphics2D) g;
