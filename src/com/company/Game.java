@@ -94,8 +94,10 @@ public class Game extends MouseAdapter implements ActionListener {
         ArrayList<ThingView> things = Maze.getThings();
         pointLabel.setText("Pontok: "+Integer.toString(points));
         for(Tile t : tiles){
-            if(t.getStrength()<=0)
+            if(t.getStrength()<=0){
                 t.getView().color=new Color(0,0,0);
+                t.getView().draw(gamePanel.getGraphics());
+            }
             else
                 t.getView().draw(gamePanel.getGraphics());
         }
