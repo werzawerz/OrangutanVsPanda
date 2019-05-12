@@ -65,9 +65,7 @@ public class Orangutan extends Animal {
      * Kiüríti a nextPanda attribútumot.
      */
     void removePanda(){
-/*        Controller.incTab();
-        Controller.writeClassAndFunction("ORANGUTAN:removePanda()");
-        Controller.decTab();*/
+
         nextPanda=null;
     }
 
@@ -76,11 +74,9 @@ public class Orangutan extends Animal {
      * vezetve.
      */
     void destroyPandas() throws IOException {
-/*        Controller.incTab();
-        Controller.writeClassAndFunction("ORANGUTAN:destroyPandas()");*/
         Maze.removePanda(getNextPanda());
         removePanda();
-/*        Controller.decTab();*/
+
     }
 
     /**
@@ -89,14 +85,9 @@ public class Orangutan extends Animal {
      */
     public void move(Tile t) throws IOException {
 
-/*        Controller.incTab();
-        Controller.writeClassAndFunction("ORANGUTAN:move(t)");*/
+
         if(t.canIMove(this)){
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-            writer.write(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
-            writer.close();
-          //  System.out.print(this.getName()+" "+this.position.getName()+"->"+t.getName()+"\n");
             getPosition().remove(this);
             if(nextPanda!=null)
             {
@@ -104,6 +95,5 @@ public class Orangutan extends Animal {
             }
             t.accept(this);
         }
-        //Controller.decTab();
     }
 }

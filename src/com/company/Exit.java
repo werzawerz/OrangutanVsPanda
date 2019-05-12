@@ -22,29 +22,11 @@ public class Exit extends Tile {
      * orángutánt a bejárati csempére.
      */
     void accept(Orangutan o) throws IOException {
-       /* Controller.incTab();
-        Controller.writeClassAndFunction("EXIT:accept(o)");*/
-        BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
-        writer.append(o.getName()+" exits : "+o.getPandaNum(o.nextPanda)+"\n");
-        System.out.print(o.getName()+" exits ");
+
         exitAll(o.nextPanda);
-        /*
-        if(o.nextPanda!=null)
-        {
-            Panda pa=o.nextPanda;
-            writer.append(pa.getName()+" ");
-            System.out.print(pa.getName()+" ");
-            while(pa.nextPanda!=null)
-            {
-                pa=pa.nextPanda;
-                writer.append(pa.getName()+" ");
-                System.out.print(pa.getName()+" ");
-            }
-        }
-        */
-        //writer.append(": "+o.getPandaNum(o.nextPanda)+"\n");
-        //System.out.println(": "+o.getPandaNum(o.nextPanda)+"\n");
-        writer.close();
+
+        System.out.println("diumdisum");
+
         int pandaNum = o.getPandaNum(o.getNextPanda());
         Game.addPoints(pandaNum);
         o.setPosition(this);
@@ -52,11 +34,7 @@ public class Exit extends Tile {
         if(o.getNextPanda()!=null) {
             o.destroyPandas();
         }
-        //Controller.decTab();
-/*        BufferedWriter writer2 = new BufferedWriter(new FileWriter("Valami.out", true));
-        System.out.print("\n");
-        writer2.append("\n");
-        writer2.close();*/
+
     }
 
     void exitAll(Panda p) throws IOException{
@@ -64,13 +42,16 @@ public class Exit extends Tile {
         {
             BufferedWriter writer = new BufferedWriter(new FileWriter("Valami.txt", true));
             writer.append(p.getName()+" ");
-           // System.out.print(p.getName()+" ");
-            exitAll(p.nextPanda);
+            Maze.removePanda(p);
+           // exitAll(p.nextPanda);
+           // Maze.removeOnePanda(p);
             writer.close();
         }
         else
             return;
     }
+
+    boolean canIMove(Orangutan o) {return true;}
 
     void setEntry(Tile t) {
         entry = t;

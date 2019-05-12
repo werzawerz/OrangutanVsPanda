@@ -56,5 +56,6 @@ public abstract class Animal extends Thing {
      */
     protected void setNextPanda(Panda p) {
 
-        nextPanda=p;}
+        nextPanda=p;
+    }
 }

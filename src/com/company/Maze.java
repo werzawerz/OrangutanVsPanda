@@ -98,7 +98,7 @@ public class Maze {
         tiles.get(5).setNeighbours(new Tile[]{tiles.get(4),
                 tiles.get(6), tiles.get(12)});
         tiles.get(6).setNeighbours(new Tile[]{tiles.get(5),
-                tiles.get(6), tiles.get(12), tiles.get(11)});
+                tiles.get(7), tiles.get(12), tiles.get(11)});
         tiles.get(7).setNeighbours(new Tile[]{tiles.get(6),
                 tiles.get(8), tiles.get(10)});
         tiles.get(8).setNeighbours(new Tile[]{tiles.get(7),
@@ -219,15 +219,16 @@ public class Maze {
      * a sorban következő pandára, amikor kimennek a kijáraton, vagy.
      */
     static void removePanda(Panda p) throws IOException {
-        if(p.getNextPanda()!=null)
-            removePanda(p.getNextPanda());
+
         p.getPosition().setAnimal(null);
-        for(ThingView tv : thingViews){
-            if(tv.getObj()==p){
-                thingViews.remove(tv);
+        for(int i = 0; i<thingViews.size();i++){
+            if(thingViews.get(i).getObj()==p){
+                thingViews.remove(thingViews.get(i));
             }
         }
         pandas.remove(p);
+        if(p.getNextPanda()!=null)
+            removePanda(p.getNextPanda());
     }
 
     /**
@@ -236,6 +237,12 @@ public class Maze {
     static void removeOnePanda(Panda p) throws IOException {
 /*        Controller.incTab();
         Controller.writeClassAndFunction("MAZE:removeOnePanda(p)");*/
+        p.getPosition().setAnimal(null);
+        for(int i = 0; i<thingViews.size();i++){
+            if(thingViews.get(i).getObj()==p){
+                thingViews.remove(thingViews.get(i));
+            }
+        }
         pandas.remove(p);
         //Controller.decTab();
     }
@@ -247,6 +254,7 @@ public class Maze {
     static void removeOrangutan(Orangutan o) throws IOException {
         /*Controller.incTab();
         Controller.writeClassAndFunction("MAZE:removeOrangutan(o)");*/
+
         orangutans.remove(o);
         //Controller.decTab();
     }
